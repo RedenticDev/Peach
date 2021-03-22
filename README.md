@@ -1,2 +1,2 @@
 # Peach
-Spy your matches through the blurry filter
+Hacky utilities for Fruitz app
