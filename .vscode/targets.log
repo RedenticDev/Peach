@@ -1,0 +1,3234 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+[1;31m> [1;3;39mMaking all for tweak Peach…[m
+ 
+# GNU Make 4.3
+# Built for x86_64-apple-darwin19.2.0
+# Copyright (C) 1988-2020 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+ 
+
+# Make data base, printed on Tue Mar  9 15:25:30 2021
+
+# Variables
+
+# environment
+_THEOS_CLEANED_SCHEMA_SET = debug
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 9)
+_THEOS_TARGET_SUPPORTS_BUNDLES := 1
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 166)
+_THEOS_TARGET_HAS_INCLUDE_PATH := 
+# makefile (from '/Users/antoine/theos/makefiles/legacy.mk', line 15)
+FW_TARGET_NAME = $(THEOS_TARGET_NAME)$(warning FW_TARGET_NAME is deprecated. Please migrate to THEOS_TARGET_NAME.)
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 170)
+_THEOS_PACKAGE_FORMAT := deb
+# makefile (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 10)
+OBJCC_FILES = $(filter %.mm %.xm %.xmi,$(_FILES))
+# makefile (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 119)
+PREPROCESS_ARCH_FLAGS = $(ALL_ARCHFLAGS)
+# makefile (from 'Makefile', line 9)
+TWEAK_NAME = Peach
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 109)
+__schema_var_last = $(strip $($(lastword $(call __schema_defined_var_names,$(1),$(2)))))
+# makefile (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 4)
+__ALL_FILES = $(call __schema_var_all,$(THEOS_CURRENT_INSTANCE)_,FILES) $($(THEOS_CURRENT_INSTANCE)_OBJCC_FILES) $($(THEOS_CURRENT_INSTANCE)_LOGOS_FILES) $($(THEOS_CURRENT_INSTANCE)_OBJC_FILES) $($(THEOS_CURRENT_INSTANCE)_CC_FILES) $($(THEOS_CURRENT_INSTANCE)_C_FILES)
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 66)
+THEOS_FALLBACK_INCLUDE_PATH := /Users/antoine/theos/include/_fallback
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 3)
+ECHO_PIPEFAIL := set -o pipefail;
+# command line
+_THEOS_CURRENT_OPERATION = all
+# makefile (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 137)
+ALL_SWIFTFLAGS = $(_THEOS_INTERNAL_SWIFTCOLORFLAGS) $(_THEOS_INTERNAL_SWIFTFLAGS) $(_THEOS_TARGET_SWIFTFLAGS) $(ADDITIONAL_SWIFTFLAGS) $(call __schema_var_all,$(THEOS_CURRENT_INSTANCE)_,SWIFTFLAGS) $(call __schema_var_all,,SWIFTFLAGS)
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 23)
+ECHO_NOTHING = @(
+# makefile (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 29)
+_OBJ_DIR_STAMPS = $(sort $(foreach o,$(filter $(THEOS_OBJ_DIR)%,$(OBJ_FILES_TO_LINK)),$(dir $o).stamp))
+# makefile (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 134)
+ALL_CCFLAGS = $(_THEOS_INTERNAL_CCFLAGS) $(_THEOS_TARGET_CCFLAGS) $(ADDITIONAL_CCFLAGS) $(call __schema_var_all,$(THEOS_CURRENT_INSTANCE)_,CCFLAGS) $(call __schema_var_all,,CCFLAGS)
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 57)
+__invocation = $(shell xcrun -sdk $(_THEOS_TARGET_PLATFORM_NAME) -f $(1) 2>/dev/null)
+# makefile (from '/Users/antoine/theos/makefiles/legacy.mk', line 46)
+FW_PACKAGE_DEBVERSION = $(THEOS_PACKAGE_VERSION)$(warning FW_PACKAGE_DEBVERSION is deprecated. Please migrate to THEOS_PACKAGE_VERSION.)
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 70)
+ECHO_LINKING = $(ECHO_BEGIN)$(PRINT_FORMAT_YELLOW) "Linking $(_THEOS_CURRENT_TYPE) $(THEOS_CURRENT_INSTANCE)"$(ECHO_END); $(ECHO_PIPEFAIL) (
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 7)
+TARGET_CFLAGS_DYNAMICLIB = 
+# 'override' directive (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 115)
+_THEOS_TARGET_INCLUDE_SDK_VERSION := 13.5
+# environment
+TMPDIR = /var/folders/dv/xtxhwssd1nv7g1p11sn3p4f40000gn/T/
+# makefile (from '/Users/antoine/theos/makefiles/targets/Darwin/iphone.mk', line 7)
+_THEOS_TARGET_PLATFORM_FLAG_NAME := iphoneos
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 64)
+THEOS_INCLUDE_PATH := /Users/antoine/theos/include
+# environment
+XPC_SERVICE_NAME = 0
+# environment
+THEOS_PACKAGE_ARCH = iphoneos-arm
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/dv/xtxhwssd1nv7g1p11sn3p4f40000gn/T/vscode-ipc-a5fef744-e454-48df-8b28-b57a3c0a07f3.sock
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 263)
+_THEOS_RSYNC_EXCLUDE_COMMANDLINE := --exclude "_MTN" --exclude ".git" --exclude ".svn" --exclude ".DS_Store" --exclude "._*"
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 119)
+_THEOS_LOAD_MODULES := 
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 78)
+ECHO_DEBUG_SYMBOLS = $(ECHO_BEGIN)$(PRINT_FORMAT_BLUE) "Generating debug symbols for $(THEOS_CURRENT_INSTANCE)"$(ECHO_END); $(ECHO_PIPEFAIL) (
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 68)
+THEOS_SDKS_PATH := /Users/antoine/theos/sdks
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_tail.mk', line 34)
+_THEOS_TARGET_CFLAGS := -isysroot "/Users/antoine/theos/sdks/iPhoneOS13.5.sdk" -target -apple-ios11.2 -fmodules -fcxx-modules -fmodule-name=Peach -fbuild-session-file=/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/build_session -fmodules-prune-after=345600 -fmodules-prune-interval=86400 -fmodules-validate-once-per-build-session 
+# makefile (from '/Users/antoine/theos/makefiles/legacy.mk', line 47)
+FW_PACKAGE_FILENAME = $(THEOS_PACKAGE_FILENAME)$(warning FW_PACKAGE_FILENAME is deprecated. Please migrate to THEOS_PACKAGE_FILENAME.)
+# makefile (from '/Users/antoine/theos/makefiles/targets/Darwin/iphone.mk', line 5)
+_THEOS_TARGET_PLATFORM_NAME := iphoneos
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 81)
+ECHO_COPYING_PUBLIC_HEADERS = $(ECHO_BEGIN)$(PRINT_FORMAT_MAGENTA) "Copying public headers into the $(_THEOS_CURRENT_TYPE) wrapper"$(ECHO_END); $(ECHO_PIPEFAIL) (
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 22)
+ECHO_BEGIN = @(
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 107)
+__schema_var_all = $(strip $(foreach sch,$(call __schema_all_var_names,$(1),$(2)),$($(sch))))
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 164)
+THEOS_TARGET_INCLUDE_PATH := /Users/antoine/theos/include/iphone
+# makefile (from '/Users/antoine/theos/makefiles/instance/library.mk', line 25)
+_THEOS_INTERNAL_CFLAGS = -DTARGET_$(_THEOS_TARGET_NAME_DEFINE)=1 $(OPTFLAG) -Wall $(DEBUGFLAG) -Werror $(TARGET_CFLAGS_DYNAMICLIB)
+# makefile (from '/Users/antoine/theos/makefiles/platform/Darwin.mk', line 43)
+_THEOS_PLATFORM_GET_LOGICAL_CORES := sysctl -n hw.ncpu
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 9)
+_TARGET_VERSION_GE_4_0 = $(call __simplify,_TARGET_VERSION_GE_4_0,$(call __vercmp,$(_THEOS_TARGET_SDK_VERSION),ge,4.0))
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 77)
+__CMP_RES := gt
+# default
+MAKE_COMMAND := make
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_tail.mk', line 46)
+_THEOS_TARGET_SWIFT_VERSION := 5.3.2
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 37)
+PRINT_FORMAT_GREEN = $(PRINT_FORMAT_STAGE) 2
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 160)
+_THEOS_TARGET_NAME_DEFINE := IPHONE
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 106)
+__schema_defined_var_names = $(foreach tuple,$(filter-out undefined:%,$(foreach schvar,$(call __schema_all_var_names,$(1),$(2)),$(origin $(schvar)):$(schvar))),$(lastword $(subst :, ,$(tuple))))
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 72)
+ECHO_LINKING_WITH_STRIP = $(ECHO_BEGIN)$(PRINT_FORMAT_YELLOW) "Linking $(_THEOS_CURRENT_TYPE) $(THEOS_CURRENT_INSTANCE) (with strip)"$(ECHO_END); $(ECHO_PIPEFAIL) (
+# makefile (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 15)
+_SWIFT_FILE_COUNT = $(words $(SWIFT_FILES))
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 34)
+PRINT_FORMAT_MAKING = printf "\e[1;31m> \e[1;3;39m%s…\e[m\n"
+# environment
+rvm_bin_path = /Users/antoine/.rvm/bin
+# environment
+__CFBundleIdentifier = com.microsoft.VSCode
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 142)
+_THEOS_TARGET := iphone
+# makefile (from '/Users/antoine/theos/makefiles/legacy.mk', line 3)
+FW_MAKEDIR = $(THEOS_MAKE_PATH)
+# environment
+TARGET_INSTALL_REMOTE = 1
+# environment
+ 
+THEOS_DEVICE_PORT = 
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 31)
+__theos_bool = $(if $(filter Y y YES yes TRUE true 1,$(1)),$(_THEOS_TRUE),$(_THEOS_FALSE))
+# makefile (from '/Users/antoine/theos/makefiles/platform/Darwin.mk', line 7)
+THEOS_PLATFORM_NAME := macosx
+# makefile (from '/Users/antoine/theos/makefiles/platform/Darwin.mk', line 23)
+_THEOS_PLATFORM_DEFAULT_TARGET := iphone
+# makefile (from 'Makefile', line 12)
+Peach_CFLAGS = -fobjc-arc
+# makefile (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 18)
+_SWIFTMODULE_HEADER = $(THEOS_OBJ_DIR)/generated-headers/$(THEOS_CURRENT_INSTANCE)-Swift.h
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 179)
+DEBUGFLAG = -ggdb
+# makefile (from '/Users/antoine/theos/makefiles/platform/Darwin.mk', line 33)
+_THEOS_PLATFORM_MD5SUM := md5
+# makefile (from '/Users/antoine/theos/makefiles/legacy.mk', line 48)
+FW_PACKAGE_STAGING_DIR = $(THEOS_STAGING_DIR)$(warning FW_PACKAGE_STAGING_DIR is deprecated. Please migrate to THEOS_STAGING_DIR.)
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 76)
+ECHO_MERGING = $(ECHO_BEGIN)$(PRINT_FORMAT_BLUE) "Merging $(_THEOS_CURRENT_TYPE) $(THEOS_CURRENT_INSTANCE)"$(ECHO_END); $(ECHO_PIPEFAIL) (
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 47)
+_DEPLOY_VERSION_GE_11_0 := 1
+# default
+.VARIABLES := 
+# makefile (from '/Users/antoine/theos/makefiles/instance/tweak.mk', line 9)
+LOCAL_INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries
+# environment
+COMMAND_MODE = unix2003
+# environment
+PWD = /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 235)
+THEOS_OBJ_DIR = $(_THEOS_LOCAL_DATA_DIR)/$(THEOS_OBJ_DIR_NAME)
+# environment
+LSCOLORS = ExFxBxDxCxegedabagacad
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_tail.mk', line 51)
+_THEOS_TARGET_SWIFT_LDFLAGS = $(call __simplify,_THEOS_TARGET_SWIFT_LDFLAGS,-rpath /usr/lib/swift -rpath /usr/lib/libswift/$(_THEOS_TARGET_SWIFT_VERSION_PATH))
+# makefile (from '/Users/antoine/theos/makefiles/platform/Darwin.mk', line 29)
+_THEOS_PLATFORM_DU_EXCLUDE := -I
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 48)
+_TARGET_VERSION_GE_12_1 := 1
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 249)
+THEOS_SUBPROJECT_PRODUCT = subproject.a
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 139)
+__TARGET_MAKEFILE := /var/folders/dv/xtxhwssd1nv7g1p11sn3p4f40000gn/T/SzRdJ7h3BM
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 84)
+ECHO_INSTALLING = $(ECHO_BEGIN)$(PRINT_FORMAT_CYAN) "Installing"$(ECHO_END); $(ECHO_PIPEFAIL) (
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 61)
+THEOS_BIN_PATH := /Users/antoine/theos/bin
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+VSCODE_LOG_STACK = false
+# automatic
+%F = $(notdir $%)
+# environment
+_system_type = Darwin
+# environment
+_system_name = OSX
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 80)
+ECHO_COPYING_RESOURCE_DIRS = $(ECHO_BEGIN)$(PRINT_FORMAT_MAGENTA) "Copying resource directories into the $(_THEOS_CURRENT_TYPE) wrapper"$(ECHO_END); $(ECHO_PIPEFAIL) (
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 73)
+ECHO_STRIPPING = $(ECHO_BEGIN)$(PRINT_FORMAT_BLUE) "Stripping $(THEOS_CURRENT_INSTANCE)"$(ECHO_END); $(ECHO_PIPEFAIL) (
+# makefile (from '/Users/antoine/theos/makefiles/legacy.mk', line 31)
+FW_OBJ_DIR = $(THEOS_OBJ_DIR)$(warning FW_OBJ_DIR is deprecated. Please migrate to THEOS_OBJ_DIR.)
+# environment
+THEOS = /Users/antoine/theos
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 39)
+_DEPLOY_VERSION_GE_3_0 := 1
+# default
+.LOADED := 
+# makefile (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 31)
+ADDITIONAL_CPPFLAGS = $(call __schema_var_all,$(THEOS_CURRENT_INSTANCE)_,CPPFLAGS)
+# default
+.INCLUDE_DIRS = /usr/local/Cellar/make/4.3/include /usr/local/include
+# environment
+GEM_PATH = /Users/antoine/.rvm/gems/ruby-2.7.2:/Users/antoine/.rvm/gems/ruby-2.7.2@global
+# environment
+THEOS_SCHEMA = DEFAULT DEBUG
+# environment
+__CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x1
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 108)
+__schema_var_name_last = $(strip $(lastword $(call __schema_defined_var_names,$(1),$(2))))
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 247)
+THEOS_LEGACY_PACKAGE_DIR = $(THEOS_BUILD_DIR)/debs
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 77)
+ECHO_SIGNING = $(ECHO_BEGIN)$(PRINT_FORMAT_BLUE) "Signing $(THEOS_CURRENT_INSTANCE)"$(ECHO_END); $(ECHO_PIPEFAIL) (
+# makefile (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 11)
+SWIFT_FILES = $(filter %.swift %.xswift,$(_FILES))
+# makefile
+MAKEFLAGS = pqrR -j4 -Otarget --jobserver-auth=3,4 --no-print-directory -- $(MAKEOVERRIDES)
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 240)
+THEOS_STAGING_DIR_NAME = _
+# makefile (from '/Users/antoine/theos/makefiles/vercmp.mk', line 52)
+___vercmp_presplit = $(strip $(foreach ver1,$(value $(1)),$(if $(filter eq,$(value $(3))), $(eval $(3):=$(call __cmp,$(ver1),$(firstword $(value $(2)))$(eval $(2):=$(wordlist 2,$(words $(value $(2))),$(value $(2)))))) ,)) $(value $(3)) )
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 221)
+_THEOS_INTERNAL_SWIFTCOLORFLAGS = -color-diagnostics
+# makefile (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 154)
+ALL_DEPFLAGS = -MT $@ -MMD -MP -MF "$(THEOS_OBJ_DIR)/$<.$(_THEOS_OBJ_FILE_TAG).Td"
+# makefile
+CURDIR := /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 85)
+ECHO_UNLOADING = $(ECHO_BEGIN)$(PRINT_FORMAT_CYAN) "Unloading $(INSTALL_TARGET_PROCESSES)"$(ECHO_END); $(ECHO_PIPEFAIL) (
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 205)
+_THEOS_INTERNAL_IFLAGS_C = $(_THEOS_INTERNAL_IFLAGS_BASE) -include $(THEOS)/Prefix.pch
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+TARGET_CODESIGN_ALLOCATE = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/codesign_allocate
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 198)
+TARGET_STRIP = :
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 165)
+THEOS_TARGET_LIBRARY_PATH := /Users/antoine/theos/lib/iphone
+# environment
+_THEOS_OS = Darwin
+# environment
+THEOS_DEVICE_USER = root
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 43)
+PRINT_FORMAT_ERROR = printf "\e[0;31m==> \e[1;31mError:\e[m %s\n"
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 58)
+ECHO_PREPROCESSING = $(ECHO_BEGIN)$(PRINT_FORMAT_RED) "Preprocessing $<"$(ECHO_END); $(ECHO_PIPEFAIL) (
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 63)
+THEOS_VENDOR_LIBRARY_PATH := /Users/antoine/theos/vendor/lib
+# environment
+MFLAGS = -pqrR -j4 -Otarget --jobserver-auth=3,4 --no-print-directory
+# environment
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.py0ckH71l6/Listeners
+# default
+.SHELLFLAGS := -c
+# makefile (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 136)
+ALL_OBJCCFLAGS = $(_THEOS_INTERNAL_OBJCCFLAGS) $(ADDITIONAL_OBJCCFLAGS) $(call __schema_var_all,$(THEOS_CURRENT_INSTANCE)_,OBJCCFLAGS) $(call __schema_var_all,,OBJCCFLAGS)
+# makefile (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 143)
+_THEOS_CODESIGN_COMMANDLINE = CODESIGN_ALLOCATE=$(TARGET_CODESIGN_ALLOCATE) $(ECHO_UNBUFFERED) $(TARGET_CODESIGN) $(or $(call __schema_var_all,$(THEOS_CURRENT_INSTANCE)_,CODESIGN_FLAGS),$(TARGET_CODESIGN_FLAGS))
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_tail.mk', line 29)
+VERSIONFLAGS := -target -apple-ios11.2
+ 
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 265)
+FAKEROOT := /Users/antoine/theos/bin/fakeroot.sh -p "/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/fakeroot"
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 276)
+THEOS_LINKAGE_TYPE = dynamic
+# makefile (from '/Users/antoine/theos/makefiles/legacy.mk', line 5)
+FW_LIBDIR = $(THEOS_LIBRARY_PATH)
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 114)
+THEOS_LAYOUT_DIR = $(THEOS_PROJECT_DIR)/$(THEOS_LAYOUT_DIR_NAME)
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 227)
+_THEOS_OBJ_DIR_EXTENSION = /$(_THEOS_CLEANED_SCHEMA_SET)
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 67)
+TARGET_LIPO = $(call __invocation,lipo)
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 72)
+TARGET_XCPRETTY = $(call __invocation,xcpretty)
+# makefile (from '/Users/antoine/theos/makefiles/instance/library.mk', line 1)
+MAKEFILE_LIST := Makefile /Users/antoine/theos/makefiles/common.mk /Users/antoine/theos/makefiles/vercmp.mk /Users/antoine/theos/makefiles/legacy.mk /Users/antoine/theos/makefiles/platform/Darwin.mk /Users/antoine/theos/makefiles/platform/Darwin.mk /var/folders/dv/xtxhwssd1nv7g1p11sn3p4f40000gn/T/SzRdJ7h3BM /Users/antoine/theos/makefiles/targets/Darwin/iphone.mk /Users/antoine/theos/makefiles/targets/_common/darwin_head.mk /Users/antoine/theos/makefiles/targets/_common/iphone.mk /Users/antoine/theos/makefiles/targets/_common/darwin_tail.mk /Users/antoine/theos/makefiles/targets/Darwin/iphone.mk /Users/antoine/theos/makefiles/messages.mk /Users/antoine/theos/makefiles/tweak.mk /Users/antoine/theos/makefiles/instance/tweak.mk /Users/antoine/theos/makefiles/rules.mk /Users/antoine/theos/makefiles/instance/rules.mk /Users/antoine/theos/makefiles/instance/library.mk
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 188)
+_THEOS_SHOULD_STRIP_DEFAULT := 
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 39)
+PRINT_FORMAT_BLUE = $(PRINT_FORMAT_STAGE) 4
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 88)
+ERROR_BEGIN = @$(PRINT_FORMAT_ERROR) $(NULLSTRING)
+# automatic
+@F = $(notdir $@)
+# makefile (from '/Users/antoine/theos/makefiles/targets/Darwin/iphone.mk', line 8)
+_THEOS_TARGET_PLATFORM_SWIFT_NAME := apple-ios
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+VSCODE_PID = 3017
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 89)
+ERROR_END = $(NULLSTRING) >&2; exit 1;
+# makefile (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 366)
+define _THEOS_TEMPLATE_ARCHIVE_LINKING_RULE
+ifeq ($(TARGET_LIPO),)
+$$(THEOS_OBJ_DIR)/$(1): $$(OBJ_FILES_TO_LINK)
+ifneq ($(2),nowarn)
+ifeq ($$(OBJ_FILES_TO_LINK),)
+	$$(WARNING_EMPTY_LINKING)
+endif
+endif
+ifeq ($$(_THEOS_CURRENT_TYPE),subproject)
+	$$(ECHO_LINKING)$$(ECHO_UNBUFFERED)$$(TARGET_LIBTOOL) -static -o "$$@" $$^$$(ECHO_END)
+else
+	$$(ECHO_LINKING)$$(ECHO_UNBUFFERED)$$(TARGET_LIBTOOL) -static -o "$$@" $$^$$(ECHO_END)
+ifeq ($(SHOULD_STRIP),$(_THEOS_TRUE))
+	$$(ECHO_STRIPPING)$$(ECHO_UNBUFFERED)$$(TARGET_STRIP) $$(ALL_STRIP_FLAGS) "$$@"$$(ECHO_END)
+endif
+endif
+else ifeq ($(THEOS_CURRENT_ARCH),)
+ifeq ($(_THEOS_LIBRARY_TYPE),static)
+
+ARCH_FILES_TO_LINK := $(addsuffix /$(1),$(addprefix $(THEOS_OBJ_DIR)/,$(TARGET_ARCHS)))
+$$(THEOS_OBJ_DIR)/%/$(1): $(__ALL_FILES)
+	@mkdir -p $(THEOS_OBJ_DIR)/$$*
+	$(ECHO_MAKE)$(MAKE) -f $(_THEOS_PROJECT_MAKEFILE_NAME) --no-print-directory --no-keep-going internal-$(_THEOS_CURRENT_TYPE)-$(_THEOS_CURRENT_OPERATION) _THEOS_CURRENT_TYPE="$(_THEOS_CURRENT_TYPE)" THEOS_CURRENT_INSTANCE="$(THEOS_CURRENT_INSTANCE)" _THEOS_CURRENT_OPERATION="$(_THEOS_CURRENT_OPERATION)" THEOS_BUILD_DIR="$(THEOS_BUILD_DIR)" THEOS_CURRENT_ARCH="$$*"
+
+endif
+$(THEOS_OBJ_DIR)/$(1): $$(ARCH_FILES_TO_LINK)
+ifeq ($$(_THEOS_CURRENT_TYPE),subproject)
+	@echo "$$(_THEOS_INTERNAL_LDFLAGS)" > $$(THEOS_OBJ_DIR)/$$(THEOS_CURRENT_INSTANCE).ldflags
+endif
+	$(ECHO_MERGING)$(ECHO_UNBUFFERED)$(TARGET_LIPO) $(foreach ARCH,$(TARGET_ARCHS),-arch $(ARCH) $(THEOS_OBJ_DIR)/$(ARCH)/$(1)) -create -output "$$@"$(ECHO_END)
+
+else
+$$(THEOS_OBJ_DIR)/$(1): $$(OBJ_FILES_TO_LINK)
+ifneq ($(2),nowarn)
+ifeq ($$(OBJ_FILES_TO_LINK),)
+	$$(WARNING_EMPTY_LINKING)
+endif
+endif
+	$$(ECHO_NOTHING)mkdir -p $(shell dirname "$(THEOS_OBJ_DIR)/$(1)")$$(ECHO_END)
+ifeq ($$(_THEOS_CURRENT_TYPE),subproject)
+	$$(ECHO_STATIC_LINKING)$$(ECHO_UNBUFFERED)$$(TARGET_LIBTOOL) -static -o "$$@" $$^$$(ECHO_END)
+	@echo "$$(_THEOS_INTERNAL_LDFLAGS)" > $$(THEOS_OBJ_DIR)/$$(THEOS_CURRENT_INSTANCE).ldflags
+else
+	$$(ECHO_STATIC_LINKING)$$(ECHO_UNBUFFERED)$$(TARGET_LIBTOOL) -static -o "$$@" $$^$$(ECHO_END)
+ifeq ($(SHOULD_STRIP),$(_THEOS_TRUE))
+ifeq ($$(_THEOS_IS_WSL),$(_THEOS_TRUE))
+	mkdir -p "$$(_THEOS_TMP_FOR_WSL)/$$(THEOS_CURRENT_ARCH)"
+	$$(ECHO_STRIPPING)$$(ECHO_UNBUFFERED)cp "$$@" "$$(_THEOS_TMP_FOR_WSL)/$$(THEOS_CURRENT_ARCH)" && $$(TARGET_STRIP) $$(ALL_STRIP_FLAGS) "$$(_THEOS_TMP_FOR_WSL)/$$(THEOS_CURRENT_ARCH)/$(1)" && mv "$$(_THEOS_TMP_FOR_WSL)/$$(THEOS_CURRENT_ARCH)/$(1)" $$(THEOS_OBJ_DIR)$$(ECHO_END)
+else
+	$$(ECHO_STRIPPING)$$(ECHO_UNBUFFERED)$$(TARGET_STRIP) $$(ALL_STRIP_FLAGS) "$$@"$$(ECHO_END)
+endif
+endif
+endif
+endif
+
+endef
+# makefile (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 9)
+OBJC_FILES = $(filter %.m %.mm %.x %.xm %.xi %.xmi,$(_FILES))
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 146)
+_THEOS_TARGET_CALCULATED := 1
+# makefile (from '/Users/antoine/theos/makefiles/legacy.mk', line 23)
+FW_BUILD_DIR = $(THEOS_BUILD_DIR)$(warning FW_BUILD_DIR is deprecated. Please migrate to THEOS_BUILD_DIR.)
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 26)
+ECHO_END = )
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# environment
+MY_RUBY_HOME = /Users/antoine/.rvm/rubies/ruby-2.7.2
+# makefile (from '/Users/antoine/theos/makefiles/targets/Darwin/iphone.mk', line 3)
+THEOS_TARGET_NAME := iphone
+# makefile (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 124)
+_LOCAL_USE_MODULES = $(or $($(THEOS_CURRENT_INSTANCE)_USE_MODULES),$(_THEOS_TRUE))
+# environment
+THEOS_USE_PARALLEL_BUILDING = 1
+# makefile (from '/Users/antoine/theos/makefiles/instance/library.mk', line 51)
+_THEOS_OUT_FILE_TAG := 47ba6b93
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 78)
+TARGET_DSYMUTIL = $(call __invocation,dsymutil)
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 65)
+THEOS_VENDOR_INCLUDE_PATH := /Users/antoine/theos/vendor/include
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 199)
+OPTFLAG = -O0
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_tail.mk', line 49)
+_THEOS_TARGET_SWIFT_VERSION_PATH = stable
+# automatic
+*F = $(notdir $*)
+# environment
+_THEOS_INTERNAL_TRUE_PATH = /Users/antoine/theos
+# makefile (from '/Users/antoine/theos/makefiles/legacy.mk', line 43)
+FW_PACKAGE_NAME = $(THEOS_PACKAGE_NAME)$(warning FW_PACKAGE_NAME is deprecated. Please migrate to THEOS_PACKAGE_NAME.)
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 12)
+_THEOS_TARGET_CXX := clang++
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 220)
+_THEOS_INTERNAL_COLORFLAGS = -fcolor-diagnostics
+# makefile (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 138)
+ALL_LOGOSFLAGS = $(_THEOS_INTERNAL_LOGOSFLAGS) $(ADDITIONAL_LOGOSFLAGS) $(call __schema_var_all,$(THEOS_CURRENT_INSTANCE)_,LOGOSFLAGS) $(call __schema_var_all,,LOGOSFLAGS)
+# makefile (from '/Users/antoine/theos/makefiles/legacy.mk', line 2)
+FW_BINDIR = $(THEOS_BIN_PATH)
+# makefile (from '/Users/antoine/theos/makefiles/platform/Darwin.mk', line 3)
+_THEOS_PLATFORM_HAS_XCODE := 1
+# command line
+COLOR = 1
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# makefile (from '/Users/antoine/theos/makefiles/vercmp.mk', line 13)
+ 
+__cmp = $(if $(filter $(1),$(2)),eq,$(strip $(eval __CMP_NUM1:=$(subst 0,0 ,$(subst 1,1 ,$(subst 2,2 ,$(subst 3,3 ,$(subst 4,4 ,$(subst 5,5 ,$(subst 6,6 ,$(subst 7,7 ,$(subst 8,8 ,$(subst 9,9 ,$(1)))))))))))) $(eval __CMP_NUM2:=$(subst 0,0 ,$(subst 1,1 ,$(subst 2,2 ,$(subst 3,3 ,$(subst 4,4 ,$(subst 5,5 ,$(subst 6,6 ,$(subst 7,7 ,$(subst 8,8 ,$(subst 9,9 ,$(2)))))))))))) $(if $(filter-out 1,$(words $(__CMP_NUM1)))$(filter-out 1,$(words $(__CMP_NUM2))),$(strip $(call ___vercmp_expand_backward,__CMP_NUM1,$(__CMP_NUM1),$(__CMP_NUM2)) $(call ___vercmp_expand_backward,__CMP_NUM2,$(__CMP_NUM2),$(__CMP_NUM1)) $(eval __CMP_RES:=eq) $(call ___vercmp_presplit,__CMP_NUM1,__CMP_NUM2,__CMP_RES) ),$(if $(filter $(1),$(firstword $(sort $(1) $(2)))),lt,gt) ) ))
+# environment
+_THEOS_PLATFORM_CALCULATED = 1
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 18)
+_TARGET_LIBCPP_LDFLAGS := -stdlib=libc++ -lc++
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 35)
+_DEPLOY_VERSION_GE_5_0 = $(call __simplify,_DEPLOY_VERSION_GE_5_0,$(call __vercmp,$(_THEOS_TARGET_OS_DEPLOYMENT_VERSION),ge,5.0))
+# makefile (from '/Users/antoine/theos/makefiles/legacy.mk', line 6)
+FW_MODDIR = $(THEOS_MODULE_PATH)
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 116)
+_THEOS_HAS_STAGING_LAYOUT := 1
+# environment
+VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{"*":"fr"},"_languagePackId":"85f597cc4688898ca124c0636a9a7be2.fr","_translationsConfigFile":"/Users/antoine/Library/Application Support/Code/clp/85f597cc4688898ca124c0636a9a7be2.fr/tcf.json","_cacheRoot":"/Users/antoine/Library/Application Support/Code/clp/85f597cc4688898ca124c0636a9a7be2.fr","_resolvedLanguagePackCoreLocation":"/Users/antoine/Library/Application Support/Code/clp/85f597cc4688898ca124c0636a9a7be2.fr/f30a9b73e8ffc278e71575118b6bf568f04587c8","_corruptedFile":"/Users/antoine/Library/Application Support/Code/clp/85f597cc4688898ca124c0636a9a7be2.fr/corrupted.info","_languagePackSupport":true}
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 34)
+_DEPLOY_VERSION_GE_9_0 = $(call __simplify,_DEPLOY_VERSION_GE_9_0,$(call __vercmp,$(_THEOS_TARGET_OS_DEPLOYMENT_VERSION),ge,9.0))
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 71)
+ECHO_STATIC_LINKING = $(ECHO_BEGIN)$(PRINT_FORMAT_YELLOW) "Linking static $(_THEOS_CURRENT_TYPE) $(THEOS_CURRENT_INSTANCE)"$(ECHO_END); $(ECHO_PIPEFAIL) (
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 34)
+__executable = $(if $(shell PATH="$(THEOS_BIN_PATH):$$PATH" type "$(1)" > /dev/null 2>&1 && echo 1),$(_THEOS_TRUE),$(_THEOS_FALSE))
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_tail.mk', line 26)
+_THEOS_TARGET_SWIFT_TARGET := apple-ios11.2
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 93)
+_UNSORTED_SDKS := 10.3 11.2 12.1.2 12.1 12.4 13.0 13.3 13.4 13.5 13.6 13.7 14.0 14.2 14.4 6.1 7.1 8.1 8.4.1 9.3.5 9.3  14.4
+# environment
+CLICOLOR = 1
+# default
+MAKE_HOST := x86_64-apple-darwin19.2.0
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 2)
+TARGET_EXE_EXT := 
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_tail.mk', line 22)
+MODULESFLAGS := -fmodules -fcxx-modules -fmodule-name=Peach -fbuild-session-file=/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/build_session -fmodules-prune-after=345600 -fmodules-prune-interval=86400 -fmodules-validate-once-per-build-session
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 67)
+THEOS_MODULE_PATH := /Users/antoine/theos/mod
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_tail.mk', line 39)
+_THEOS_TARGET_SWIFT_LDPATHS = $(call __simplify,_THEOS_TARGET_SWIFT_LDPATHS,$(dir $(shell type -p $(TARGET_SWIFT)))../lib/swift/$(_THEOS_TARGET_PLATFORM_NAME) /usr/lib/swift)
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 181)
+DEBUG.CFLAGS = -DDEBUG -O0
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 15)
+SHELL = bash
+# default
+MAKECMDGOALS := internal-tweak-all
+# makefile (from '/Users/antoine/theos/makefiles/legacy.mk', line 4)
+FW_INCDIR = $(THEOS_INCLUDE_PATH)
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 39)
+_TARGET_VERSION_GE_6_0 := 1
+# environment
+_system_arch = x86_64
+# makefile (from '/Users/antoine/theos/makefiles/platform/Darwin.mk', line 20)
+DEVELOPER_DIR = $(THEOS_PLATFORM_SDK_ROOT)
+# environment
+SHLVL = 2
+# environment
+rvm_path = /Users/antoine/.rvm
+# makefile (from '/var/folders/dv/xtxhwssd1nv7g1p11sn3p4f40000gn/T/SzRdJ7h3BM', line 2)
+__THEOS_TARGET_ARG_1 := clang
+# makefile (from '/Users/antoine/theos/makefiles/legacy.mk', line 40)
+FW_INSTANCE = $(THEOS_CURRENT_INSTANCE)$(warning FW_INSTANCE is deprecated. Please migrate to THEOS_CURRENT_INSTANCE.)
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 4)
+TARGET_AR_EXT := .a
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 69)
+ECHO_SWIFTMODULE_HEADER = $(ECHO_BEGIN)$(PRINT_FORMAT_BLUE) "Generating $(notdir $@)"$(ECHO_END); $(ECHO_PIPEFAIL) (
+# makefile (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 130)
+ALL_PFLAGS = $(_THEOS_INTERNAL_COLORFLAGS) $(_THEOS_INTERNAL_CFLAGS) $(_THEOS_TARGET_CFLAGS) $(ADDITIONAL_CFLAGS) $(call __schema_var_all,$(THEOS_CURRENT_INSTANCE)_,CFLAGS) $(call __schema_var_all,,CFLAGS) $($(<)_CFLAGS) -DTHEOS_INSTANCE_NAME="\"$(THEOS_CURRENT_INSTANCE)\"" $(MODULESFLAGS) $($(THEOS_CURRENT_ARCH)_CFLAGS)
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 33)
+__exists = $(if $(wildcard $(1)),$(_THEOS_TRUE),$(_THEOS_FALSE))
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 119)
+_THEOS_TARGET_OS_DEPLOYMENT_VERSION = $(or $(__THEOS_TARGET_ARG_$(word 2,$(_THEOS_TARGET_ARG_ORDER))),$(TARGET_OS_DEPLOYMENT_VERSION_$(THEOS_CURRENT_ARCH)),$(TARGET_OS_DEPLOYMENT_VERSION),$(_SDKVERSION),$(_THEOS_TARGET_DEFAULT_OS_DEPLOYMENT_VERSION))
+# environment
+MAKELEVEL := 1
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 39)
+__THEOS_COMMON_MK_VERSION := 1k
+# makefile (from '/Users/antoine/theos/makefiles/legacy.mk', line 42)
+FW_SHARED_BUNDLE_RESOURCE_PATH = $(THEOS_SHARED_BUNDLE_RESOURCE_PATH)$(warning FW_SHARED_BUNDLE_RESOURCE_PATH is deprecated. Please migrate to THEOS_SHARED_BUNDLE_RESOURCE_PATH.)
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 33)
+PRINT_FORMAT = printf "\e[0;36m==> \e[1;36mNotice:\e[m %s\n"
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 94)
+NOTICE_EMPTY_LINKING = @$(PRINT_FORMAT_WARNING) "No files to link - creating a bundle containing only resources"
+# default
+MAKE = $(MAKE_COMMAND)
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 72)
+PATH := /Users/antoine/theos/bin:/Users/antoine/theos/bin:/Users/antoine/.rvm/gems/ruby-2.7.2/bin:/Users/antoine/.rvm/gems/ruby-2.7.2@global/bin:/Users/antoine/.rvm/rubies/ruby-2.7.2/bin:/Users/antoine/theos/bin:/usr/local/sbin:/usr/local/opt/make/libexec/gnubin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/usr/local/share/dotnet:/opt/X11/bin:~/.dotnet/tools:/Library/Apple/usr/bin:/Applications/Wireshark.app/Contents/MacOS:/Users/antoine/.rvm/bin:/usr/local/mysql/bin:/opt/local/bin/python3:/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Scripts:/opt
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 41)
+PRINT_FORMAT_CYAN = $(PRINT_FORMAT_STAGE) 6
+# default
+MAKEFILES := 
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 88)
+VERCMP_OP := 10.0
+# makefile (from '/var/folders/dv/xtxhwssd1nv7g1p11sn3p4f40000gn/T/SzRdJ7h3BM', line 1)
+__THEOS_TARGET_ARG_0 := iphone
+# makefile (from '/Users/antoine/theos/makefiles/targets/Darwin/iphone.mk', line 2)
+_THEOS_TARGET_LOADED := 1
+# environment
+THEOS_PROJECT_DIR = /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach
+# automatic
+^F = $(notdir $^)
+ 
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 5)
+_THEOS_VERBOSE := 
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_tail.mk', line 18)
+TARGET_PRIVATE_FRAMEWORK_INCLUDE_PATH = $(ISYSROOT)/System/Library/PrivateFrameworks
+# environment
+TARGET_LD = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_tail.mk', line 17)
+TARGET_PRIVATE_FRAMEWORK_PATH = $(SYSROOT)/System/Library/PrivateFrameworks
+# makefile (from '/Users/antoine/theos/makefiles/vercmp.mk', line 68)
+___vercmp_expand = $(if $(filter $(words $(2)),$(words $(3))),, $(if $(filter $(words $(3)),$(firstword $(sort $(words $(2)) $(words $(3))))),, $(eval $(1) += 0) $(call ___vercmp_expand,$(1),$(value $(1)),$(3)) ) )
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 189)
+PACKAGE_BUILDNAME = debug
+# makefile (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 65)
+_THEOS_INTERNAL_SWIFTFLAGS = -DTHEOS_SWIFT -DTARGET_$(_THEOS_TARGET_NAME_DEFINE) $(SWIFT_OPTFLAG) -module-name $(THEOS_CURRENT_INSTANCE) $(SWIFT_DEBUGFLAG) -swift-version $(or $($(THEOS_CURRENT_INSTANCE)_SWIFT_VERSION),5)
+# makefile (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 8)
+OBJ_FILES = $(strip $(patsubst %,%.$(_THEOS_OBJ_FILE_TAG).o,$(_FILES)))
+# makefile (from '/Users/antoine/theos/makefiles/platform/Darwin.mk', line 2)
+_THEOS_PLATFORM_LOADED := 1
+# makefile (from 'Makefile', line 1)
+ARCHS = arm64 arm64e
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 10)
+_TARGET_VERSION_GE_3_0 = $(call __simplify,_TARGET_VERSION_GE_3_0,$(call __vercmp,$(_THEOS_TARGET_SDK_VERSION),ge,3.0))
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 74)
+TARGET_STRIP_FLAGS = -x
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 1)
+NULLSTRING := 
+# makefile (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 140)
+ALL_LDFLAGS = $(_THEOS_INTERNAL_COLORFLAGS) $(_THEOS_INTERNAL_LDFLAGS) $(ADDITIONAL_LDFLAGS) $(_THEOS_TARGET_LDFLAGS) $(ALL_ARCHFLAGS) $(call __schema_var_all,$(THEOS_CURRENT_INSTANCE)_,LDFLAGS) $(call __schema_var_all,,LDFLAGS)
+# makefile (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 157)
+_THEOS_OBJ_FILE_TAG := 0afe2a03
+# environment
+VSCODE_LOG_NATIVE = false
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 71)
+TARGET_XCODEBUILD = $(call __invocation,xcodebuild)
+# makefile (from '/Users/antoine/theos/makefiles/platform/Darwin.mk', line 39)
+_THEOS_PLATFORM_SHOW_IN_FILE_MANAGER := open -R
+# makefile (from '/Users/antoine/theos/makefiles/legacy.mk', line 17)
+FW_STAGING_DIR = $(THEOS_STAGING_DIR)$(warning FW_STAGING_DIR is deprecated. Please migrate to THEOS_STAGING_DIR.)
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 88)
+__CMP_NUM1 := ge
+# makefile (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 21)
+_SUBPROJECTS := 
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 274)
+THEOS_PACKAGE_VERSION = $(call __simplify,THEOS_PACKAGE_VERSION,$(THEOS_PACKAGE_BASE_VERSION)$(warning THEOS_PACKAGE_VERSION is deprecated. Please migrate to THEOS_PACKAGE_BASE_VERSION.))
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 246)
+THEOS_PACKAGE_DIR = $(THEOS_BUILD_DIR)/$(THEOS_PACKAGE_DIR_NAME)
+# makefile (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 14)
+_OBJCC_FILE_COUNT = $(words $(OBJCC_FILES))
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 7)
+_TARGET_VERSION_GE_7_0 = $(call __simplify,_TARGET_VERSION_GE_7_0,$(call __vercmp,$(_THEOS_TARGET_SDK_VERSION),ge,7.0))
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 39)
+_DEPLOY_VERSION_LT_4_3 := 
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_tail.mk', line 14)
+ISYSROOT := /Users/antoine/theos/sdks/iPhoneOS13.5.sdk
+# makefile (from '/var/folders/dv/xtxhwssd1nv7g1p11sn3p4f40000gn/T/SzRdJ7h3BM', line 4)
+__THEOS_TARGET_ARG_3 := 11.2
+# makefile (from '/Users/antoine/theos/makefiles/targets/Darwin/iphone.mk', line 6)
+_THEOS_TARGET_PLATFORM_SDK_NAME := iPhoneOS
+# automatic
+?F = $(notdir $?)
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 62)
+THEOS_LIBRARY_PATH := /Users/antoine/theos/lib
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 242)
+_SPACE := $(subst ,, )
+# makefile (from '/Users/antoine/theos/makefiles/legacy.mk', line 45)
+FW_PACKAGE_VERSION = $(THEOS_PACKAGE_BASE_VERSION)$(warning FW_PACKAGE_VERSION is deprecated. Please migrate to THEOS_PACKAGE_BASE_VERSION.)
+# makefile (from 'Makefile', line 4)
+INSTALL_TARGET_PROCESSES = SpringBoard
+# environment
+_THEOS_PROJECT_MAKEFILE_NAME = Makefile
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 17)
+_TARGET_LIBCPP_CCFLAGS := -stdlib=libc++
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 204)
+_THEOS_INTERNAL_IFLAGS_BASE = $(if $(_THEOS_TARGET_HAS_INCLUDE_PATH),-I$(THEOS_TARGET_INCLUDE_PATH) )-I$(THEOS_INCLUDE_PATH) -I$(THEOS_VENDOR_INCLUDE_PATH) -I$(THEOS_FALLBACK_INCLUDE_PATH)
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 79)
+ECHO_COPYING_RESOURCE_FILES = $(ECHO_BEGIN)$(PRINT_FORMAT_MAGENTA) "Copying resource files into the $(_THEOS_CURRENT_TYPE) wrapper"$(ECHO_END); $(ECHO_PIPEFAIL) (
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 22)
+_THEOS_LOCAL_DATA_DIR := /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 91)
+WARNING_EMPTY_LINKING = @$(PRINT_FORMAT_WARNING) "No files to link. Please check your Makefile! Make sure you set $(THEOS_CURRENT_INSTANCE)_FILES (or similar variables)"
+# makefile (from '/Users/antoine/theos/makefiles/rules.mk', line 2)
+_THEOS_RULES_LOADED := 1
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 88)
+VERCMP_SECOND := 
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 88)
+_TARGET_VERSION_GE_10_0 := 
+# makefile (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 28)
+OBJ_FILES_TO_LINK = $(strip $(addprefix $(THEOS_OBJ_DIR)/,$(OBJ_FILES)) $(call __schema_var_all,$(THEOS_CURRENT_INSTANCE)_,OBJ_FILES) $(SUBPROJECT_OBJ_FILES))
+# makefile (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 110)
+TARGET_ARCHS = $(ARCHS)
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 30)
+_THEOS_FALSE := 
+# automatic
++F = $(notdir $+)
+# makefile (from '/Users/antoine/theos/makefiles/legacy.mk', line 37)
+FW_SUBPROJECT_PRODUCT = $(THEOS_SUBPROJECT_PRODUCT)$(warning FW_SUBPROJECT_PRODUCT is deprecated. Please migrate to THEOS_SUBPROJECT_PRODUCT.)
+# makefile (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 148)
+ALL_STRIP_FLAGS = $(or $(call __schema_var_all,$(THEOS_CURRENT_INSTANCE)_,STRIP_FLAGS),$(TARGET_STRIP_FLAGS))
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# makefile (from '/Users/antoine/theos/makefiles/legacy.mk', line 44)
+FW_PACKAGE_ARCH = $(THEOS_PACKAGE_ARCH)$(warning FW_PACKAGE_ARCH is deprecated. Please migrate to THEOS_PACKAGE_ARCH.)
+# environment
+IRBRC = /Users/antoine/.rvm/rubies/ruby-2.7.2/.irbrc
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 83)
+ECHO_PRE_UNLOADING = $(ECHO_BEGIN)$(PRINT_FORMAT_CYAN) "Unloading $(PREINSTALL_TARGET_PROCESSES)"$(ECHO_END); $(ECHO_PIPEFAIL) (
+# 'override' directive
+GNUMAKEFLAGS := 
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_tail.mk', line 64)
+_THEOS_TARGET_BUNDLE_HEADERS_SUBDIRECTORY := /Headers
+# environment
+TARGET_CODESIGN = ldid
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 206)
+_THEOS_INTERNAL_IFLAGS_SWIFT = $(_THEOS_INTERNAL_IFLAGS_BASE)
+# makefile (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 61)
+_THEOS_INTERNAL_SWIFT_BRIDGING_HEADER = $(or $($(THEOS_CURRENT_INSTANCE)_SWIFT_BRIDGING_HEADER),$(THEOS_CURRENT_INSTANCE)-Bridging-Header.h)
+# command line
+ 
+THEOS_CURRENT_INSTANCE = Peach
+# environment
+LOGNAME = antoine
+# makefile (from '/Users/antoine/theos/makefiles/vercmp.mk', line 1)
+empty := 
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 21)
+_THEOS_RELATIVE_DATA_DIR = .theos
+# makefile (from '/Users/antoine/theos/makefiles/vercmp.mk', line 34)
+__vercmp = $(strip $(eval VERCMP_FIRST := $(subst .,$(space),$(1))) $(eval VERCMP_OP := $(if $(filter ge,$(2)),eq gt,$(if $(filter le,$(2)),eq lt,$(2)))) $(eval VERCMP_SECOND := $(subst .,$(space),$(3))) $(eval VERCMP_RES := eq) $(call ___vercmp_expand,VERCMP_FIRST,$(VERCMP_FIRST),$(VERCMP_SECOND)) $(call ___vercmp_expand,VERCMP_SECOND,$(VERCMP_SECOND),$(VERCMP_FIRST)) $(if $(filter $(VERCMP_OP),$(call ___vercmp_presplit,VERCMP_FIRST,VERCMP_SECOND,VERCMP_RES)),1,) )
+# makefile (from '/Users/antoine/theos/makefiles/legacy.mk', line 14)
+FW_PLATFORM_NAME = $(THEOS_PLATFORM_NAME)$(warning FW_PLATFORM_NAME is deprecated. Please migrate to THEOS_PLATFORM_NAME.)
+# environment
+DRAGONBUILD = /Users/antoine/DragonBuild
+# environment
+DRBIP = 192.168.1.96
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 68)
+ECHO_COMPILING = $(ECHO_BEGIN)$(PRINT_FORMAT_GREEN) "Compiling $<"$(ECHO_END); $(ECHO_PIPEFAIL) (
+# environment
+XPC_FLAGS = 0x0
+# environment
+TARGET_CXX = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
+# makefile (from '/Users/antoine/theos/makefiles/instance/tweak.mk', line 12)
+_LOCAL_LOGOS_DEFAULT_GENERATOR = $(or $($(THEOS_CURRENT_INSTANCE)_LOGOS_DEFAULT_GENERATOR),$(LOGOS_DEFAULT_GENERATOR),$(_THEOS_TARGET_LOGOS_DEFAULT_GENERATOR),MobileSubstrate)
+# environment
+_THEOS_TOP_INVOCATION_DONE = 1
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 29)
+_THEOS_TRUE := 1
+# makefile
+.DEFAULT_GOAL := all
+# makefile (from '/Users/antoine/theos/makefiles/vercmp.mk', line 2)
+space := $(subst ,, )
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 22)
+_THEOS_TARGET_DEFAULT_OS_DEPLOYMENT_VERSION := 9.0
+# makefile (from '/Users/antoine/theos/makefiles/platform/Darwin.mk', line 17)
+THEOS_PLATFORM_SDK_ROOT := /Applications/Xcode.app/Contents/Developer
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 28)
+STDERR_NULL_REDIRECT = 2> /dev/null
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 25)
+ECHO_UNBUFFERED = 
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 24)
+ECHO_MAKE = +@
+# environment
+rvm_version = 1.27.0 (1.27.0)
+# environment
+DISPLAY = :0
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 60)
+THEOS_MAKE_PATH := /Users/antoine/theos/makefiles
+# environment
+USER = antoine
+# makefile (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 13)
+_OBJC_FILE_COUNT = $(words $(OBJC_FILES))
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 23)
+_THEOS_BUILD_SESSION_FILE = $(_THEOS_LOCAL_DATA_DIR)/build_session
+# default
+MAKE_VERSION := 4.3
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_tail.mk', line 36)
+_THEOS_TARGET_LDFLAGS := -isysroot "/Users/antoine/theos/sdks/iPhoneOS13.5.sdk" -target -apple-ios11.2  -multiply_defined suppress -stdlib=libc++ -lc++ 
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 88)
+__CMP_NUM2 := 0 
+# 'override' directive
+.SHELLSTATUS := 0
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 77)
+_TARGET_VERSION_GE_8_4 := 1
+# makefile (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 155)
+ALL_DEPFLAGS_SWIFT = -emit-dependencies-path "$(THEOS_OBJ_DIR)/$<.$(_THEOS_OBJ_FILE_TAG).Td"
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 245)
+THEOS_PACKAGE_DIR_NAME = packages
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_tail.mk', line 11)
+SYSROOT := /Users/antoine/theos/sdks/iPhoneOS13.5.sdk
+# environment
+MAKEOVERRIDES = ${-*-command-variables-*-}
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_tail.mk', line 38)
+_THEOS_TARGET_SWIFTFLAGS := -sdk "/Users/antoine/theos/sdks/iPhoneOS13.5.sdk" 
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 171)
+_THEOS_PACKAGE_LAST_FILENAME = $(call __simplify,_THEOS_PACKAGE_LAST_FILENAME,$(shell cat "$(_THEOS_LOCAL_DATA_DIR)/last_package" 2>/dev/null))
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 106)
+_LATEST_SDK = $(call __simplify,_LATEST_SDK,$(lastword $(_SORTED_SDKS)))
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 86)
+ECHO_CLEANING = $(ECHO_BEGIN)$(PRINT_FORMAT_CYAN) "Cleaning"$(ECHO_END); $(ECHO_PIPEFAIL) (
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 27)
+__clean_pwd = $(shell (unset CDPATH; cd "$(1)"; pwd))
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 78)
+_THEOS_DARWIN_CAN_USE_MODULES := 1
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 16)
+_THEOS_TARGET_ARG_ORDER := 2 3
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 29)
+STDOUT_NULL_REDIRECT = > /dev/null
+# makefile (from '/Users/antoine/theos/makefiles/instance/library.mk', line 22)
+_LOCAL_LINKAGE_TYPE = $(or $($(THEOS_CURRENT_INSTANCE)_LINKAGE_TYPE),$(THEOS_LINKAGE_TYPE))
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 120)
+__mod = -include $$(foreach mod,$$(_THEOS_LOAD_MODULES),$$(THEOS_MODULE_PATH)/$$(mod)/$(1))
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 35)
+PRINT_FORMAT_STAGE = printf "\e[0;3%im==> \e[1;39m%s…\e[m\n"
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 92)
+_XCODE_SDK_DIR := /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 180)
+SWIFT_DEBUGFLAG = -g
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 262)
+THEOS_RSYNC_EXCLUDES = _MTN .git .svn .DS_Store ._*
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 12)
+_TARGET_VERSION_GE_13_0 := 1
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 66)
+TARGET_SWIFT = $(call __invocation,$(_THEOS_TARGET_SWIFT))
+# makefile (from 'Makefile', line 11)
+Peach_FILES = Tweak.x
+# makefile (from '/Users/antoine/theos/makefiles/platform/Darwin.mk', line 42)
+THEOS_SUDO_COMMAND = sudo
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 13)
+_THEOS_TARGET_USE_CLANG_TARGET_FLAG := 1
+# makefile (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 7)
+_FILES = $(strip $(filter-out $(__OFF_FILES),$(__ON_FILES)))
+# makefile (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 156)
+DEP_FILES = $(strip $(patsubst %,$(THEOS_OBJ_DIR)/%.$(_THEOS_OBJ_FILE_TAG).Td,$(_FILES)))
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 40)
+PRINT_FORMAT_MAGENTA = $(PRINT_FORMAT_STAGE) 5
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 105)
+__schema_all_var_names = $(foreach sch,$(THEOS_SCHEMA),$(subst DEFAULT.,,$(sch).)$(1)$(2))
+# makefile (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 290)
+define _THEOS_TEMPLATE_DEFAULT_LINKING_RULE
+ifeq ($(TARGET_LIPO),)
+ifneq ($$(_THEOS_CODESIGN_COMMANDLINE),)
+.INTERMEDIATE: $$(THEOS_OBJ_DIR)/$(1).$(_THEOS_OUT_FILE_TAG).unsigned
+$$(THEOS_OBJ_DIR)/$(1): $$(THEOS_OBJ_DIR)/$(1).$(_THEOS_OUT_FILE_TAG).unsigned
+	$$(ECHO_SIGNING)$$(_THEOS_CODESIGN_COMMANDLINE) "$$<" && mv "$$<" "$$@"$$(ECHO_END)
+$$(THEOS_OBJ_DIR)/$(1).$(_THEOS_OUT_FILE_TAG).unsigned: $$(OBJ_FILES_TO_LINK)
+else
+$$(THEOS_OBJ_DIR)/$(1): $$(OBJ_FILES_TO_LINK)
+endif
+ifneq ($(2),nowarn)
+ifeq ($$(OBJ_FILES_TO_LINK),)
+	$$(WARNING_EMPTY_LINKING)
+endif
+endif
+ifeq ($$(_THEOS_CURRENT_TYPE),subproject)
+	$$(ECHO_LINKING)$$(ECHO_UNBUFFERED)$$(TARGET_LIBTOOL) -static -o "$$@" $$^$$(ECHO_END)
+else
+	$$(ECHO_LINKING)$$(ECHO_UNBUFFERED)$$(TARGET_LD) $$(ALL_LDFLAGS) -o "$$@" $$^$$(ECHO_END)
+ifneq ($$(TARGET_DSYMUTIL),)
+	$$(ECHO_DEBUG_SYMBOLS)$$(ECHO_UNBUFFERED)$$(TARGET_DSYMUTIL) "$$@"$(ECHO_END)
+endif
+ 
+ifeq ($(SHOULD_STRIP),$(_THEOS_TRUE))
+	$$(ECHO_STRIPPING)$$(ECHO_UNBUFFERED)$$(TARGET_STRIP) $$(ALL_STRIP_FLAGS) "$$@"$$(ECHO_END)
+endif
+endif
+else ifeq ($(THEOS_CURRENT_ARCH),)
+
+ARCH_FILES_TO_LINK := $(addsuffix /$(1),$(addprefix $(THEOS_OBJ_DIR)/,$(TARGET_ARCHS)))
+$$(THEOS_OBJ_DIR)/%/$(1): $(__ALL_FILES)
+	@mkdir -p $(THEOS_OBJ_DIR)/$$*
+	$(ECHO_MAKE)$(MAKE) -f $(_THEOS_PROJECT_MAKEFILE_NAME) --no-print-directory --no-keep-going internal-$(_THEOS_CURRENT_TYPE)-$(_THEOS_CURRENT_OPERATION) _THEOS_CURRENT_TYPE="$(_THEOS_CURRENT_TYPE)" THEOS_CURRENT_INSTANCE="$(THEOS_CURRENT_INSTANCE)" _THEOS_CURRENT_OPERATION="$(_THEOS_CURRENT_OPERATION)" THEOS_BUILD_DIR="$(THEOS_BUILD_DIR)" THEOS_CURRENT_ARCH="$$*"
+
+ifneq ($$(_THEOS_CODESIGN_COMMANDLINE),)
+.INTERMEDIATE: $$(THEOS_OBJ_DIR)/$(1).$(_THEOS_OUT_FILE_TAG).unsigned
+$(THEOS_OBJ_DIR)/$(1): $$(THEOS_OBJ_DIR)/$(1).$(_THEOS_OUT_FILE_TAG).unsigned
+	$$(ECHO_SIGNING)$$(_THEOS_CODESIGN_COMMANDLINE) "$$<" && mv "$$<" "$$@"$$(ECHO_END)
+$(THEOS_OBJ_DIR)/$(1).$(_THEOS_OUT_FILE_TAG).unsigned: $$(ARCH_FILES_TO_LINK)
+else
+$(THEOS_OBJ_DIR)/$(1): $$(ARCH_FILES_TO_LINK)
+endif
+ifeq ($$(_THEOS_CURRENT_TYPE),subproject)
+	@echo "$$(_THEOS_INTERNAL_LDFLAGS)" > $$(THEOS_OBJ_DIR)/$$(THEOS_CURRENT_INSTANCE).ldflags
+endif
+	$(ECHO_MERGING)$(ECHO_UNBUFFERED)$(TARGET_LIPO) $(foreach ARCH,$(TARGET_ARCHS),-arch $(ARCH) $(THEOS_OBJ_DIR)/$(ARCH)/$(1)) -create -output "$$@"$(ECHO_END)
+
+else
+$$(THEOS_OBJ_DIR)/$(1): $$(OBJ_FILES_TO_LINK)
+ifneq ($(2),nowarn)
+ifeq ($$(OBJ_FILES_TO_LINK),)
+	$$(WARNING_EMPTY_LINKING)
+endif
+endif
+	$$(ECHO_NOTHING)mkdir -p $(shell dirname "$(THEOS_OBJ_DIR)/$(1)")$$(ECHO_END)
+ifeq ($$(_THEOS_CURRENT_TYPE),subproject)
+	$$(ECHO_LINKING)$$(ECHO_UNBUFFERED)$$(TARGET_LIBTOOL) -static -o "$$@" $$^$$(ECHO_END)
+	@echo "$$(_THEOS_INTERNAL_LDFLAGS)" > $$(THEOS_OBJ_DIR)/$$(THEOS_CURRENT_INSTANCE).ldflags
+else
+	$$(ECHO_LINKING)$$(ECHO_UNBUFFERED)$$(TARGET_LD) $$(ALL_LDFLAGS) -o "$$@" $$^$$(ECHO_END)
+ifneq ($$(TARGET_DSYMUTIL),)
+	$$(ECHO_DEBUG_SYMBOLS)$$(ECHO_UNBUFFERED)$$(TARGET_DSYMUTIL) "$$@"$(ECHO_END)
+endif
+ifeq ($(SHOULD_STRIP),$(_THEOS_TRUE))
+	$$(ECHO_STRIPPING)$$(ECHO_UNBUFFERED)$$(TARGET_STRIP) $$(ALL_STRIP_FLAGS) "$$@"$$(ECHO_END)
+endif
+endif
+endif
+
+endef
+# environment
+TARGET_CC = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
+# automatic
+-*-command-variables-*- := THEOS_BUILD_DIR=. _THEOS_CURRENT_OPERATION=all THEOS_CURRENT_INSTANCE=Peach _THEOS_CURRENT_TYPE=tweak COLOR=1
+# environment
+VSCODE_NODE_CACHED_DATA_DIR = /Users/antoine/Library/Application Support/Code/CachedData/f30a9b73e8ffc278e71575118b6bf568f04587c8
+# environment
+_ = /usr/local/opt/make/libexec/gnubin/make
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 256)
+_THEOS_MAKEFLAGS := --no-keep-going COLOR=1 --no-print-directory
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 13)
+_THEOS_TARGET_SWIFT := swift
+# makefile (from '/Users/antoine/theos/makefiles/instance/library.mk', line 17)
+_LOCAL_ARCHIVE_EXTENSION = $(or $($(THEOS_CURRENT_INSTANCE)_ARCHIVE_EXTENSION),$(TARGET_AR_EXT))
+# environment
+GEM_HOME = /Users/antoine/.rvm/gems/ruby-2.7.2
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_tail.mk', line 63)
+_THEOS_TARGET_BUNDLE_BINARY_SUBDIRECTORY := 
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 241)
+THEOS_STAGING_DIR = $(_THEOS_LOCAL_DATA_DIR)/$(THEOS_STAGING_DIR_NAME)
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 21)
+_THEOS_TARGET_DEFAULT_PACKAGE_FORMAT = deb
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 113)
+THEOS_LAYOUT_DIR_NAME = layout
+# environment
+THEOS_PACKAGE_NAME = com.redenticdev.peach
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 167)
+_THEOS_TARGET_HAS_LIBRARY_PATH := 
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 16)
+_TARGET_VERSION_GE_12_0 := 1
+# makefile (from '/Users/antoine/theos/makefiles/instance/library.mk', line 24)
+_THEOS_INTERNAL_LDFLAGS = $(if $(_THEOS_TARGET_HAS_LIBRARY_PATH),-L$(THEOS_TARGET_LIBRARY_PATH) )-L$(THEOS_LIBRARY_PATH) $(DEBUGFLAG) -L$(THEOS_VENDOR_LIBRARY_PATH) -lobjc -framework Foundation -framework CoreFoundation $(foreach framework,$($(_THEOS_CURRENT_TYPE)_FRAMEWORKS),-framework $(framework)) $(foreach framework,$(call __schema_var_all,$(THEOS_CURRENT_INSTANCE)_,FRAMEWORKS),-framework $(framework)) $(foreach library,$($(_THEOS_CURRENT_TYPE)_LIBRARIES),-l$(library)) $(foreach library,$(call __schema_var_all,$(THEOS_CURRENT_INSTANCE)_,LIBRARIES),-l$(library)) $(foreach framework,$($(_THEOS_CURRENT_TYPE)_PRIVATE_FRAMEWORKS),-framework $(framework)) $(foreach framework,$(call __schema_var_all,$(THEOS_CURRENT_INSTANCE)_,PRIVATE_FRAMEWORKS),-framework $(framework)) $(foreach framework,$($(_THEOS_CURRENT_TYPE)_EXTRA_FRAMEWORKS),-framework $(framework)) $(foreach framework,$(call __schema_var_all,$(THEOS_CURRENT_INSTANCE)_,EXTRA_FRAMEWORKS),-framework $(framework)) $(foreach framework,$($(_THEOS_CURRENT_TYPE)_WEAK_FRAMEWORKS),-framework $(framework)) $(foreach framework,$(call __schema_var_all,$(THEOS_CURRENT_INSTANCE)_,WEAK_FRAMEWORKS),-weak_framework $(framework)) $(foreach library,$($(_THEOS_CURRENT_TYPE)_WEAK_LIBRARIES),-weak_library $(library)) $(foreach library,$(call __schema_var_all,$(THEOS_CURRENT_INSTANCE)_,WEAK_LIBRARIES),-weak_library $(library)) $($(THEOS_CURRENT_ARCH)_LDFLAGS) -F$(THEOS_VENDOR_LIBRARY_PATH) -framework CydiaSubstrate $(call TARGET_LDFLAGS_DYNAMICLIB,$(THEOS_CURRENT_INSTANCE)$(_LOCAL_LIBRARY_EXTENSION))
+# makefile (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 6)
+__OFF_FILES = $(patsubst -%,%,$(filter -%,$(__ALL_FILES)))
+# environment
+_THEOS_PLATFORM = Darwin
+# makefile (from '/Users/antoine/theos/makefiles/instance/tweak.mk', line 13)
+_THEOS_INTERNAL_LOGOSFLAGS = -c warnings=error -c generator=$(_LOCAL_LOGOS_DEFAULT_GENERATOR)
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 85)
+_SDKVERSION := 13.5
+# environment
+THEOS_DEVICE_IP = 192.168.1.96
+# makefile (from '/Users/antoine/theos/makefiles/instance/library.mk', line 12)
+_LOCAL_LIBRARY_EXTENSION = $(or $($(THEOS_CURRENT_INSTANCE)_LIBRARY_EXTENSION),$(TARGET_LIB_EXT))
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 86)
+_THEOS_TARGET_SDK_VERSION := 13.5
+# environment
+HOME = /Users/antoine
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_tail.mk', line 35)
+_THEOS_TARGET_CCFLAGS := -stdlib=libc++
+# makefile (from '/var/folders/dv/xtxhwssd1nv7g1p11sn3p4f40000gn/T/SzRdJ7h3BM', line 3)
+__THEOS_TARGET_ARG_2 := 13.5
+# environment
+redentic = /Users/antoine/OneDrive/Documents/Programmation/RedenticDev
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 38)
+PRINT_FORMAT_YELLOW = $(PRINT_FORMAT_STAGE) 3
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 3)
+TARGET_LIB_EXT := .dylib
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+VSCODE_IPC_HOOK = /Users/antoine/Library/Application Support/Code/1.54.1-main.sock
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 88)
+VERCMP_FIRST := ge
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 183)
+DEBUG.LDFLAGS = -O0
+# makefile (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 5)
+__ON_FILES = $(filter-out -%,$(__ALL_FILES))
+# makefile (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 184)
+MDFLAGS = -MP -MT "$@ $(subst .md,.o,$@)" -MM
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 6)
+TARGET_LDFLAGS_DYNAMICLIB = -dynamiclib -install_name "$(LOCAL_INSTALL_PATH)/$(1)"
+# environment
+_system_version = 11.2
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 88)
+VERCMP_RES := gt
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 232)
+THEOS_OBJ_DIR_NAME = obj$(_THEOS_OBJ_DIR_EXTENSION)
+ 
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_tail.mk', line 61)
+_THEOS_TARGET_BUNDLE_INFO_PLIST_SUBDIRECTORY := 
+# default
+.RECIPEPREFIX := 
+# automatic
+<F = $(notdir $<)
+# command line
+_THEOS_CURRENT_TYPE = tweak
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_tail.mk', line 62)
+_THEOS_TARGET_BUNDLE_RESOURCE_SUBDIRECTORY := 
+# makefile (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 135)
+ALL_OBJCFLAGS = $(_THEOS_INTERNAL_OBJCFLAGS) $(_THEOS_TARGET_OBJCFLAGS) $(ADDITIONAL_OBJCFLAGS) $(call __schema_var_all,$(THEOS_CURRENT_INSTANCE)_,OBJCFLAGS) $(call __schema_var_all,,OBJCFLAGS)
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 74)
+NEUTRAL_ARCH := armv7
+# default
+SUFFIXES := 
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 11)
+_THEOS_TARGET_CC := clang
+# makefile (from 'Makefile', line 2)
+TARGET = iphone:clang:13.5:11.2
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 243)
+_THEOS_ESCAPED_STAGING_DIR = $(subst $(_SPACE),\ ,$(THEOS_STAGING_DIR))
+# environment
+TARGET_CODESIGN_FLAGS = -S
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 70)
+TARGET_LIBTOOL = $(call __invocation,libtool)
+# makefile (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 118)
+ALL_ARCHFLAGS = -arch $(THEOS_CURRENT_ARCH)
+# environment
+THEOS_PACKAGE_BASE_VERSION = 1.0.0
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 82)
+ECHO_COPYING_FRAMEWORK = $(ECHO_BEGIN)$(PRINT_FORMAT_MAGENTA) "Installing $(_THEOS_CURRENT_TYPE) to $(THEOS_LIBRARY_PATH)"$(ECHO_END); $(ECHO_PIPEFAIL) (
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 182)
+DEBUG.SWIFTFLAGS = -DDEBUG -Onone
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 268)
+_THEOS_MAKE_PARALLEL_BUILDING = yes
+# command line
+THEOS_BUILD_DIR = .
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 105)
+_SORTED_SDKS = $(call __simplify,_SORTED_SDKS,$(shell echo $(_UNSORTED_SDKS) | tr ' ' $$'\n' | sort -t. -k 1,1n -k 2,2n))
+# makefile (from '/Users/antoine/theos/makefiles/vercmp.mk', line 84)
+___vercmp_expand_backward = $(if $(filter $(words $(2)),$(words $(3))),, $(if $(filter $(words $(3)),$(firstword $(sort $(words $(2)) $(words $(3))))),, $(eval $(1) := 0 $(1)) $(call ___vercmp_expand_backward,$(1),$(value $(1)),$(3)) ) )
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
+# makefile (from '/Users/antoine/theos/makefiles/legacy.mk', line 8)
+FW_PROJECT_DIR = $(THEOS_PROJECT_DIR)
+# makefile (from '/Users/antoine/theos/makefiles/legacy.mk', line 1)
+FRAMEWORKDIR = $(THEOS)
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 192)
+SHOULD_STRIP := 
+# environment
+rvm_prefix = /Users/antoine
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 42)
+PRINT_FORMAT_WARNING = printf "\e[0;33m==> \e[1;33mWarning:\e[m %s\n"
+# makefile (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 133)
+ALL_CFLAGS = $(ALL_PFLAGS) $(ALL_ARCHFLAGS)
+# environment
+RUBY_VERSION = ruby-2.7.2
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 78)
+_THEOS_FINAL_PACKAGE := 
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 36)
+PRINT_FORMAT_RED = $(PRINT_FORMAT_STAGE) 1
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 36)
+__simplify = $(2)$(eval $(1):=$(2))
+# makefile (from '/Users/antoine/theos/makefiles/instance/library.mk', line 51)
+ARCH_FILES_TO_LINK := /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/arm64/Peach.dylib /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/arm64e/Peach.dylib
+# variable set hash-table stats:
+# Load=409/1024=40%, Rehash=0, Collisions=805/2779=29%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# /Users/antoine/theos/sdks (device 16777220, inode 33471344): 30 files, no impossibilities.
+# /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs (device 16777220, inode 59255909): 4 files, no impossibilities.
+# /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug (device 16777220, inode 67406018): No files, no impossibilities so far.
+
+# 34 files, no impossibilities in 3 directories.
+
+# Implicit Rules
+
+/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/%.m.0afe2a03.o: %.m
+#  recipe to execute (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 192):
+	$(ECHO_NOTHING)mkdir -p $(dir $@)$(ECHO_END)
+	$(ECHO_COMPILING)$(ECHO_UNBUFFERED)$(TARGET_CXX) -x objective-c -c $(_THEOS_INTERNAL_IFLAGS_C) $(ALL_DEPFLAGS) $(ALL_CFLAGS) $(ALL_OBJCFLAGS) $< -o $@$(ECHO_END)
+
+/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/%.mi.0afe2a03.o: %.mi
+#  recipe to execute (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 196):
+	$(ECHO_NOTHING)mkdir -p $(dir $@)$(ECHO_END)
+	$(ECHO_COMPILING)$(ECHO_UNBUFFERED)$(TARGET_CXX) -x objective-c-cpp-output -c $(_THEOS_INTERNAL_IFLAGS_C) $(ALL_DEPFLAGS) $(ALL_CFLAGS) $(ALL_OBJCFLAGS) $< -o $@$(ECHO_END)
+
+/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/%.mm.0afe2a03.o: %.mm
+#  recipe to execute (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 200):
+	$(ECHO_NOTHING)mkdir -p $(dir $@)$(ECHO_END)
+	$(ECHO_COMPILING)$(ECHO_UNBUFFERED)$(TARGET_CXX) -x objective-c++ -c $(_THEOS_INTERNAL_IFLAGS_C) $(ALL_DEPFLAGS) $(ALL_CFLAGS) $(ALL_OBJCFLAGS) $(ALL_CCFLAGS) $(ALL_OBJCCFLAGS) $< -o $@$(ECHO_END)
+
+/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/%.mii.0afe2a03.o: %.mii
+#  recipe to execute (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 204):
+	$(ECHO_NOTHING)mkdir -p $(dir $@)$(ECHO_END)
+	$(ECHO_COMPILING)$(ECHO_UNBUFFERED)$(TARGET_CXX) -x objective-c++-cpp-output -c $(_THEOS_INTERNAL_IFLAGS_C) $(ALL_DEPFLAGS) $(ALL_CFLAGS) $(ALL_OBJCFLAGS) $< -o $@$(ECHO_END)
+
+/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/%.c.0afe2a03.o: %.c
+#  recipe to execute (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 208):
+	$(ECHO_NOTHING)mkdir -p $(dir $@)$(ECHO_END)
+	$(ECHO_COMPILING)$(ECHO_UNBUFFERED)$(TARGET_CXX) -x c -c $(_THEOS_INTERNAL_IFLAGS_C) $(ALL_DEPFLAGS) $(ALL_CFLAGS) $< -o $@$(ECHO_END)
+
+/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/%.i.0afe2a03.o: %.i
+#  recipe to execute (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 212):
+	$(ECHO_NOTHING)mkdir -p $(dir $@)$(ECHO_END)
+	$(ECHO_COMPILING)$(ECHO_UNBUFFERED)$(TARGET_CXX) -x c-cpp-output -c $(_THEOS_INTERNAL_IFLAGS_C) $(ALL_DEPFLAGS) $(ALL_CFLAGS) $< -o $@$(ECHO_END)
+
+/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/%.s.0afe2a03.o: %.s
+#  recipe to execute (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 216):
+	$(ECHO_NOTHING)mkdir -p $(dir $@)$(ECHO_END)
+	$(ECHO_COMPILING)$(ECHO_UNBUFFERED)$(TARGET_CXX) -x assembler -c $(_THEOS_INTERNAL_IFLAGS_C) $(ALL_DEPFLAGS) $(ALL_CFLAGS) $< -o $@$(ECHO_END)
+
+/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/%.S.0afe2a03.o: %.S
+#  recipe to execute (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 220):
+	$(ECHO_NOTHING)mkdir -p $(dir $@)$(ECHO_END)
+	$(ECHO_COMPILING)$(ECHO_UNBUFFERED)$(TARGET_CXX) -x assembler-with-cpp -c $(_THEOS_INTERNAL_IFLAGS_C) $(ALL_DEPFLAGS) $(ALL_CFLAGS) $< -o $@$(ECHO_END)
+
+/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/%.cc.0afe2a03.o: %.cc
+#  recipe to execute (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 224):
+	$(ECHO_NOTHING)mkdir -p $(dir $@)$(ECHO_END)
+ 
+	$(ECHO_COMPILING)$(ECHO_UNBUFFERED)$(TARGET_CXX) -x c++ -c $(_THEOS_INTERNAL_IFLAGS_C) $(ALL_DEPFLAGS) $(ALL_CFLAGS) $(ALL_CCFLAGS) $< -o $@$(ECHO_END)
+
+/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/%.cp.0afe2a03.o: %.cp
+#  recipe to execute (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 228):
+	$(ECHO_NOTHING)mkdir -p $(dir $@)$(ECHO_END)
+	$(ECHO_COMPILING)$(ECHO_UNBUFFERED)$(TARGET_CXX) -x c++ -c $(_THEOS_INTERNAL_IFLAGS_C) $(ALL_DEPFLAGS) $(ALL_CFLAGS) $(ALL_CCFLAGS) $< -o $@$(ECHO_END)
+
+/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/%.cxx.0afe2a03.o: %.cxx
+#  recipe to execute (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 232):
+	$(ECHO_NOTHING)mkdir -p $(dir $@)$(ECHO_END)
+	$(ECHO_COMPILING)$(ECHO_UNBUFFERED)$(TARGET_CXX) -x c++ -c $(_THEOS_INTERNAL_IFLAGS_C) $(ALL_DEPFLAGS) $(ALL_CFLAGS) $(ALL_CCFLAGS) $< -o $@$(ECHO_END)
+
+/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/%.cpp.0afe2a03.o: %.cpp
+#  recipe to execute (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 236):
+	$(ECHO_NOTHING)mkdir -p $(dir $@)$(ECHO_END)
+	$(ECHO_COMPILING)$(ECHO_UNBUFFERED)$(TARGET_CXX) -x c++ -c $(_THEOS_INTERNAL_IFLAGS_C) $(ALL_DEPFLAGS) $(ALL_CFLAGS) $(ALL_CCFLAGS) $< -o $@$(ECHO_END)
+
+/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/%.c++.0afe2a03.o: %.c++
+#  recipe to execute (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 240):
+	$(ECHO_NOTHING)mkdir -p $(dir $@)$(ECHO_END)
+	$(ECHO_COMPILING)$(ECHO_UNBUFFERED)$(TARGET_CXX) -x c++ -c $(_THEOS_INTERNAL_IFLAGS_C) $(ALL_DEPFLAGS) $(ALL_CFLAGS) $(ALL_CCFLAGS) $< -o $@$(ECHO_END)
+
+/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/%.ii.0afe2a03.o: %.ii
+#  recipe to execute (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 244):
+	$(ECHO_NOTHING)mkdir -p $(dir $@)$(ECHO_END)
+	$(ECHO_COMPILING)$(ECHO_UNBUFFERED)$(TARGET_CXX) -x c++-cpp-output -c $(_THEOS_INTERNAL_IFLAGS_C) $(ALL_DEPFLAGS) $(ALL_CFLAGS) $< -o $@$(ECHO_END)
+
+/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/%.swift.0afe2a03.o /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/%.swift.0afe2a03.swiftmodule: %.swift
+#  recipe to execute (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 249):
+	$(ECHO_NOTHING)mkdir -p $(dir $@)$(ECHO_END)
+	$(ECHO_COMPILING)$(TARGET_SWIFT) -frontend -c $(_THEOS_INTERNAL_IFLAGS_SWIFT) $(ALL_DEPFLAGS_SWIFT) $(ALL_SWIFTFLAGS) -target $(THEOS_CURRENT_ARCH)-$(_THEOS_TARGET_SWIFT_TARGET) -emit-module-path $(@:.o=.swiftmodule) -primary-file $< $(filter-out $<,$(SWIFT_FILES)) -o $(@:.swiftmodule=.o)$(ECHO_END)
+
+/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/%.x.m: %.x
+#  recipe to execute (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 257):
+	$(ECHO_NOTHING)mkdir -p $(dir $@)$(ECHO_END)
+	$(ECHO_PREPROCESSING)$(THEOS_BIN_PATH)/logos.pl $(ALL_LOGOSFLAGS) $< > $@$(ECHO_END)
+
+/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/%.x.0afe2a03.o: %.x /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/%.x.m
+#  recipe to execute (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 261):
+	$(ECHO_NOTHING)mkdir -p $(dir $@)$(ECHO_END)
+	$(ECHO_COMPILING)$(ECHO_UNBUFFERED)$(TARGET_CXX) -x objective-c -c -I"$(call __clean_pwd,$(dir $<))" $(_THEOS_INTERNAL_IFLAGS_C) $(ALL_DEPFLAGS) $(ALL_CFLAGS) $(ALL_OBJCFLAGS) $(THEOS_OBJ_DIR)/$<.m -o $@$(ECHO_END)
+
+/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/%.xm.mm: %.xm
+#  recipe to execute (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 265):
+	$(ECHO_NOTHING)mkdir -p $(dir $@)$(ECHO_END)
+	$(ECHO_PREPROCESSING)$(THEOS_BIN_PATH)/logos.pl $(ALL_LOGOSFLAGS) $< > $@$(ECHO_END)
+
+/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/%.xm.0afe2a03.o: %.xm /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/%.xm.mm
+#  recipe to execute (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 269):
+	$(ECHO_NOTHING)mkdir -p $(dir $@)$(ECHO_END)
+	$(ECHO_COMPILING)$(ECHO_UNBUFFERED)$(TARGET_CXX) -x objective-c++ -c -I"$(call __clean_pwd,$(dir $<))" $(_THEOS_INTERNAL_IFLAGS_C) $(ALL_DEPFLAGS) $(ALL_CFLAGS) $(ALL_OBJCFLAGS) $(ALL_CCFLAGS) $(ALL_OBJCCFLAGS) $(THEOS_OBJ_DIR)/$<.mm -o $@$(ECHO_END)
+
+/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/%.mi: %.xi
+#  recipe to execute (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 273):
+	$(ECHO_NOTHING)mkdir -p $(dir $@)$(ECHO_END)
+	$(ECHO_PREPROCESSING)$(ECHO_UNBUFFERED)$(TARGET_CXX) -x objective-c -E -I"$(call __clean_pwd,$(dir $<))" $(_THEOS_INTERNAL_IFLAGS_C) $(ALL_DEPFLAGS) $(ALL_PFLAGS) $(PREPROCESS_ARCH_FLAGS) $(ALL_OBJCFLAGS) $< > $(THEOS_OBJ_DIR)/$<.pre && $(THEOS_BIN_PATH)/logos.pl $(ALL_LOGOSFLAGS) $(THEOS_OBJ_DIR)/$<.pre > $(THEOS_OBJ_DIR)/$<.mi $(ECHO_END)
+	$(ECHO_NOTHING)$(THEOS_BIN_PATH)/logos.pl $(ALL_LOGOSFLAGS) $< > $@$(ECHO_END)
+
+/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/%.xi.0afe2a03.o: %.xi /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/%.mi
+#  recipe to execute (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 278):
+	$(ECHO_NOTHING)mkdir -p $(dir $@)$(ECHO_END)
+	$(ECHO_COMPILING)$(ECHO_UNBUFFERED)$(TARGET_CXX) -x objective-c -c $(ALL_CFLAGS) $(ALL_OBJCFLAGS) $(THEOS_OBJ_DIR)/$<.mi -o $@$(ECHO_END)
+
+/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/%.mii: %.xmi
+#  recipe to execute (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 282):
+	$(ECHO_NOTHING)mkdir -p $(dir $@)$(ECHO_END)
+	$(ECHO_PREPROCESSING)$(ECHO_UNBUFFERED)$(TARGET_CXX) -x objective-c -E -I"$(call __clean_pwd,$(dir $<))" $(_THEOS_INTERNAL_IFLAGS_C) $(ALL_DEPFLAGS) $(ALL_PFLAGS) $(PREPROCESS_ARCH_FLAGS) $(ALL_OBJCFLAGS) $< > $(THEOS_OBJ_DIR)/$<.pre && $(THEOS_BIN_PATH)/logos.pl $(ALL_LOGOSFLAGS) $(THEOS_OBJ_DIR)/$<.pre > $(THEOS_OBJ_DIR)/$<.mii $(ECHO_END)
+	$(ECHO_NOTHING)$(THEOS_BIN_PATH)/logos.pl $(ALL_LOGOSFLAGS) $< > $@$(ECHO_END)
+
+/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/%.xmi.0afe2a03.o: %.xmi /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/%.mii
+#  recipe to execute (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 287):
+	$(ECHO_NOTHING)mkdir -p $(dir $@)$(ECHO_END)
+	$(ECHO_COMPILING)$(ECHO_UNBUFFERED)$(TARGET_CXX) -x objective-c++ -c $(ALL_CFLAGS) $(ALL_OBJCFLAGS) $(ALL_CCFLAGS) $(ALL_OBJCCFLAGS) $(THEOS_OBJ_DIR)/$<.mii -o $@$(ECHO_END)
+
+%.mm: %.l.mm
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 17):
+	$(THEOS_BIN_PATH)/logos.pl $(ALL_LOGOSFLAGS) $< > $@
+
+%.mm: %.xmm
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 20):
+	$(THEOS_BIN_PATH)/logos.pl $(ALL_LOGOSFLAGS) $< > $@
+
+%.mm: %.xm
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 23):
+	$(THEOS_BIN_PATH)/logos.pl $(ALL_LOGOSFLAGS) $< > $@
+
+%.m: %.xm
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 26):
+	$(THEOS_BIN_PATH)/logos.pl $(ALL_LOGOSFLAGS) $< > $@
+
+%.swift: %.xswift
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 29):
+	$(THEOS_BIN_PATH)/logos.pl $(ALL_LOGOSFLAGS) $< > $@
+
+/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/%/.stamp: /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 43):
+	@mkdir -p $(dir $@); touch $@
+
+%.mk:
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 46):
+	
+
+/Users/antoine/theos/makefiles/%.mk:
+ 
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 47):
+	
+
+/Users/antoine/theos/makefiles/master/%.mk:
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 48):
+	
+
+/Users/antoine/theos/makefiles/instance/%.mk:
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 49):
+	
+
+/Users/antoine/theos/makefiles/instance/shared/%.mk:
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 50):
+	
+
+/Users/antoine/theos/makefiles/platform/%.mk:
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 51):
+	
+
+/Users/antoine/theos/makefiles/targets/%.mk:
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 52):
+	
+
+/Users/antoine/theos/makefiles/targets/%/%.mk:
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 53):
+	
+
+/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/%/Peach.dylib: Tweak.x
+#  recipe to execute (from '/Users/antoine/theos/makefiles/instance/library.mk', line 51):
+	@mkdir -p /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/$*
+	+@make -f Makefile --no-print-directory --no-keep-going internal-tweak-all _THEOS_CURRENT_TYPE="tweak" THEOS_CURRENT_INSTANCE="Peach" _THEOS_CURRENT_OPERATION="all" THEOS_BUILD_DIR="." THEOS_CURRENT_ARCH="$*"
+
+%.m:
+
+%.mm:
+
+%.c:
+
+%.cc:
+
+%.cpp:
+
+%.xm:
+
+# 44 implicit rules, 0 (0.0%) terminal.
+# Files
+
+# Not a target:
+.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+internal-tweak-compile: internal-library-compile
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/Users/antoine/theos/makefiles/common.mk:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'common'
+#  Last modified 2021-03-04 09:00:35.64583446
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 47):
+	
+
+/Users/antoine/theos/makefiles/tweak.mk:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'tweak'
+#  Last modified 2019-05-12 18:33:58.345264661
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 47):
+	
+
+.INTERMEDIATE: /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/Peach.dylib.47ba6b93.unsigned
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+packages:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 57):
+	@cd $(THEOS_BUILD_DIR); mkdir -p $(THEOS_PACKAGE_DIR_NAME)
+
+# Not a target:
+.mm:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.xm:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+after-Peach-stage::
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 174):
+	@:
+
+# Not a target:
+/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/arm64/Peach.dylib:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Makefile:
+#  Implicit rule search has not been done.
+#  Last modified 2021-03-04 15:33:20.249358104
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 45):
+	
+
+internal-tweak-all_:: internal-library-all_
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+before-Peach-stage::
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 174):
+	@:
+
+# Not a target:
+/var/folders/dv/xtxhwssd1nv7g1p11sn3p4f40000gn/T/SzRdJ7h3BM:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
+
+/Users/antoine/theos/makefiles/targets/iphone.mk:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'iphone'
+#  File does not exist.
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 52):
+	
+
+# Not a target:
+.cc:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.m:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/Users/antoine/theos/makefiles/targets/_common/iphone.mk:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: '_common/iphone'
+#  Last modified 2021-03-04 09:00:35.658409891
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 52):
+	
+
+/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 37):
+	@mkdir -p $@
+
+/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/Peach.dylib.47ba6b93.unsigned: /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/arm64/Peach.dylib /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/arm64e/Peach.dylib
+#  Implicit rule search has not been done.
+#  File is an intermediate prerequisite.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/instance/library.mk', line 51):
+	@(printf "\e[0;3%im==> \e[1;39m%s…\e[m\n" 4 "Merging tweak Peach"); set -o pipefail; (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo -arch arm64 /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/arm64/Peach.dylib -arch arm64e /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/arm64e/Peach.dylib -create -output "$@")
+
+/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: '_common/darwin_head'
+#  Last modified 2021-01-25 21:18:32.778382669
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 52):
+	
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+internal-library-stage_::
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/instance/library.mk', line 56):
+	$(ECHO_NOTHING)mkdir -p "$(THEOS_STAGING_DIR)$(LOCAL_INSTALL_PATH)/"$(ECHO_END)
+	$(ECHO_NOTHING)cp $(THEOS_OBJ_DIR)/$(THEOS_CURRENT_INSTANCE)$(_LOCAL_LIBRARY_EXTENSION) "$(THEOS_STAGING_DIR)$(LOCAL_INSTALL_PATH)/"$(ECHO_END)
+
+all::
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/Users/antoine/theos/makefiles/instance/library.mk:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'library'
+#  Last modified 2020-09-20 16:22:24.926935613
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 49):
+	
+
+/Users/antoine/theos/makefiles/legacy.mk:
+#  Implicit rule search has been done.
+ 
+#  Implicit/static pattern stem: 'legacy'
+#  Last modified 2019-05-12 18:33:58.331054547
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 47):
+	
+
+/Users/antoine/theos/makefiles/instance/tweak.mk:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'tweak'
+#  Last modified 2019-12-22 13:45:00.693362767
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 49):
+	
+
+# Not a target:
+/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/Tweak.x.0afe2a03.Td:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
+
+/Users/antoine/theos/makefiles/platform/Darwin.mk:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'Darwin'
+#  Last modified 2021-03-04 09:00:35.650183658
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 51):
+	
+
+internal-library-compile: /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/Peach.dylib
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+internal-tweak-stage:: before-Peach-stage internal-tweak-stage_ after-Peach-stage
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 177):
+	@:
+
+# Not a target:
+/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/arm64e/Peach.dylib:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+.NOTPARALLEL:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+after-Peach-all::
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 168):
+	@:
+
+internal-tweak-all:: before-Peach-all internal-tweak-all_ after-Peach-all
+#  Phony target (prerequisite of .PHONY).
+#  Command line target.
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/47=0%
+#  recipe to execute (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 171):
+	@:
+
+/Users/antoine/theos/makefiles/instance/rules.mk:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'rules'
+#  Last modified 2021-01-08 18:55:16.232015426
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 49):
+	
+
+# Not a target:
+.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/Peach.a: /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/arm64/Peach.dylib /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/arm64e/Peach.dylib
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/instance/library.mk', line 52):
+	@(printf "\e[0;3%im==> \e[1;39m%s…\e[m\n" 4 "Merging tweak Peach"); set -o pipefail; (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo -arch arm64 /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/arm64/Peach.a -arch arm64e /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/arm64e/Peach.a -create -output "$@")
+
+/Users/antoine/theos/makefiles/targets/_common/darwin_tail.mk:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: '_common/darwin_tail'
+#  Last modified 2021-03-04 09:00:35.656172289
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 52):
+	
+
+/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/.stamp: /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 40):
+	@mkdir -p $(dir $@); touch $@
+
+/Users/antoine/theos/makefiles/vercmp.mk:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'vercmp'
+#  Last modified 2021-03-04 09:00:35.659198675
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 47):
+	
+
+/Users/antoine/theos/makefiles/targets/Darwin/iphone.mk:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'Darwin/iphone'
+#  Last modified 2019-05-12 18:33:58.340728469
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 52):
+	
+
+/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/Peach.dylib: /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/Peach.dylib.47ba6b93.unsigned
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/instance/library.mk', line 51):
+	$(ECHO_SIGNING)$(_THEOS_CODESIGN_COMMANDLINE) "$<" && mv "$<" "$@"$(ECHO_END)
+
+/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/generated-headers/Peach-Swift.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 253):
+	$(ECHO_NOTHING)mkdir -p $(dir $@)$(ECHO_END)
+	$(ECHO_SWIFTMODULE_HEADER)$(TARGET_SWIFT) -frontend -c $(_THEOS_INTERNAL_IFLAGS_SWIFT) $(ALL_SWIFTFLAGS) -target $(THEOS_CURRENT_ARCH)-$(_THEOS_TARGET_SWIFT_TARGET) -emit-module -merge-modules $^ -emit-objc-header-path $@ -o /dev/null$(ECHO_END)
+
+internal-library-all_:: /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/.stamp
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/instance/library.mk', line 37):
+	$(ECHO_MAKE)$(MAKE) -f $(_THEOS_PROJECT_MAKEFILE_NAME) $(_THEOS_MAKEFLAGS) \
+		internal-library-compile \
+		_THEOS_CURRENT_TYPE=$(_THEOS_CURRENT_TYPE) THEOS_CURRENT_INSTANCE=$(THEOS_CURRENT_INSTANCE) _THEOS_CURRENT_OPERATION=compile \
+		THEOS_BUILD_DIR="$(THEOS_BUILD_DIR)" _THEOS_MAKE_PARALLEL=yes
+
+/Users/antoine/theos/makefiles/messages.mk:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'messages'
+#  Last modified 2020-09-20 16:22:24.928904883
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 47):
+	
+
+.SUFFIXES: .m .mm .c .cc .cpp .xm
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+.PHONY: before-Peach-all after-Peach-all internal-tweak-all before-Peach-stage after-Peach-stage internal-tweak-stage internal-tweak-all_ internal-tweak-stage_ internal-library-all_ internal-library-stage_ internal-library-compile
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+before-Peach-all::
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+ 
+#  Implicit/static pattern stem: ''
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := before-Peach-all
+# automatic
+# * := 
+# automatic
+# < := 
+# automatic
+# + := 
+# automatic
+# % := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# automatic
+# | := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=31/55=56%
+#  recipe to execute (from '/Users/antoine/theos/makefiles/instance/rules.mk', line 161):
+	@for i in $(_FILES); do \
+		if [[ ! -f "$$i" ]]; then \
+			$(PRINT_FORMAT_ERROR) "File $$i does not exist." $(ERROR_END) \
+		fi; \
+	done
+
+/Users/antoine/theos/makefiles/rules.mk:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'rules'
+#  Last modified 2019-05-12 18:33:58.338499372
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 47):
+	
+
+internal-tweak-stage_:: internal-library-stage_
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/instance/tweak.mk', line 41):
+	$(ECHO_NOTHING)cp $(THEOS_CURRENT_INSTANCE).plist "$(THEOS_STAGING_DIR)$(LOCAL_INSTALL_PATH)/"$(ECHO_END)
+
+# files hash-table stats:
+# Load=51/1024=5%, Rehash=0, Collisions=4/190=2%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 156 / storage = 6017 B / avg = 38 B
+# current buf: size = 8162 B / used = 6017 B / count = 156 / avg = 38 B
+
+# strcache performance: lookups = 269 / hit rate = 42%
+# hash-table stats:
+# Load=156/8192=2%, Rehash=0, Collisions=1/269=0%
+# Finished Make data base on Tue Mar  9 15:25:30 2021
+
+ 
+# GNU Make 4.3
+# Built for x86_64-apple-darwin19.2.0
+# Copyright (C) 1988-2020 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+ 
+
+# Make data base, printed on Tue Mar  9 15:25:30 2021
+ 
+
+# Variables
+
+# 'override' directive (from '/Users/antoine/theos/makefiles/common.mk', line 95)
+_THEOS_CLEANED_SCHEMA_SET := debug
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 9)
+_THEOS_TARGET_SUPPORTS_BUNDLES := 1
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 85)
+_THEOS_SCHEMA := 
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 166)
+_THEOS_TARGET_HAS_INCLUDE_PATH := 
+# makefile (from '/Users/antoine/theos/makefiles/legacy.mk', line 15)
+FW_TARGET_NAME = $(THEOS_TARGET_NAME)$(warning FW_TARGET_NAME is deprecated. Please migrate to THEOS_TARGET_NAME.)
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 170)
+_THEOS_PACKAGE_FORMAT := deb
+# makefile (from '/Users/antoine/theos/makefiles/master/tweak.mk', line 1)
+TWEAK_NAME := Peach
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 109)
+__schema_var_last = $(strip $($(lastword $(call __schema_defined_var_names,$(1),$(2)))))
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 66)
+THEOS_FALLBACK_INCLUDE_PATH := /Users/antoine/theos/include/_fallback
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 3)
+ECHO_PIPEFAIL := set -o pipefail;
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 23)
+ECHO_NOTHING = @(
+# makefile (from '/Users/antoine/theos/makefiles/package/deb.mk', line 37)
+_TARGET_SWIFT_VERSION_GE_5_0 := 1
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 57)
+__invocation = $(shell xcrun -sdk $(_THEOS_TARGET_PLATFORM_NAME) -f $(1) 2>/dev/null)
+# makefile (from '/Users/antoine/theos/makefiles/legacy.mk', line 46)
+FW_PACKAGE_DEBVERSION = $(THEOS_PACKAGE_VERSION)$(warning FW_PACKAGE_DEBVERSION is deprecated. Please migrate to THEOS_PACKAGE_VERSION.)
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 70)
+ECHO_LINKING = $(ECHO_BEGIN)$(PRINT_FORMAT_YELLOW) "Linking $(_THEOS_CURRENT_TYPE) $(THEOS_CURRENT_INSTANCE)"$(ECHO_END); $(ECHO_PIPEFAIL) (
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 7)
+TARGET_CFLAGS_DYNAMICLIB = 
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 93)
+_THEOS_OFF_SCHEMA := 
+# environment
+TMPDIR = /var/folders/dv/xtxhwssd1nv7g1p11sn3p4f40000gn/T/
+# makefile (from '/Users/antoine/theos/makefiles/targets/Darwin/iphone.mk', line 7)
+_THEOS_TARGET_PLATFORM_FLAG_NAME := iphoneos
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 64)
+THEOS_INCLUDE_PATH := /Users/antoine/theos/include
+# 'override' directive (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 115)
+_THEOS_TARGET_INCLUDE_SDK_VERSION := 13.5
+# environment
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.67714005.67714011
+# makefile (from '/Users/antoine/theos/makefiles/package/deb.mk', line 26)
+THEOS_PACKAGE_ARCH := iphoneos-arm
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/dv/xtxhwssd1nv7g1p11sn3p4f40000gn/T/vscode-ipc-a5fef744-e454-48df-8b28-b57a3c0a07f3.sock
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 263)
+_THEOS_RSYNC_EXCLUDE_COMMANDLINE := --exclude "_MTN" --exclude ".git" --exclude ".svn" --exclude ".DS_Store" --exclude "._*"
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 119)
+_THEOS_LOAD_MODULES := 
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 78)
+ECHO_DEBUG_SYMBOLS = $(ECHO_BEGIN)$(PRINT_FORMAT_BLUE) "Generating debug symbols for $(THEOS_CURRENT_INSTANCE)"$(ECHO_END); $(ECHO_PIPEFAIL) (
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 68)
+THEOS_SDKS_PATH := /Users/antoine/theos/sdks
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_tail.mk', line 34)
+_THEOS_TARGET_CFLAGS := -isysroot "/Users/antoine/theos/sdks/iPhoneOS13.5.sdk" -target -apple-ios11.2 -fmodules -fcxx-modules -fmodule-name= -fbuild-session-file=/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/build_session -fmodules-prune-after=345600 -fmodules-prune-interval=86400 -fmodules-validate-once-per-build-session 
+# makefile (from '/Users/antoine/theos/makefiles/legacy.mk', line 47)
+FW_PACKAGE_FILENAME = $(THEOS_PACKAGE_FILENAME)$(warning FW_PACKAGE_FILENAME is deprecated. Please migrate to THEOS_PACKAGE_FILENAME.)
+# makefile (from '/Users/antoine/theos/makefiles/targets/Darwin/iphone.mk', line 5)
+_THEOS_TARGET_PLATFORM_NAME := iphoneos
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 81)
+ECHO_COPYING_PUBLIC_HEADERS = $(ECHO_BEGIN)$(PRINT_FORMAT_MAGENTA) "Copying public headers into the $(_THEOS_CURRENT_TYPE) wrapper"$(ECHO_END); $(ECHO_PIPEFAIL) (
+# makefile (from '/Users/antoine/theos/makefiles/package/deb.mk', line 41)
+_THEOS_DEB_LIBSWIFT_PACKAGE := org.swift.libswift
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 22)
+ECHO_BEGIN = @(
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 107)
+__schema_var_all = $(strip $(foreach sch,$(call __schema_all_var_names,$(1),$(2)),$($(sch))))
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 164)
+THEOS_TARGET_INCLUDE_PATH := /Users/antoine/theos/include/iphone
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 210)
+_THEOS_INTERNAL_CFLAGS = -DTARGET_$(_THEOS_TARGET_NAME_DEFINE)=1 $(OPTFLAG) -Wall $(DEBUGFLAG) -Werror
+# makefile (from '/Users/antoine/theos/makefiles/platform/Darwin.mk', line 43)
+_THEOS_PLATFORM_GET_LOGICAL_CORES := sysctl -n hw.ncpu
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 9)
+_TARGET_VERSION_GE_4_0 = $(call __simplify,_TARGET_VERSION_GE_4_0,$(call __vercmp,$(_THEOS_TARGET_SDK_VERSION),ge,4.0))
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 77)
+__CMP_RES := gt
+# default
+MAKE_COMMAND := make
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_tail.mk', line 46)
+_THEOS_TARGET_SWIFT_VERSION := 5.3.2
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 37)
+PRINT_FORMAT_GREEN = $(PRINT_FORMAT_STAGE) 2
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 160)
+_THEOS_TARGET_NAME_DEFINE := IPHONE
+# makefile (from '/Users/antoine/theos/makefiles/master/rules.mk', line 10)
+_THEOS_IS_MAKE_GT_4_0 := 1
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 106)
+__schema_defined_var_names = $(foreach tuple,$(filter-out undefined:%,$(foreach schvar,$(call __schema_all_var_names,$(1),$(2)),$(origin $(schvar)):$(schvar))),$(lastword $(subst :, ,$(tuple))))
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 72)
+ECHO_LINKING_WITH_STRIP = $(ECHO_BEGIN)$(PRINT_FORMAT_YELLOW) "Linking $(_THEOS_CURRENT_TYPE) $(THEOS_CURRENT_INSTANCE) (with strip)"$(ECHO_END); $(ECHO_PIPEFAIL) (
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 34)
+PRINT_FORMAT_MAKING = printf "\e[1;31m> \e[1;3;39m%s…\e[m\n"
+# environment
+rvm_bin_path = /Users/antoine/.rvm/bin
+# environment
+__CFBundleIdentifier = com.microsoft.VSCode
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 31)
+__theos_bool = $(if $(filter Y y YES yes TRUE true 1,$(1)),$(_THEOS_TRUE),$(_THEOS_FALSE))
+# makefile (from '/Users/antoine/theos/makefiles/legacy.mk', line 3)
+FW_MAKEDIR = $(THEOS_MAKE_PATH)
+# makefile (from '/Users/antoine/theos/makefiles/platform/Darwin.mk', line 23)
+_THEOS_PLATFORM_DEFAULT_TARGET := iphone
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 142)
+_THEOS_TARGET := iphone
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 29)
+TARGET_INSTALL_REMOTE = $(_THEOS_TRUE)
+# makefile (from '/Users/antoine/theos/makefiles/platform/Darwin.mk', line 7)
+THEOS_PLATFORM_NAME := macosx
+# 'override' directive (from '/Users/antoine/theos/makefiles/package.mk', line 70)
+PACKAGE_VERSION = $(__PACKAGE_VERSION)
+# makefile (from '/Users/antoine/theos/makefiles/package.mk', line 99)
+THEOS_DEVICE_PORT := 
+# makefile (from 'Makefile', line 12)
+Peach_CFLAGS = -fobjc-arc
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 179)
+DEBUGFLAG = -ggdb
+ 
+# makefile (from '/Users/antoine/theos/makefiles/platform/Darwin.mk', line 33)
+_THEOS_PLATFORM_MD5SUM := md5
+# makefile (from '/Users/antoine/theos/makefiles/legacy.mk', line 48)
+FW_PACKAGE_STAGING_DIR = $(THEOS_STAGING_DIR)$(warning FW_PACKAGE_STAGING_DIR is deprecated. Please migrate to THEOS_STAGING_DIR.)
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 76)
+ECHO_MERGING = $(ECHO_BEGIN)$(PRINT_FORMAT_BLUE) "Merging $(_THEOS_CURRENT_TYPE) $(THEOS_CURRENT_INSTANCE)"$(ECHO_END); $(ECHO_PIPEFAIL) (
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 47)
+_DEPLOY_VERSION_GE_11_0 := 1
+# default
+.VARIABLES := 
+# environment
+COMMAND_MODE = unix2003
+# environment
+PWD = /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# makefile (from '/Users/antoine/theos/makefiles/package.mk', line 42)
+__BASEVER_FOR_BUILDNUM = $(or $(__USERVER_FOR_BUILDNUM),$(THEOS_PACKAGE_BASE_VERSION))
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 235)
+THEOS_OBJ_DIR = $(_THEOS_LOCAL_DATA_DIR)/$(THEOS_OBJ_DIR_NAME)
+# environment
+LSCOLORS = ExFxBxDxCxegedabagacad
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_tail.mk', line 51)
+_THEOS_TARGET_SWIFT_LDFLAGS = $(call __simplify,_THEOS_TARGET_SWIFT_LDFLAGS,-rpath /usr/lib/swift -rpath /usr/lib/libswift/$(_THEOS_TARGET_SWIFT_VERSION_PATH))
+# makefile (from '/Users/antoine/theos/makefiles/platform/Darwin.mk', line 29)
+_THEOS_PLATFORM_DU_EXCLUDE := -I
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 48)
+_TARGET_VERSION_GE_12_1 := 1
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 249)
+THEOS_SUBPROJECT_PRODUCT = subproject.a
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 139)
+__TARGET_MAKEFILE := /var/folders/dv/xtxhwssd1nv7g1p11sn3p4f40000gn/T/stLly12uWR
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 84)
+ECHO_INSTALLING = $(ECHO_BEGIN)$(PRINT_FORMAT_CYAN) "Installing"$(ECHO_END); $(ECHO_PIPEFAIL) (
+# makefile (from '/Users/antoine/theos/makefiles/package.mk', line 72)
+_THEOS_INTERNAL_PACKAGE_VERSION = $(call __simplify,_THEOS_INTERNAL_PACKAGE_VERSION,$(or $(__PACKAGE_VERSION),$(_THEOS_PACKAGE_DEFAULT_VERSION_FORMAT),1))
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 61)
+THEOS_BIN_PATH := /Users/antoine/theos/bin
+# makefile (from '/Users/antoine/theos/makefiles/stage.mk', line 2)
+_THEOS_STAGING_RULES_LOADED := 1
+# environment
+VSCODE_LOG_STACK = false
+# automatic
+%F = $(notdir $%)
+# environment
+_system_type = Darwin
+# environment
+_system_name = OSX
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 80)
+ECHO_COPYING_RESOURCE_DIRS = $(ECHO_BEGIN)$(PRINT_FORMAT_MAGENTA) "Copying resource directories into the $(_THEOS_CURRENT_TYPE) wrapper"$(ECHO_END); $(ECHO_PIPEFAIL) (
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 73)
+ECHO_STRIPPING = $(ECHO_BEGIN)$(PRINT_FORMAT_BLUE) "Stripping $(THEOS_CURRENT_INSTANCE)"$(ECHO_END); $(ECHO_PIPEFAIL) (
+# makefile (from '/Users/antoine/theos/makefiles/legacy.mk', line 31)
+FW_OBJ_DIR = $(THEOS_OBJ_DIR)$(warning FW_OBJ_DIR is deprecated. Please migrate to THEOS_OBJ_DIR.)
+# 'override' directive (from '/Users/antoine/theos/makefiles/common.mk', line 57)
+THEOS := /Users/antoine/theos
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 39)
+_DEPLOY_VERSION_GE_3_0 := 1
+# default
+.LOADED := 
+# default
+.INCLUDE_DIRS = /usr/local/Cellar/make/4.3/include /usr/local/include
+# environment
+GEM_PATH = /Users/antoine/.rvm/gems/ruby-2.7.2:/Users/antoine/.rvm/gems/ruby-2.7.2@global
+# 'override' directive (from '/Users/antoine/theos/makefiles/common.mk', line 94)
+THEOS_SCHEMA := DEFAULT DEBUG
+# environment
+__CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x1
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 108)
+__schema_var_name_last = $(strip $(lastword $(call __schema_defined_var_names,$(1),$(2))))
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 247)
+THEOS_LEGACY_PACKAGE_DIR = $(THEOS_BUILD_DIR)/debs
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 77)
+ECHO_SIGNING = $(ECHO_BEGIN)$(PRINT_FORMAT_BLUE) "Signing $(THEOS_CURRENT_INSTANCE)"$(ECHO_END); $(ECHO_PIPEFAIL) (
+# makefile
+MAKEFLAGS = pqrR -j4 -Otarget --jobserver-auth=3,4 --no-print-directory
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 240)
+THEOS_STAGING_DIR_NAME = _
+# makefile (from '/Users/antoine/theos/makefiles/vercmp.mk', line 52)
+___vercmp_presplit = $(strip $(foreach ver1,$(value $(1)),$(if $(filter eq,$(value $(3))), $(eval $(3):=$(call __cmp,$(ver1),$(firstword $(value $(2)))$(eval $(2):=$(wordlist 2,$(words $(value $(2))),$(value $(2)))))) ,)) $(value $(3)) )
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 221)
+_THEOS_INTERNAL_SWIFTCOLORFLAGS = -color-diagnostics
+# makefile
+CURDIR := /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 85)
+ECHO_UNLOADING = $(ECHO_BEGIN)$(PRINT_FORMAT_CYAN) "Unloading $(INSTALL_TARGET_PROCESSES)"$(ECHO_END); $(ECHO_PIPEFAIL) (
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 205)
+_THEOS_INTERNAL_IFLAGS_C = $(_THEOS_INTERNAL_IFLAGS_BASE) -include $(THEOS)/Prefix.pch
+# environment
+VSCODE_PIPE_LOGGING = true
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 69)
+TARGET_CODESIGN_ALLOCATE = $(call __invocation,codesign_allocate)
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 198)
+TARGET_STRIP = :
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 165)
+THEOS_TARGET_LIBRARY_PATH := /Users/antoine/theos/lib/iphone
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 129)
+_THEOS_OS = $(if $(uname_o),$(uname_o),$(uname_s))
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 43)
+PRINT_FORMAT_ERROR = printf "\e[0;31m==> \e[1;31mError:\e[m %s\n"
+# makefile (from '/Users/antoine/theos/makefiles/package/deb.mk', line 4)
+_THEOS_PLATFORM_DPKG_DEB = dm.pl
+# makefile (from '/Users/antoine/theos/makefiles/package.mk', line 98)
+THEOS_DEVICE_USER = root
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 58)
+ECHO_PREPROCESSING = $(ECHO_BEGIN)$(PRINT_FORMAT_RED) "Preprocessing $<"$(ECHO_END); $(ECHO_PIPEFAIL) (
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 63)
+THEOS_VENDOR_LIBRARY_PATH := /Users/antoine/theos/vendor/lib
+# environment
+MFLAGS = -pqrR -j4 -Otarget --jobserver-auth=3,4 --no-print-directory
+# environment
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.py0ckH71l6/Listeners
+# default
+.SHELLFLAGS := -c
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_tail.mk', line 29)
+VERSIONFLAGS := -target -apple-ios11.2
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 265)
+FAKEROOT := /Users/antoine/theos/bin/fakeroot.sh -p "/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/fakeroot"
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 276)
+THEOS_LINKAGE_TYPE = dynamic
+# makefile (from '/Users/antoine/theos/makefiles/legacy.mk', line 5)
+FW_LIBDIR = $(THEOS_LIBRARY_PATH)
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 114)
+THEOS_LAYOUT_DIR = $(THEOS_PROJECT_DIR)/$(THEOS_LAYOUT_DIR_NAME)
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 227)
+ 
+_THEOS_OBJ_DIR_EXTENSION = /$(_THEOS_CLEANED_SCHEMA_SET)
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 67)
+TARGET_LIPO = $(call __invocation,lipo)
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 72)
+TARGET_XCPRETTY = $(call __invocation,xcpretty)
+# makefile (from '/Users/antoine/theos/makefiles/master/rules.mk', line 1)
+MAKEFILE_LIST := Makefile /Users/antoine/theos/makefiles/common.mk /Users/antoine/theos/makefiles/vercmp.mk /Users/antoine/theos/makefiles/legacy.mk /Users/antoine/theos/makefiles/platform/Darwin.mk /Users/antoine/theos/makefiles/platform/Darwin.mk /var/folders/dv/xtxhwssd1nv7g1p11sn3p4f40000gn/T/stLly12uWR /Users/antoine/theos/makefiles/targets/Darwin/iphone.mk /Users/antoine/theos/makefiles/targets/_common/darwin_head.mk /Users/antoine/theos/makefiles/targets/_common/iphone.mk /Users/antoine/theos/makefiles/targets/_common/darwin_tail.mk /Users/antoine/theos/makefiles/targets/Darwin/iphone.mk /Users/antoine/theos/makefiles/messages.mk /Users/antoine/theos/makefiles/stage.mk /Users/antoine/theos/makefiles/package.mk /Users/antoine/theos/makefiles/package/deb.mk /Users/antoine/theos/makefiles/install/deb_remote.mk /Users/antoine/theos/makefiles/tweak.mk /Users/antoine/theos/makefiles/master/tweak.mk /Users/antoine/theos/makefiles/rules.mk /Users/antoine/theos/makefiles/master/rules.mk
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 188)
+_THEOS_SHOULD_STRIP_DEFAULT := 
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 39)
+PRINT_FORMAT_BLUE = $(PRINT_FORMAT_STAGE) 4
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 88)
+ERROR_BEGIN = @$(PRINT_FORMAT_ERROR) $(NULLSTRING)
+# automatic
+@F = $(notdir $@)
+# makefile (from '/Users/antoine/theos/makefiles/package/deb.mk', line 47)
+_THEOS_DEB_LIBSWIFT_DEPENDS := org.swift.libswift (>= 5.0)
+# makefile (from '/Users/antoine/theos/makefiles/targets/Darwin/iphone.mk', line 8)
+_THEOS_TARGET_PLATFORM_SWIFT_NAME := apple-ios
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+VSCODE_PID = 3017
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 89)
+ERROR_END = $(NULLSTRING) >&2; exit 1;
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 146)
+_THEOS_TARGET_CALCULATED := 1
+# makefile (from '/Users/antoine/theos/makefiles/legacy.mk', line 23)
+FW_BUILD_DIR = $(THEOS_BUILD_DIR)$(warning FW_BUILD_DIR is deprecated. Please migrate to THEOS_BUILD_DIR.)
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 26)
+ECHO_END = )
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# environment
+MY_RUBY_HOME = /Users/antoine/.rvm/rubies/ruby-2.7.2
+# makefile (from '/Users/antoine/theos/makefiles/targets/Darwin/iphone.mk', line 3)
+THEOS_TARGET_NAME := iphone
+# makefile (from '/Users/antoine/theos/makefiles/master/rules.mk', line 17)
+THEOS_USE_PARALLEL_BUILDING := 1
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 78)
+TARGET_DSYMUTIL = $(call __invocation,dsymutil)
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 65)
+THEOS_VENDOR_INCLUDE_PATH := /Users/antoine/theos/vendor/include
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 199)
+OPTFLAG = -O0
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_tail.mk', line 49)
+_THEOS_TARGET_SWIFT_VERSION_PATH = stable
+# automatic
+*F = $(notdir $*)
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 52)
+_THEOS_INTERNAL_TRUE_PATH := /Users/antoine/theos
+# makefile (from '/Users/antoine/theos/makefiles/legacy.mk', line 43)
+FW_PACKAGE_NAME = $(THEOS_PACKAGE_NAME)$(warning FW_PACKAGE_NAME is deprecated. Please migrate to THEOS_PACKAGE_NAME.)
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 12)
+_THEOS_TARGET_CXX := clang++
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 220)
+_THEOS_INTERNAL_COLORFLAGS = -fcolor-diagnostics
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 46)
+_THEOS_STATIC_MAKEFILE_LIST := Makefile
+# makefile (from '/Users/antoine/theos/makefiles/package/deb.mk', line 13)
+_THEOS_DEB_CAN_PACKAGE := 1
+# makefile (from '/Users/antoine/theos/makefiles/legacy.mk', line 2)
+FW_BINDIR = $(THEOS_BIN_PATH)
+# makefile (from '/Users/antoine/theos/makefiles/platform/Darwin.mk', line 3)
+_THEOS_PLATFORM_HAS_XCODE := 1
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 125)
+uname_s := Darwin
+# command line
+COLOR = 1
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# makefile (from '/Users/antoine/theos/makefiles/vercmp.mk', line 13)
+__cmp = $(if $(filter $(1),$(2)),eq,$(strip $(eval __CMP_NUM1:=$(subst 0,0 ,$(subst 1,1 ,$(subst 2,2 ,$(subst 3,3 ,$(subst 4,4 ,$(subst 5,5 ,$(subst 6,6 ,$(subst 7,7 ,$(subst 8,8 ,$(subst 9,9 ,$(1)))))))))))) $(eval __CMP_NUM2:=$(subst 0,0 ,$(subst 1,1 ,$(subst 2,2 ,$(subst 3,3 ,$(subst 4,4 ,$(subst 5,5 ,$(subst 6,6 ,$(subst 7,7 ,$(subst 8,8 ,$(subst 9,9 ,$(2)))))))))))) $(if $(filter-out 1,$(words $(__CMP_NUM1)))$(filter-out 1,$(words $(__CMP_NUM2))),$(strip $(call ___vercmp_expand_backward,__CMP_NUM1,$(__CMP_NUM1),$(__CMP_NUM2)) $(call ___vercmp_expand_backward,__CMP_NUM2,$(__CMP_NUM2),$(__CMP_NUM1)) $(eval __CMP_RES:=eq) $(call ___vercmp_presplit,__CMP_NUM1,__CMP_NUM2,__CMP_RES) ),$(if $(filter $(1),$(firstword $(sort $(1) $(2)))),lt,gt) ) ))
+# makefile (from '/Users/antoine/theos/makefiles/package.mk', line 58)
+VERSION.INC_BUILD_NUMBER = $(shell THEOS_PROJECT_DIR="$(THEOS_PROJECT_DIR)" "$(THEOS_BIN_PATH)/package_version.sh" -N "$(THEOS_PACKAGE_NAME)" -V "$(__BASEVER_FOR_BUILDNUM)")
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 130)
+_THEOS_PLATFORM_CALCULATED := 1
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 18)
+_TARGET_LIBCPP_LDFLAGS := -stdlib=libc++ -lc++
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 35)
+_DEPLOY_VERSION_GE_5_0 = $(call __simplify,_DEPLOY_VERSION_GE_5_0,$(call __vercmp,$(_THEOS_TARGET_OS_DEPLOYMENT_VERSION),ge,5.0))
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 116)
+_THEOS_HAS_STAGING_LAYOUT := 1
+# makefile (from '/Users/antoine/theos/makefiles/legacy.mk', line 6)
+FW_MODDIR = $(THEOS_MODULE_PATH)
+# environment
+VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{"*":"fr"},"_languagePackId":"85f597cc4688898ca124c0636a9a7be2.fr","_translationsConfigFile":"/Users/antoine/Library/Application Support/Code/clp/85f597cc4688898ca124c0636a9a7be2.fr/tcf.json","_cacheRoot":"/Users/antoine/Library/Application Support/Code/clp/85f597cc4688898ca124c0636a9a7be2.fr","_resolvedLanguagePackCoreLocation":"/Users/antoine/Library/Application Support/Code/clp/85f597cc4688898ca124c0636a9a7be2.fr/f30a9b73e8ffc278e71575118b6bf568f04587c8","_corruptedFile":"/Users/antoine/Library/Application Support/Code/clp/85f597cc4688898ca124c0636a9a7be2.fr/corrupted.info","_languagePackSupport":true}
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 34)
+_DEPLOY_VERSION_GE_9_0 = $(call __simplify,_DEPLOY_VERSION_GE_9_0,$(call __vercmp,$(_THEOS_TARGET_OS_DEPLOYMENT_VERSION),ge,9.0))
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 71)
+ECHO_STATIC_LINKING = $(ECHO_BEGIN)$(PRINT_FORMAT_YELLOW) "Linking static $(_THEOS_CURRENT_TYPE) $(THEOS_CURRENT_INSTANCE)"$(ECHO_END); $(ECHO_PIPEFAIL) (
+# makefile (from '/Users/antoine/theos/makefiles/package.mk', line 52)
+VERSION.EXTRAVERSION = $(if $(PACKAGE_BUILDNAME),+$(PACKAGE_BUILDNAME))
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 34)
+__executable = $(if $(shell PATH="$(THEOS_BIN_PATH):$$PATH" type "$(1)" > /dev/null 2>&1 && echo 1),$(_THEOS_TRUE),$(_THEOS_FALSE))
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_tail.mk', line 26)
+_THEOS_TARGET_SWIFT_TARGET := apple-ios11.2
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 93)
+_UNSORTED_SDKS := 10.3 11.2 12.1.2 12.1 12.4 13.0 13.3 13.4 13.5 13.6 13.7 14.0 14.2 14.4 6.1 7.1 8.1 8.4.1 9.3.5 9.3  14.4
+# environment
+CLICOLOR = 1
+# default
+ 
+MAKE_HOST := x86_64-apple-darwin19.2.0
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 2)
+TARGET_EXE_EXT := 
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_tail.mk', line 22)
+MODULESFLAGS := -fmodules -fcxx-modules -fmodule-name= -fbuild-session-file=/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/build_session -fmodules-prune-after=345600 -fmodules-prune-interval=86400 -fmodules-validate-once-per-build-session
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 67)
+THEOS_MODULE_PATH := /Users/antoine/theos/mod
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_tail.mk', line 39)
+_THEOS_TARGET_SWIFT_LDPATHS = $(call __simplify,_THEOS_TARGET_SWIFT_LDPATHS,$(dir $(shell type -p $(TARGET_SWIFT)))../lib/swift/$(_THEOS_TARGET_PLATFORM_NAME) /usr/lib/swift)
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 181)
+DEBUG.CFLAGS = -DDEBUG -O0
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 15)
+SHELL = bash
+# default
+MAKECMDGOALS := all
+# makefile (from '/Users/antoine/theos/makefiles/legacy.mk', line 4)
+FW_INCDIR = $(THEOS_INCLUDE_PATH)
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 39)
+_TARGET_VERSION_GE_6_0 := 1
+# environment
+_system_arch = x86_64
+# makefile (from '/Users/antoine/theos/makefiles/platform/Darwin.mk', line 20)
+DEVELOPER_DIR = $(THEOS_PLATFORM_SDK_ROOT)
+# environment
+SHLVL = 1
+# environment
+rvm_path = /Users/antoine/.rvm
+# makefile (from '/Users/antoine/theos/makefiles/legacy.mk', line 40)
+FW_INSTANCE = $(THEOS_CURRENT_INSTANCE)$(warning FW_INSTANCE is deprecated. Please migrate to THEOS_CURRENT_INSTANCE.)
+# makefile (from '/var/folders/dv/xtxhwssd1nv7g1p11sn3p4f40000gn/T/stLly12uWR', line 2)
+__THEOS_TARGET_ARG_1 := clang
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 4)
+TARGET_AR_EXT := .a
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 126)
+uname_o := 
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 69)
+ECHO_SWIFTMODULE_HEADER = $(ECHO_BEGIN)$(PRINT_FORMAT_BLUE) "Generating $(notdir $@)"$(ECHO_END); $(ECHO_PIPEFAIL) (
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 33)
+__exists = $(if $(wildcard $(1)),$(_THEOS_TRUE),$(_THEOS_FALSE))
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 119)
+_THEOS_TARGET_OS_DEPLOYMENT_VERSION = $(or $(__THEOS_TARGET_ARG_$(word 2,$(_THEOS_TARGET_ARG_ORDER))),$(TARGET_OS_DEPLOYMENT_VERSION_$(THEOS_CURRENT_ARCH)),$(TARGET_OS_DEPLOYMENT_VERSION),$(_SDKVERSION),$(_THEOS_TARGET_DEFAULT_OS_DEPLOYMENT_VERSION))
+# environment
+MAKELEVEL := 0
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 39)
+__THEOS_COMMON_MK_VERSION := 1k
+# makefile (from '/Users/antoine/theos/makefiles/legacy.mk', line 42)
+FW_SHARED_BUNDLE_RESOURCE_PATH = $(THEOS_SHARED_BUNDLE_RESOURCE_PATH)$(warning FW_SHARED_BUNDLE_RESOURCE_PATH is deprecated. Please migrate to THEOS_SHARED_BUNDLE_RESOURCE_PATH.)
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 33)
+PRINT_FORMAT = printf "\e[0;36m==> \e[1;36mNotice:\e[m %s\n"
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 94)
+NOTICE_EMPTY_LINKING = @$(PRINT_FORMAT_WARNING) "No files to link - creating a bundle containing only resources"
+# default
+MAKE = $(MAKE_COMMAND)
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 72)
+PATH := /Users/antoine/theos/bin:/Users/antoine/.rvm/gems/ruby-2.7.2/bin:/Users/antoine/.rvm/gems/ruby-2.7.2@global/bin:/Users/antoine/.rvm/rubies/ruby-2.7.2/bin:/Users/antoine/theos/bin:/usr/local/sbin:/usr/local/opt/make/libexec/gnubin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/usr/local/share/dotnet:/opt/X11/bin:~/.dotnet/tools:/Library/Apple/usr/bin:/Applications/Wireshark.app/Contents/MacOS:/Users/antoine/.rvm/bin:/usr/local/mysql/bin:/opt/local/bin/python3:/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Scripts:/opt
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 41)
+PRINT_FORMAT_CYAN = $(PRINT_FORMAT_STAGE) 6
+# default
+MAKEFILES := 
+# makefile (from '/Users/antoine/theos/makefiles/master/rules.mk', line 10)
+VERCMP_OP := gt
+# makefile (from '/var/folders/dv/xtxhwssd1nv7g1p11sn3p4f40000gn/T/stLly12uWR', line 1)
+__THEOS_TARGET_ARG_0 := iphone
+# makefile (from '/Users/antoine/theos/makefiles/targets/Darwin/iphone.mk', line 2)
+_THEOS_TARGET_LOADED := 1
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 19)
+THEOS_PROJECT_DIR := /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach
+# automatic
+^F = $(notdir $^)
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 5)
+_THEOS_VERBOSE := 
+# makefile (from '/Users/antoine/theos/makefiles/package/deb.mk', line 5)
+_THEOS_PLATFORM_DPKG_DEB_COMPRESSION = $(or $(THEOS_PLATFORM_DEB_COMPRESSION_TYPE),lzma)
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_tail.mk', line 18)
+TARGET_PRIVATE_FRAMEWORK_INCLUDE_PATH = $(ISYSROOT)/System/Library/PrivateFrameworks
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 65)
+TARGET_LD = $(call __invocation,$(_THEOS_TARGET_CXX))
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_tail.mk', line 17)
+TARGET_PRIVATE_FRAMEWORK_PATH = $(SYSROOT)/System/Library/PrivateFrameworks
+# makefile (from '/Users/antoine/theos/makefiles/vercmp.mk', line 68)
+___vercmp_expand = $(if $(filter $(words $(2)),$(words $(3))),, $(if $(filter $(words $(3)),$(firstword $(sort $(words $(2)) $(words $(3))))),, $(eval $(1) += 0) $(call ___vercmp_expand,$(1),$(value $(1)),$(3)) ) )
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 189)
+PACKAGE_BUILDNAME = debug
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 203)
+_THEOS_INTERNAL_SWIFTFLAGS = -DTHEOS_SWIFT -DTARGET_$(_THEOS_TARGET_NAME_DEFINE) $(SWIFT_OPTFLAG) -module-name $(THEOS_CURRENT_INSTANCE) $(SWIFT_DEBUGFLAG)
+# makefile (from '/Users/antoine/theos/makefiles/platform/Darwin.mk', line 2)
+_THEOS_PLATFORM_LOADED := 1
+# makefile (from 'Makefile', line 1)
+ARCHS = arm64 arm64e
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 10)
+_TARGET_VERSION_GE_3_0 = $(call __simplify,_TARGET_VERSION_GE_3_0,$(call __vercmp,$(_THEOS_TARGET_SDK_VERSION),ge,3.0))
+# makefile (from '/Users/antoine/theos/makefiles/package/deb.mk', line 15)
+_THEOS_PACKAGE_EXTRA_VERSION_PREFIX := +
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 74)
+TARGET_STRIP_FLAGS = -x
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 1)
+NULLSTRING := 
+# environment
+VSCODE_LOG_NATIVE = false
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 71)
+TARGET_XCODEBUILD = $(call __invocation,xcodebuild)
+# makefile (from '/Users/antoine/theos/makefiles/platform/Darwin.mk', line 39)
+_THEOS_PLATFORM_SHOW_IN_FILE_MANAGER := open -R
+# makefile (from '/Users/antoine/theos/makefiles/legacy.mk', line 17)
+FW_STAGING_DIR = $(THEOS_STAGING_DIR)$(warning FW_STAGING_DIR is deprecated. Please migrate to THEOS_STAGING_DIR.)
+# makefile (from '/Users/antoine/theos/makefiles/master/rules.mk', line 10)
+__CMP_NUM1 := 3 
+# makefile (from '/Users/antoine/theos/makefiles/package/deb.mk', line 14)
+_THEOS_PACKAGE_INC_VERSION_PREFIX := -
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 274)
+THEOS_PACKAGE_VERSION = $(call __simplify,THEOS_PACKAGE_VERSION,$(THEOS_PACKAGE_BASE_VERSION)$(warning THEOS_PACKAGE_VERSION is deprecated. Please migrate to THEOS_PACKAGE_BASE_VERSION.))
+ 
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 246)
+THEOS_PACKAGE_DIR = $(THEOS_BUILD_DIR)/$(THEOS_PACKAGE_DIR_NAME)
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 7)
+_TARGET_VERSION_GE_7_0 = $(call __simplify,_TARGET_VERSION_GE_7_0,$(call __vercmp,$(_THEOS_TARGET_SDK_VERSION),ge,7.0))
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 39)
+_DEPLOY_VERSION_LT_4_3 := 
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_tail.mk', line 14)
+ISYSROOT := /Users/antoine/theos/sdks/iPhoneOS13.5.sdk
+# makefile (from '/var/folders/dv/xtxhwssd1nv7g1p11sn3p4f40000gn/T/stLly12uWR', line 4)
+__THEOS_TARGET_ARG_3 := 11.2
+# makefile (from '/Users/antoine/theos/makefiles/targets/Darwin/iphone.mk', line 6)
+_THEOS_TARGET_PLATFORM_SDK_NAME := iPhoneOS
+# automatic
+?F = $(notdir $?)
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 62)
+THEOS_LIBRARY_PATH := /Users/antoine/theos/lib
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 242)
+_SPACE := $(subst ,, )
+# makefile (from '/Users/antoine/theos/makefiles/legacy.mk', line 45)
+FW_PACKAGE_VERSION = $(THEOS_PACKAGE_BASE_VERSION)$(warning FW_PACKAGE_VERSION is deprecated. Please migrate to THEOS_PACKAGE_BASE_VERSION.)
+# makefile (from 'Makefile', line 4)
+INSTALL_TARGET_PROCESSES = SpringBoard
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 47)
+_THEOS_PROJECT_MAKEFILE_NAME := Makefile
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 17)
+_TARGET_LIBCPP_CCFLAGS := -stdlib=libc++
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 204)
+_THEOS_INTERNAL_IFLAGS_BASE = $(if $(_THEOS_TARGET_HAS_INCLUDE_PATH),-I$(THEOS_TARGET_INCLUDE_PATH) )-I$(THEOS_INCLUDE_PATH) -I$(THEOS_VENDOR_INCLUDE_PATH) -I$(THEOS_FALLBACK_INCLUDE_PATH)
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 79)
+ECHO_COPYING_RESOURCE_FILES = $(ECHO_BEGIN)$(PRINT_FORMAT_MAGENTA) "Copying resource files into the $(_THEOS_CURRENT_TYPE) wrapper"$(ECHO_END); $(ECHO_PIPEFAIL) (
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 22)
+_THEOS_LOCAL_DATA_DIR := /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 91)
+WARNING_EMPTY_LINKING = @$(PRINT_FORMAT_WARNING) "No files to link. Please check your Makefile! Make sure you set $(THEOS_CURRENT_INSTANCE)_FILES (or similar variables)"
+# makefile (from '/Users/antoine/theos/makefiles/rules.mk', line 2)
+_THEOS_RULES_LOADED := 1
+# makefile (from '/Users/antoine/theos/makefiles/master/rules.mk', line 10)
+VERCMP_SECOND := 
+# makefile (from '/Users/antoine/theos/makefiles/package/deb.mk', line 44)
+_THEOS_DEB_LIBSWIFT_PACKAGE_VERSION := 5.0
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 88)
+_TARGET_VERSION_GE_10_0 := 
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 30)
+_THEOS_FALSE := 
+# automatic
++F = $(notdir $+)
+# makefile (from '/Users/antoine/theos/makefiles/legacy.mk', line 37)
+FW_SUBPROJECT_PRODUCT = $(THEOS_SUBPROJECT_PRODUCT)$(warning FW_SUBPROJECT_PRODUCT is deprecated. Please migrate to THEOS_SUBPROJECT_PRODUCT.)
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# makefile (from '/Users/antoine/theos/makefiles/legacy.mk', line 44)
+FW_PACKAGE_ARCH = $(THEOS_PACKAGE_ARCH)$(warning FW_PACKAGE_ARCH is deprecated. Please migrate to THEOS_PACKAGE_ARCH.)
+# environment
+IRBRC = /Users/antoine/.rvm/rubies/ruby-2.7.2/.irbrc
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 83)
+ECHO_PRE_UNLOADING = $(ECHO_BEGIN)$(PRINT_FORMAT_CYAN) "Unloading $(PREINSTALL_TARGET_PROCESSES)"$(ECHO_END); $(ECHO_PIPEFAIL) (
+# 'override' directive
+GNUMAKEFLAGS := 
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_tail.mk', line 64)
+_THEOS_TARGET_BUNDLE_HEADERS_SUBDIRECTORY := /Headers
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 35)
+TARGET_CODESIGN = ldid
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 206)
+_THEOS_INTERNAL_IFLAGS_SWIFT = $(_THEOS_INTERNAL_IFLAGS_BASE)
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 260)
+THEOS_CURRENT_INSTANCE := 
+# environment
+LOGNAME = antoine
+# makefile (from '/Users/antoine/theos/makefiles/vercmp.mk', line 1)
+empty := 
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 21)
+_THEOS_RELATIVE_DATA_DIR = .theos
+# makefile (from '/Users/antoine/theos/makefiles/vercmp.mk', line 34)
+__vercmp = $(strip $(eval VERCMP_FIRST := $(subst .,$(space),$(1))) $(eval VERCMP_OP := $(if $(filter ge,$(2)),eq gt,$(if $(filter le,$(2)),eq lt,$(2)))) $(eval VERCMP_SECOND := $(subst .,$(space),$(3))) $(eval VERCMP_RES := eq) $(call ___vercmp_expand,VERCMP_FIRST,$(VERCMP_FIRST),$(VERCMP_SECOND)) $(call ___vercmp_expand,VERCMP_SECOND,$(VERCMP_SECOND),$(VERCMP_FIRST)) $(if $(filter $(VERCMP_OP),$(call ___vercmp_presplit,VERCMP_FIRST,VERCMP_SECOND,VERCMP_RES)),1,) )
+# makefile (from '/Users/antoine/theos/makefiles/legacy.mk', line 14)
+FW_PLATFORM_NAME = $(THEOS_PLATFORM_NAME)$(warning FW_PLATFORM_NAME is deprecated. Please migrate to THEOS_PLATFORM_NAME.)
+# environment
+DRAGONBUILD = /Users/antoine/DragonBuild
+# makefile (from '/Users/antoine/theos/makefiles/package.mk', line 2)
+_THEOS_PACKAGE_RULES_LOADED := 1
+# environment
+DRBIP = 192.168.1.96
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 68)
+ECHO_COMPILING = $(ECHO_BEGIN)$(PRINT_FORMAT_GREEN) "Compiling $<"$(ECHO_END); $(ECHO_PIPEFAIL) (
+# environment
+XPC_FLAGS = 0x0
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 64)
+TARGET_CXX = $(call __invocation,$(_THEOS_TARGET_CXX))
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 29)
+_THEOS_TRUE := 1
+# makefile (from '/Users/antoine/theos/makefiles/master/rules.mk', line 188)
+_THEOS_TOP_INVOCATION_DONE = 1
+# makefile
+.DEFAULT_GOAL := all
+# makefile (from '/Users/antoine/theos/makefiles/vercmp.mk', line 2)
+space := $(subst ,, )
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 22)
+_THEOS_TARGET_DEFAULT_OS_DEPLOYMENT_VERSION := 9.0
+# makefile (from '/Users/antoine/theos/makefiles/platform/Darwin.mk', line 17)
+THEOS_PLATFORM_SDK_ROOT := /Applications/Xcode.app/Contents/Developer
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 28)
+STDERR_NULL_REDIRECT = 2> /dev/null
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 25)
+ECHO_UNBUFFERED = 
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 24)
+ECHO_MAKE = +@
+# environment
+rvm_version = 1.27.0 (1.27.0)
+# environment
+DISPLAY = :0
+# environment
+USER = antoine
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 60)
+THEOS_MAKE_PATH := /Users/antoine/theos/makefiles
+# makefile (from '/Users/antoine/theos/makefiles/package/deb.mk', line 9)
+THEOS_PLATFORM_DEB_COMPRESSION_LEVEL = 0
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 23)
+_THEOS_BUILD_SESSION_FILE = $(_THEOS_LOCAL_DATA_DIR)/build_session
+# default
+MAKE_VERSION := 4.3
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_tail.mk', line 36)
+_THEOS_TARGET_LDFLAGS := -isysroot "/Users/antoine/theos/sdks/iPhoneOS13.5.sdk" -target -apple-ios11.2  -multiply_defined suppress -stdlib=libc++ -lc++ 
+# makefile (from '/Users/antoine/theos/makefiles/master/rules.mk', line 10)
+__CMP_NUM2 := 0 
+# makefile (from '/Users/antoine/theos/makefiles/package/deb.mk', line 56)
+_THEOS_DEB_PACKAGE_FILENAME = $(THEOS_PACKAGE_DIR)/$(THEOS_PACKAGE_NAME)_$(_THEOS_INTERNAL_PACKAGE_VERSION)_$(THEOS_PACKAGE_ARCH).deb
+# 'override' directive
+.SHELLSTATUS := 0
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 77)
+_TARGET_VERSION_GE_8_4 := 1
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 245)
+THEOS_PACKAGE_DIR_NAME = packages
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_tail.mk', line 11)
+SYSROOT := /Users/antoine/theos/sdks/iPhoneOS13.5.sdk
+ 
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 86)
+ECHO_CLEANING = $(ECHO_BEGIN)$(PRINT_FORMAT_CYAN) "Cleaning"$(ECHO_END); $(ECHO_PIPEFAIL) (
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_tail.mk', line 38)
+_THEOS_TARGET_SWIFTFLAGS := -sdk "/Users/antoine/theos/sdks/iPhoneOS13.5.sdk" 
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 171)
+_THEOS_PACKAGE_LAST_FILENAME = $(call __simplify,_THEOS_PACKAGE_LAST_FILENAME,$(shell cat "$(_THEOS_LOCAL_DATA_DIR)/last_package" 2>/dev/null))
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 106)
+_LATEST_SDK = $(call __simplify,_LATEST_SDK,$(lastword $(_SORTED_SDKS)))
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 27)
+__clean_pwd = $(shell (unset CDPATH; cd "$(1)"; pwd))
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 78)
+_THEOS_DARWIN_CAN_USE_MODULES := 1
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 16)
+_THEOS_TARGET_ARG_ORDER := 2 3
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 29)
+STDOUT_NULL_REDIRECT = > /dev/null
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 120)
+__mod = -include $$(foreach mod,$$(_THEOS_LOAD_MODULES),$$(THEOS_MODULE_PATH)/$$(mod)/$(1))
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 35)
+PRINT_FORMAT_STAGE = printf "\e[0;3%im==> \e[1;39m%s…\e[m\n"
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 92)
+_XCODE_SDK_DIR := /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 180)
+SWIFT_DEBUGFLAG = -g
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 262)
+THEOS_RSYNC_EXCLUDES = _MTN .git .svn .DS_Store ._*
+# makefile (from '/Users/antoine/theos/makefiles/package.mk', line 69)
+__PACKAGE_VERSION = $(call __simplify,__PACKAGE_VERSION,)
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 12)
+_TARGET_VERSION_GE_13_0 := 1
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 66)
+TARGET_SWIFT = $(call __invocation,$(_THEOS_TARGET_SWIFT))
+# makefile (from 'Makefile', line 11)
+Peach_FILES = Tweak.x
+# makefile (from '/Users/antoine/theos/makefiles/platform/Darwin.mk', line 42)
+THEOS_SUDO_COMMAND = sudo
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 13)
+_THEOS_TARGET_USE_CLANG_TARGET_FLAG := 1
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 40)
+PRINT_FORMAT_MAGENTA = $(PRINT_FORMAT_STAGE) 5
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 105)
+__schema_all_var_names = $(foreach sch,$(THEOS_SCHEMA),$(subst DEFAULT.,,$(sch).)$(1)$(2))
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 63)
+TARGET_CC = $(call __invocation,$(_THEOS_TARGET_CC))
+# environment
+VSCODE_NODE_CACHED_DATA_DIR = /Users/antoine/Library/Application Support/Code/CachedData/f30a9b73e8ffc278e71575118b6bf568f04587c8
+# environment
+_ = /usr/local/opt/make/libexec/gnubin/make
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 256)
+_THEOS_MAKEFLAGS := --no-keep-going COLOR=1 --no-print-directory
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 13)
+_THEOS_TARGET_SWIFT := swift
+# environment
+GEM_HOME = /Users/antoine/.rvm/gems/ruby-2.7.2
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_tail.mk', line 63)
+_THEOS_TARGET_BUNDLE_BINARY_SUBDIRECTORY := 
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 241)
+THEOS_STAGING_DIR = $(_THEOS_LOCAL_DATA_DIR)/$(THEOS_STAGING_DIR_NAME)
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 21)
+_THEOS_TARGET_DEFAULT_PACKAGE_FORMAT = deb
+# makefile (from '/Users/antoine/theos/makefiles/package.mk', line 91)
+_THEOS_INSTALL_TYPE := remote
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 113)
+THEOS_LAYOUT_DIR_NAME = layout
+# makefile (from '/Users/antoine/theos/makefiles/package/deb.mk', line 25)
+THEOS_PACKAGE_NAME := com.redenticdev.peach
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 167)
+_THEOS_TARGET_HAS_LIBRARY_PATH := 
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 16)
+_TARGET_VERSION_GE_12_0 := 1
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 51)
+_THEOS_RELATIVE_MAKE_PATH := /Users/antoine/theos/makefiles/
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 176)
+_THEOS_INTERNAL_LDFLAGS = $(if $(_THEOS_TARGET_HAS_LIBRARY_PATH),-L$(THEOS_TARGET_LIBRARY_PATH) )-L$(THEOS_LIBRARY_PATH) $(DEBUGFLAG) -L$(THEOS_VENDOR_LIBRARY_PATH)
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 128)
+_THEOS_PLATFORM = $(uname_s)
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 209)
+_THEOS_INTERNAL_LOGOSFLAGS = -c warnings=error
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 85)
+_SDKVERSION := 13.5
+# environment
+THEOS_DEVICE_IP = 192.168.1.96
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 86)
+_THEOS_TARGET_SDK_VERSION := 13.5
+# environment
+HOME = /Users/antoine
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_tail.mk', line 35)
+_THEOS_TARGET_CCFLAGS := -stdlib=libc++
+# makefile (from '/var/folders/dv/xtxhwssd1nv7g1p11sn3p4f40000gn/T/stLly12uWR', line 3)
+__THEOS_TARGET_ARG_2 := 13.5
+# environment
+redentic = /Users/antoine/OneDrive/Documents/Programmation/RedenticDev
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 38)
+PRINT_FORMAT_YELLOW = $(PRINT_FORMAT_STAGE) 3
+# makefile (from '/Users/antoine/theos/makefiles/package.mk', line 59)
+_THEOS_PACKAGE_DEFAULT_VERSION_FORMAT = $(THEOS_PACKAGE_BASE_VERSION)-$(VERSION.INC_BUILD_NUMBER)$(VERSION.EXTRAVERSION)
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 3)
+TARGET_LIB_EXT := .dylib
+# makefile (from '/Users/antoine/theos/makefiles/package/deb.mk', line 12)
+_THEOS_DEB_PACKAGE_CONTROL_PATH := /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/control
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+VSCODE_IPC_HOOK = /Users/antoine/Library/Application Support/Code/1.54.1-main.sock
+# makefile (from '/Users/antoine/theos/makefiles/master/rules.mk', line 10)
+VERCMP_FIRST := 4 3
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 183)
+DEBUG.LDFLAGS = -O0
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 6)
+TARGET_LDFLAGS_DYNAMICLIB = -dynamiclib -install_name "$(LOCAL_INSTALL_PATH)/$(1)"
+# makefile (from '/Users/antoine/theos/makefiles/master/rules.mk', line 87)
+_THEOS_ABSOLUTE_BUILD_DIR = .
+# environment
+_system_version = 11.2
+# makefile (from '/Users/antoine/theos/makefiles/master/rules.mk', line 10)
+VERCMP_RES := gt
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 232)
+THEOS_OBJ_DIR_NAME = obj$(_THEOS_OBJ_DIR_EXTENSION)
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_tail.mk', line 61)
+_THEOS_TARGET_BUNDLE_INFO_PLIST_SUBDIRECTORY := 
+# default
+.RECIPEPREFIX := 
+# automatic
+<F = $(notdir $<)
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 260)
+_THEOS_CURRENT_TYPE := 
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_tail.mk', line 62)
+_THEOS_TARGET_BUNDLE_RESOURCE_SUBDIRECTORY := 
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/iphone.mk', line 74)
+NEUTRAL_ARCH := armv7
+# default
+SUFFIXES := 
+# makefile (from '/Users/antoine/theos/makefiles/package/deb.mk', line 17)
+_THEOS_DEB_HAS_DPKG_DEB := 1
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 11)
+_THEOS_TARGET_CC := clang
+# makefile (from 'Makefile', line 2)
+TARGET = iphone:clang:13.5:11.2
+ 
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 243)
+_THEOS_ESCAPED_STAGING_DIR = $(subst $(_SPACE),\ ,$(THEOS_STAGING_DIR))
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 43)
+TARGET_CODESIGN_FLAGS = -S
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 70)
+TARGET_LIBTOOL = $(call __invocation,libtool)
+# makefile (from '/Users/antoine/theos/makefiles/package/deb.mk', line 2)
+_THEOS_PACKAGE_FORMAT_LOADED := 1
+# makefile (from '/Users/antoine/theos/makefiles/master/tweak.mk', line 15)
+TWEAKS_WITH_SUBPROJECTS = $(strip $(foreach tweak,$(TWEAK_NAME),$(patsubst %,$(tweak),$(call __schema_var_all,$(tweak)_,SUBPROJECTS))))
+# makefile (from '/Users/antoine/theos/makefiles/package/deb.mk', line 27)
+THEOS_PACKAGE_BASE_VERSION := 1.0.0
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 82)
+ECHO_COPYING_FRAMEWORK = $(ECHO_BEGIN)$(PRINT_FORMAT_MAGENTA) "Installing $(_THEOS_CURRENT_TYPE) to $(THEOS_LIBRARY_PATH)"$(ECHO_END); $(ECHO_PIPEFAIL) (
+# makefile (from '/Users/antoine/theos/makefiles/master/rules.mk', line 1)
+__THEOS_RULES_MK_VERSION := 1k
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 182)
+DEBUG.SWIFTFLAGS = -DDEBUG -Onone
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 268)
+_THEOS_MAKE_PARALLEL_BUILDING = yes
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 88)
+DEBUG := 1
+# makefile (from '/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk', line 105)
+_SORTED_SDKS = $(call __simplify,_SORTED_SDKS,$(shell echo $(_UNSORTED_SDKS) | tr ' ' $$'\n' | sort -t. -k 1,1n -k 2,2n))
+# makefile (from '/Users/antoine/theos/makefiles/vercmp.mk', line 84)
+___vercmp_expand_backward = $(if $(filter $(words $(2)),$(words $(3))),, $(if $(filter $(words $(3)),$(firstword $(sort $(words $(2)) $(words $(3))))),, $(eval $(1) := 0 $(1)) $(call ___vercmp_expand_backward,$(1),$(value $(1)),$(3)) ) )
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
+# makefile (from '/Users/antoine/theos/makefiles/legacy.mk', line 8)
+FW_PROJECT_DIR = $(THEOS_PROJECT_DIR)
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 224)
+THEOS_BUILD_DIR = .
+# makefile (from '/Users/antoine/theos/makefiles/legacy.mk', line 1)
+FRAMEWORKDIR = $(THEOS)
+# makefile (from '/Users/antoine/theos/makefiles/package.mk', line 41)
+__USERVER_FOR_BUILDNUM := 
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 192)
+SHOULD_STRIP := 
+# environment
+rvm_prefix = /Users/antoine
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 91)
+_THEOS_ON_SCHEMA := DEFAULT  DEBUG
+# makefile (from '/Users/antoine/theos/makefiles/package.mk', line 105)
+_THEOS_SUDO_COMMAND = 
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 42)
+PRINT_FORMAT_WARNING = printf "\e[0;33m==> \e[1;33mWarning:\e[m %s\n"
+# environment
+RUBY_VERSION = ruby-2.7.2
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 78)
+_THEOS_FINAL_PACKAGE := 
+# makefile (from '/Users/antoine/theos/makefiles/messages.mk', line 36)
+PRINT_FORMAT_RED = $(PRINT_FORMAT_STAGE) 1
+# makefile (from '/Users/antoine/theos/makefiles/common.mk', line 36)
+__simplify = $(2)$(eval $(1):=$(2))
+# variable set hash-table stats:
+# Load=399/1024=39%, Rehash=0, Collisions=645/2013=32%
+
+# Pattern-specific Variable Values
+
+%.variables :
+# makefile (from '/Users/antoine/theos/makefiles/master/rules.mk', line 112)
+# _INSTANCE := $$(basename $$(basename $$*))
+
+%.variables :
+# makefile (from '/Users/antoine/theos/makefiles/master/rules.mk', line 113)
+# _OPERATION := $$(subst .,,$$(suffix $$(basename $$*)))
+
+%.variables :
+# makefile (from '/Users/antoine/theos/makefiles/master/rules.mk', line 114)
+# _TYPE := $$(subst -,_,$$(subst .,,$$(suffix $$*)))
+
+%.variables :
+# makefile (from '/Users/antoine/theos/makefiles/master/rules.mk', line 115)
+# __SUBPROJECTS := $$(strip $$(call __schema_var_all,$$(_INSTANCE)_,SUBPROJECTS))
+
+%.subprojects :
+# makefile (from '/Users/antoine/theos/makefiles/master/rules.mk', line 144)
+# _INSTANCE := $$(basename $$(basename $$*))
+
+%.subprojects :
+# makefile (from '/Users/antoine/theos/makefiles/master/rules.mk', line 145)
+# _OPERATION := $$(subst .,,$$(suffix $$(basename $$*)))
+
+%.subprojects :
+# makefile (from '/Users/antoine/theos/makefiles/master/rules.mk', line 146)
+# _TYPE := $$(subst -,_,$$(subst .,,$$(suffix $$*)))
+
+%.subprojects :
+# makefile (from '/Users/antoine/theos/makefiles/master/rules.mk', line 147)
+# __SUBPROJECTS := $$(strip $$(call __schema_var_all,$$(_INSTANCE)_,SUBPROJECTS))
+
+# 8 pattern-specific variable values
+# Directories
+
+# . (device 16777220, inode 67404883): 14 files, no impossibilities.
+# /Users/antoine/theos/sdks (device 16777220, inode 33471344): 30 files, no impossibilities.
+# /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs (device 16777220, inode 59255909): 4 files, no impossibilities.
+
+# 48 files, no impossibilities in 3 directories.
+
+# Implicit Rules
+
+%.variables:
+#  recipe to execute (from '/Users/antoine/theos/makefiles/master/rules.mk', line 117):
+	+@ \
+abs_build_dir=$(_THEOS_ABSOLUTE_BUILD_DIR); \
+if [[ "$(__SUBPROJECTS)" != "" ]]; then \
+  $(PRINT_FORMAT_MAKING) "Making $(_OPERATION) in subprojects of $(_TYPE) $(_INSTANCE)"; \
+  for d in $(__SUBPROJECTS); do \
+    d="$${d%:*}"; \
+    if [[ "$${abs_build_dir}" = "." ]]; then \
+      lbuilddir="."; \
+    else \
+      lbuilddir="$${abs_build_dir}/$$d"; \
+    fi; \
+    if $(MAKE) -C $$d -f $(_THEOS_PROJECT_MAKEFILE_NAME) $(_THEOS_MAKEFLAGS) $(_OPERATION) \
+        THEOS_BUILD_DIR="$$lbuilddir" \
+       ; then\
+       :; \
+    else exit $$?; \
+    fi; \
+  done; \
+ fi; \
+$(PRINT_FORMAT_MAKING) "Making $(_OPERATION) for $(_TYPE) $(_INSTANCE)"; \
+$(MAKE) -f $(_THEOS_PROJECT_MAKEFILE_NAME) $(_THEOS_MAKEFLAGS) \
+	internal-$(_TYPE)-$(_OPERATION) \
+	_THEOS_CURRENT_TYPE="$(_TYPE)" \
+	THEOS_CURRENT_INSTANCE="$(_INSTANCE)" \
+	_THEOS_CURRENT_OPERATION="$(_OPERATION)" \
+	THEOS_BUILD_DIR="$(_THEOS_ABSOLUTE_BUILD_DIR)"
+
+%.subprojects:
+#  recipe to execute (from '/Users/antoine/theos/makefiles/master/rules.mk', line 149):
+	+@ \
+abs_build_dir=$(_THEOS_ABSOLUTE_BUILD_DIR); \
+if [[ "$(__SUBPROJECTS)" != "" ]]; then \
+  $(PRINT_FORMAT_MAKING) "Making $(_OPERATION) in subprojects of $(_TYPE) $(_INSTANCE)"; \
+  for d in $(__SUBPROJECTS); do \
+    d="$${d%:*}"; \
+    if [[ "$${abs_build_dir}" = "." ]]; then \
+      lbuilddir="."; \
+    else \
+      lbuilddir="$${abs_build_dir}/$$d"; \
+    fi; \
+    if $(MAKE) -C $$d -f $(_THEOS_PROJECT_MAKEFILE_NAME) $(_THEOS_MAKEFLAGS) $(_OPERATION) \
+        THEOS_BUILD_DIR="$$lbuilddir" \
+       ; then\
+       :; \
+    else exit $$?; \
+    fi; \
+  done; \
+ fi
+
+%.mm: %.l.mm
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 17):
+	$(THEOS_BIN_PATH)/logos.pl $(ALL_LOGOSFLAGS) $< > $@
+
+%.mm: %.xmm
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 20):
+	$(THEOS_BIN_PATH)/logos.pl $(ALL_LOGOSFLAGS) $< > $@
+
+%.mm: %.xm
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 23):
+	$(THEOS_BIN_PATH)/logos.pl $(ALL_LOGOSFLAGS) $< > $@
+
+%.m: %.xm
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 26):
+	$(THEOS_BIN_PATH)/logos.pl $(ALL_LOGOSFLAGS) $< > $@
+
+%.swift: %.xswift
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 29):
+	$(THEOS_BIN_PATH)/logos.pl $(ALL_LOGOSFLAGS) $< > $@
+
+/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/%/.stamp: /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 43):
+	@mkdir -p $(dir $@); touch $@
+
+/Users/antoine/theos/makefiles/%.mk:
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 47):
+	
+
+/Users/antoine/theos/makefiles/master/%.mk:
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 48):
+	
+
+ 
+/Users/antoine/theos/makefiles/instance/%.mk:
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 49):
+	
+
+/Users/antoine/theos/makefiles/instance/shared/%.mk:
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 50):
+	
+
+/Users/antoine/theos/makefiles/platform/%.mk:
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 51):
+	
+
+/Users/antoine/theos/makefiles/targets/%.mk:
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 52):
+	
+
+/Users/antoine/theos/makefiles/targets/%/%.mk:
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 53):
+	
+
+# 15 implicit rules, 0 (0.0%) terminal.
+# Files
+
+before-install::
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/package.mk', line 112):
+	@:
+
+before-clean::
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+/Users/antoine/theos/makefiles/common.mk:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'common'
+#  Last modified 2021-03-04 09:00:35.64583446
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 47):
+	
+
+/Users/antoine/theos/makefiles/tweak.mk:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'tweak'
+#  Last modified 2019-05-12 18:33:58.345264661
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 47):
+	
+
+/Users/antoine/theos/makefiles/master/rules.mk:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'rules'
+#  Last modified 2021-03-04 09:00:35.647708215
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 48):
+	
+
+after-clean::
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+before-all::
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Successfully updated.
+
+packages:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 57):
+	@cd $(THEOS_BUILD_DIR); mkdir -p $(THEOS_PACKAGE_DIR_NAME)
+
+package:: internal-package-check stage before-package internal-package after-package
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+stage:: all before-stage internal-stage after-stage
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+do:: all package install
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+before-package:: packages
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+before-package:: /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/_/DEBIAN/control
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+Peach:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/master/tweak.mk', line 21):
+	$(ECHO_MAKE)$(MAKE) -f $(_THEOS_PROJECT_MAKEFILE_NAME) $(_THEOS_MAKEFLAGS) $@.all.tweak.variables
+
+# makefile (from '/Users/antoine/theos/makefiles/package/deb.mk', line 62)
+after-package: __THEOS_LAST_PACKAGE_FILENAME = $(_THEOS_DEB_PACKAGE_FILENAME)
+after-package::
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+# variable set hash-table stats:
+# Load=1/32=3%, Rehash=0, Collisions=0/2=0%
+#  recipe to execute (from '/Users/antoine/theos/makefiles/package.mk', line 18):
+	@echo "$(__THEOS_LAST_PACKAGE_FILENAME)" > "$(_THEOS_LOCAL_DATA_DIR)/last_package"
+
+.PRECIOUS: %.variables %.subprojects
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+after-install:: internal-after-install
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Makefile:
+#  Implicit rule search has not been done.
+#  Last modified 2021-03-04 15:33:20.249358104
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 45):
+	
+
+internal-uninstall::
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/package.mk', line 134):
+	@:
+
+internal-uninstall::
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/install/deb_remote.mk', line 5):
+	$(ECHO_NOTHING)install.exec "$(_THEOS_SUDO_COMMAND) dpkg -r \"$(THEOS_PACKAGE_NAME)\""$(ECHO_END)
+
+/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/_/DEBIAN/control: /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/_/DEBIAN
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/package/deb.mk', line 50):
+	$(ECHO_NOTHING)sed -e 's/\$${LIBSWIFT}/$(_THEOS_DEB_LIBSWIFT_DEPENDS)/g; s/\$${LIBSWIFT_VERSION}/$(_THEOS_DEB_LIBSWIFT_PACKAGE_VERSION)/g; /^[Vv]ersion:/d; /^$$/d; $$a\' "$(_THEOS_DEB_PACKAGE_CONTROL_PATH)" > "$@"$(ECHO_END)
+	$(ECHO_NOTHING)echo "Version: $(_THEOS_INTERNAL_PACKAGE_VERSION)" >> "$@"$(ECHO_END)
+	$(ECHO_NOTHING)echo "Installed-Size: $(shell du $(_THEOS_PLATFORM_DU_EXCLUDE) DEBIAN -ks "$(THEOS_STAGING_DIR)" | cut -f 1)" >> "$@"$(ECHO_END)
+
+after-stage::
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/stage.mk', line 29):
+	@:
+
+uninstall:: before-uninstall internal-uninstall after-uninstall
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+ 
+
+internal-package::
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+internal-package::
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/package/deb.mk', line 59):
+	$(ECHO_NOTHING)COPYFILE_DISABLE=1 $(FAKEROOT) -r $(_THEOS_PLATFORM_DPKG_DEB) -Z$(_THEOS_PLATFORM_DPKG_DEB_COMPRESSION) -z$(THEOS_PLATFORM_DEB_COMPRESSION_LEVEL) -b "$(THEOS_STAGING_DIR)" "$(_THEOS_DEB_PACKAGE_FILENAME)"$(ECHO_END)
+
+internal-stage::
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/stage.mk', line 26):
+	$(ECHO_NOTHING)[ -d $(THEOS_LAYOUT_DIR_NAME) ] && rsync -a "$(THEOS_LAYOUT_DIR_NAME)/" "$(THEOS_STAGING_DIR)" --exclude "DEBIAN" $(_THEOS_RSYNC_EXCLUDE_COMMANDLINE) || true$(ECHO_END)
+
+internal-stage:: Peach.stage.tweak.variables
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/master/tweak.mk', line 9):
+	
+
+before-clean-packages::
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+before-uninstall::
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+clean:: before-clean internal-clean after-clean
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+/Users/antoine/theos/makefiles/targets/iphone.mk:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'iphone'
+#  File does not exist.
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 52):
+	
+
+clean-packages:: before-clean-packages internal-clean-packages after-clean-packages
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+internal-install-check::
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/package.mk', line 79):
+	@if [[ -z "$(_THEOS_PACKAGE_LAST_FILENAME)" ]]; then \
+		$(PRINT_FORMAT_ERROR) "$(MAKE) install and show require that you build a package before you try to install it." >&2; exit 1; \
+	fi
+	@if [[ ! -f "$(_THEOS_PACKAGE_LAST_FILENAME)" ]]; then \
+		$(PRINT_FORMAT_ERROR) "Could not find “$(_THEOS_PACKAGE_LAST_FILENAME)” to install. Aborting." >&2; exit 1; \
+	fi
+
+internal-clean::
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/master/rules.mk', line 70):
+	$(ECHO_CLEANING)rm -rf "$(subst $(_THEOS_OBJ_DIR_EXTENSION),,$(THEOS_OBJ_DIR))"$(ECHO_END)
+	$(ECHO_NOTHING)rm "$(_THEOS_BUILD_SESSION_FILE)"$(ECHO_END)
+	$(ECHO_NOTHING)touch "$(_THEOS_BUILD_SESSION_FILE)"$(ECHO_END)
+	$(ECHO_NOTHING)rm -rf "$(THEOS_STAGING_DIR)"$(ECHO_END)
+
+after-uninstall:: internal-after-uninstall
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Peach.stage.tweak.variables:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/Users/antoine/theos/makefiles/package/deb.mk:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'package/deb'
+#  Last modified 2021-03-04 09:00:35.648921868
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 47):
+	
+
+/Users/antoine/theos/makefiles/targets/_common/iphone.mk:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: '_common/iphone'
+#  Last modified 2021-03-04 09:00:35.658409891
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 52):
+	
+
+/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 37):
+	@mkdir -p $@
+
+Peach.all.tweak.variables:
+#  Precious file (prerequisite of .PRECIOUS).
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'Peach.all.tweak'
+#  Modification time never checked.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := Peach.all.tweak.variables
+# automatic
+# * := Peach.all.tweak
+# automatic
+# < := 
+# automatic
+# + := 
+# automatic
+# % := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# automatic
+# | := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=41/106=39%
+#  recipe to execute (from '/Users/antoine/theos/makefiles/master/rules.mk', line 117):
+	+@ \
+abs_build_dir=$(_THEOS_ABSOLUTE_BUILD_DIR); \
+if [[ "$(__SUBPROJECTS)" != "" ]]; then \
+  $(PRINT_FORMAT_MAKING) "Making $(_OPERATION) in subprojects of $(_TYPE) $(_INSTANCE)"; \
+  for d in $(__SUBPROJECTS); do \
+    d="$${d%:*}"; \
+    if [[ "$${abs_build_dir}" = "." ]]; then \
+      lbuilddir="."; \
+    else \
+      lbuilddir="$${abs_build_dir}/$$d"; \
+    fi; \
+    if $(MAKE) -C $$d -f $(_THEOS_PROJECT_MAKEFILE_NAME) $(_THEOS_MAKEFLAGS) $(_OPERATION) \
+        THEOS_BUILD_DIR="$$lbuilddir" \
+       ; then\
+       :; \
+    else exit $$?; \
+    fi; \
+  done; \
+ fi; \
+$(PRINT_FORMAT_MAKING) "Making $(_OPERATION) for $(_TYPE) $(_INSTANCE)"; \
+$(MAKE) -f $(_THEOS_PROJECT_MAKEFILE_NAME) $(_THEOS_MAKEFLAGS) \
+	internal-$(_TYPE)-$(_OPERATION) \
+	_THEOS_CURRENT_TYPE="$(_TYPE)" \
+	THEOS_CURRENT_INSTANCE="$(_INSTANCE)" \
+	_THEOS_CURRENT_OPERATION="$(_OPERATION)" \
+	THEOS_BUILD_DIR="$(_THEOS_ABSOLUTE_BUILD_DIR)"
+
+before-stage::
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/stage.mk', line 17):
+	$(ECHO_NOTHING)rm -rf "$(THEOS_STAGING_DIR)"$(ECHO_END)
+	$(ECHO_NOTHING)$(FAKEROOT) -c$(ECHO_END)
+	$(ECHO_NOTHING)mkdir -p "$(THEOS_STAGING_DIR)"$(ECHO_END)
+
+/Users/antoine/theos/makefiles/package.mk:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'package'
+#  Last modified 2021-01-16 22:21:01.705344098
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 47):
+	
+
+/Users/antoine/theos/makefiles/targets/_common/darwin_head.mk:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: '_common/darwin_head'
+#  Last modified 2021-01-25 21:18:32.778382669
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 52):
+	
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+all::
+#  Phony target (prerequisite of .PHONY).
+#  Command line target.
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/68=0%
+
+all:: /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/build_session before-all internal-all after-all
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/68=0%
+
+internal-package-check::
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+ 
+#  recipe to execute (from '/Users/antoine/theos/makefiles/package.mk', line 14):
+	@:
+
+show:: internal-install-check
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/package.mk', line 155):
+	$(ECHO_NOTHING)$(_THEOS_PLATFORM_SHOW_IN_FILE_MANAGER) "$(shell cat "$(_THEOS_LOCAL_DATA_DIR)/last_package")"$(ECHO_END)
+
+/Users/antoine/theos/makefiles/legacy.mk:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'legacy'
+#  Last modified 2019-05-12 18:33:58.331054547
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 47):
+	
+
+troubleshoot::
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/master/rules.mk', line 174):
+	@$(PRINT_FORMAT) "Be sure to check the troubleshooting page at https://github.com/theos/theos/wiki/Troubleshooting first."
+	@$(PRINT_FORMAT) "For support with build errors, ask on IRC: http://iphonedevwiki.net/index.php/IRC. If you think you've found a bug in Theos, check the issue tracker at https://github.com/theos/theos/issues."
+	@echo
+	@$(PRINT_FORMAT) "Creating a Ghostbin containing the output of \`make clean all messages=yes\`…"
+	+$(MAKE) -f $(_THEOS_PROJECT_MAKEFILE_NAME) --no-print-directory --no-keep-going clean all messages=yes COLOR=yes 2>&1 | ghost -x 2w - ansi
+
+after-all::
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+/Users/antoine/theos/makefiles/platform/Darwin.mk:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'Darwin'
+#  Last modified 2021-03-04 09:00:35.650183658
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 51):
+	
+
+internal-after-install::
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/package.mk', line 124):
+	$(ECHO_UNLOADING)install.exec "killall $(INSTALL_TARGET_PROCESSES) 2>/dev/null || true"$(ECHO_END)
+
+.NOTPARALLEL:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/var/folders/dv/xtxhwssd1nv7g1p11sn3p4f40000gn/T/stLly12uWR:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
+
+internal-install::
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/package.mk', line 118):
+	@:
+
+internal-install:: internal-install-check
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/install/deb_remote.mk', line 2):
+	$(ECHO_INSTALLING)install.exec "cat > /tmp/_theos_install.deb; $(_THEOS_SUDO_COMMAND) dpkg -i /tmp/_theos_install.deb && rm /tmp/_theos_install.deb" < "$(_THEOS_PACKAGE_LAST_FILENAME)"$(ECHO_END)
+
+/Users/antoine/theos/makefiles/stage.mk:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'stage'
+#  Last modified 2019-05-12 18:33:58.338911268
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 47):
+	
+
+install:: before-install internal-install after-install
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/Users/antoine/theos/makefiles/targets/_common/darwin_tail.mk:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: '_common/darwin_tail'
+#  Last modified 2021-03-04 09:00:35.656172289
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 52):
+	
+
+/Users/antoine/theos/makefiles/install/deb_remote.mk:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'install/deb_remote'
+#  Last modified 2019-05-12 18:33:58.325772688
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 47):
+	
+
+/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/.stamp: /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 40):
+	@mkdir -p $(dir $@); touch $@
+
+/Users/antoine/theos/makefiles/vercmp.mk:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'vercmp'
+#  Last modified 2021-03-04 09:00:35.659198675
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 47):
+	
+
+/Users/antoine/theos/makefiles/targets/Darwin/iphone.mk:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'Darwin/iphone'
+#  Last modified 2019-05-12 18:33:58.340728469
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 52):
+	
+
+internal-after-uninstall::
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/package.mk', line 140):
+	$(ECHO_UNLOADING)install.exec "killall $(INSTALL_TARGET_PROCESSES) 2>/dev/null || true"$(ECHO_END)
+
+internal-clean-packages::
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/master/rules.mk', line 98):
+	$(ECHO_NOTHING)rm -rf $(THEOS_PACKAGE_DIR)/$(THEOS_PACKAGE_NAME)_*-*_$(THEOS_PACKAGE_ARCH).deb$(ECHO_END)
+	$(ECHO_NOTHING)rm -rf $(THEOS_PACKAGE_DIR)/$(THEOS_PACKAGE_NAME)-*-*.$(THEOS_PACKAGE_ARCH).rpm$(ECHO_END)
+
+after-clean-packages::
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+/Users/antoine/theos/makefiles/messages.mk:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'messages'
+#  Last modified 2020-09-20 16:22:24.928904883
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 47):
+	
+
+/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/build_session:
+#  Implicit rule search has not been done.
+#  Last modified 2021-03-04 16:08:37.044539896
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/master/rules.mk', line 104):
+	@mkdir -p $(_THEOS_LOCAL_DATA_DIR)
+
+/Users/antoine/theos/makefiles/master/tweak.mk:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'tweak'
+#  Last modified 2019-05-12 18:33:58.334936886
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 48):
+	
+
+/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/_/DEBIAN:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/package/deb.mk', line 30):
+	$(ECHO_NOTHING)mkdir -p "$(THEOS_STAGING_DIR)/DEBIAN"$(ECHO_END)
+	$(ECHO_NOTHING)[ -d "$(THEOS_LAYOUT_DIR)/DEBIAN" ] && rsync -a "$(THEOS_LAYOUT_DIR)/DEBIAN/" "$(THEOS_STAGING_DIR)/DEBIAN" $(_THEOS_RSYNC_EXCLUDE_COMMANDLINE) || true$(ECHO_END)
+
+ 
+.PHONY: stage before-stage internal-stage after-stage package internal-package-check before-package internal-package after-package all before-all internal-all after-all clean before-clean internal-clean after-clean clean-packages before-clean-packages internal-clean-packages after-clean-packages update-theos
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+update-theos::
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/master/rules.mk', line 170):
+	@$(PRINT_FORMAT_MAKING) "Updating Theos"
+	$(ECHO_NOTHING)$(THEOS_BIN_PATH)/update-theos$(ECHO_END)
+
+# Not a target:
+%.variables:
+#  Precious file (prerequisite of .PRECIOUS).
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+internal-all::
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/68=0%
+
+internal-all:: Peach.all.tweak.variables
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/68=0%
+#  recipe to execute (from '/Users/antoine/theos/makefiles/master/tweak.mk', line 7):
+	
+
+/Users/antoine/theos/makefiles/rules.mk:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'rules'
+#  Last modified 2019-05-12 18:33:58.338499372
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from '/Users/antoine/theos/makefiles/rules.mk', line 47):
+	
+
+# Not a target:
+%.subprojects:
+#  Precious file (prerequisite of .PRECIOUS).
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# files hash-table stats:
+# Load=72/1024=7%, Rehash=0, Collisions=0/271=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 144 / storage = 3358 B / avg = 23 B
+# current buf: size = 8162 B / used = 3358 B / count = 144 / avg = 23 B
+
+# strcache performance: lookups = 324 / hit rate = 55%
+# hash-table stats:
+# Load=144/8192=2%, Rehash=0, Collisions=1/324=0%
+# Finished Make data base on Tue Mar  9 15:25:30 2021
+
+ 

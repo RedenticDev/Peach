@@ -1,0 +1,120 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach'
+ 
+fcntl(): Bad file descriptor
+ 
+make: Entering directory '/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach'
+mkdir -p /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos
+make: Leaving directory '/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach'
+\
+abs_build_dir=.; \
+if [[ "" != "" ]]; then \
+  printf "\e[1;31m> \e[1;3;39m%s…\e[m\n" "Making all in subprojects of tweak Peach"; \
+  for d in ; do \
+    d="${d%:*}"; \
+    if [[ "${abs_build_dir}" = "." ]]; then \
+      lbuilddir="."; \
+    else \
+      lbuilddir="${abs_build_dir}/$d"; \
+    fi; \
+    if make -C $d -f Makefile --no-keep-going COLOR=1 --no-print-directory all \
+        THEOS_BUILD_DIR="$lbuilddir" \
+       ; then\
+       :; \
+    else exit $?; \
+    fi; \
+  done; \
+ fi; \
+printf "\e[1;31m> \e[1;3;39m%s…\e[m\n" "Making all for tweak Peach"; \
+make -f Makefile --no-keep-going COLOR=1 --no-print-directory \
+internal-tweak-all \
+_THEOS_CURRENT_TYPE="tweak" \
+THEOS_CURRENT_INSTANCE="Peach" \
+_THEOS_CURRENT_OPERATION="all" \
+THEOS_BUILD_DIR="."
+ 
+[1;31m> [1;3;39mMaking all for tweak Peach…[m
+ 
+fcntl(): Bad file descriptor
+ 
+for i in Tweak.x; do \
+	if [[ ! -f "$i" ]]; then \
+		printf "\e[0;31m==> \e[1;31mError:\e[m %s\n" "File $i does not exist."  >&2; exit 1; \
+	fi; \
+done
+ 
+fcntl(): Bad file descriptor
+ 
+mkdir -p /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug
+ 
+fcntl(): Bad file descriptor
+ 
+mkdir -p /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/; touch /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/.stamp
+ 
+make -f Makefile --no-keep-going COLOR=1 --no-print-directory \
+	internal-library-compile \
+	_THEOS_CURRENT_TYPE=tweak THEOS_CURRENT_INSTANCE=Peach _THEOS_CURRENT_OPERATION=compile \
+	THEOS_BUILD_DIR="." _THEOS_MAKE_PARALLEL=yes
+ 
+fcntl(): Bad file descriptor
+ 
+mkdir -p /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/arm64
+make -f Makefile --no-print-directory --no-keep-going internal-tweak-compile _THEOS_CURRENT_TYPE="tweak" THEOS_CURRENT_INSTANCE="Peach" _THEOS_CURRENT_OPERATION="compile" THEOS_BUILD_DIR="." THEOS_CURRENT_ARCH="arm64"
+ 
+fcntl(): Bad file descriptor
+ 
+mkdir -p /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/arm64e
+ 
+make -f Makefile --no-print-directory --no-keep-going internal-tweak-compile _THEOS_CURRENT_TYPE="tweak" THEOS_CURRENT_INSTANCE="Peach" _THEOS_CURRENT_OPERATION="compile" THEOS_BUILD_DIR="." THEOS_CURRENT_ARCH="arm64e"
+ 
+fcntl(): Bad file descriptor
+ 
+(mkdir -p /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/arm64/)
+(printf "\e[0;3%im==> \e[1;39m%s…\e[m\n" 1 "Preprocessing Tweak.x"); set -o pipefail; (/Users/antoine/theos/bin/logos.pl -c warnings=error -c generator=MobileSubstrate    Tweak.x > /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/arm64/Tweak.x.m)
+ 
+fcntl(): Bad file descriptor
+ 
+(mkdir -p /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/arm64/)
+(printf "\e[0;3%im==> \e[1;39m%s…\e[m\n" 2 "Compiling Tweak.x (arm64)"); set -o pipefail; (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -x objective-c -c -I"/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach" -I/Users/antoine/theos/include -I/Users/antoine/theos/vendor/include -I/Users/antoine/theos/include/_fallback -include /Users/antoine/theos/Prefix.pch -MT /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/arm64/Tweak.x.5ef8d1fc.o -MMD -MP -MF "/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/arm64/Tweak.x.5ef8d1fc.Td" -fcolor-diagnostics -DTARGET_IPHONE=1 -O0 -Wall -ggdb -Werror  -isysroot "/Users/antoine/theos/sdks/iPhoneOS13.5.sdk" -target arm64-apple-ios11.2 -fmodules -fcxx-modules -fmodule-name=Peach -fbuild-session-file=/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/build_session -fmodules-prune-after=345600 -fmodules-prune-interval=86400 -fmodules-validate-once-per-build-session   -fobjc-arc -DDEBUG -O0  -DTHEOS_INSTANCE_NAME="\"Peach\"" -fmodules -fcxx-modules -fmodule-name=Peach -fbuild-session-file=/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/build_session -fmodules-prune-after=345600 -fmodules-prune-interval=86400 -fmodules-validate-once-per-build-session  -arch arm64      /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/arm64/Tweak.x.m -o /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/arm64/Tweak.x.5ef8d1fc.o)
+(mkdir -p /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/arm64e/)
+(printf "\e[0;3%im==> \e[1;39m%s…\e[m\n" 1 "Preprocessing Tweak.x"); set -o pipefail; (/Users/antoine/theos/bin/logos.pl -c warnings=error -c generator=MobileSubstrate    Tweak.x > /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/arm64e/Tweak.x.m)
+ 
+fcntl(): Bad file descriptor
+ 
+fcntl(): Bad file descriptor
+ 
+(mkdir -p /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/arm64e/)
+(printf "\e[0;3%im==> \e[1;39m%s…\e[m\n" 2 "Compiling Tweak.x (arm64e)"); set -o pipefail; (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -x objective-c -c -I"/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach" -I/Users/antoine/theos/include -I/Users/antoine/theos/vendor/include -I/Users/antoine/theos/include/_fallback -include /Users/antoine/theos/Prefix.pch -MT /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/arm64e/Tweak.x.20dc6bfc.o -MMD -MP -MF "/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/arm64e/Tweak.x.20dc6bfc.Td" -fcolor-diagnostics -DTARGET_IPHONE=1 -O0 -Wall -ggdb -Werror  -isysroot "/Users/antoine/theos/sdks/iPhoneOS13.5.sdk" -target arm64e-apple-ios11.2 -fmodules -fcxx-modules -fmodule-name=Peach -fbuild-session-file=/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/build_session -fmodules-prune-after=345600 -fmodules-prune-interval=86400 -fmodules-validate-once-per-build-session   -fobjc-arc -DDEBUG -O0  -DTHEOS_INSTANCE_NAME="\"Peach\"" -fmodules -fcxx-modules -fmodule-name=Peach -fbuild-session-file=/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/build_session -fmodules-prune-after=345600 -fmodules-prune-interval=86400 -fmodules-validate-once-per-build-session  -arch arm64e      /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/arm64e/Tweak.x.m -o /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/arm64e/Tweak.x.20dc6bfc.o)
+ 
+fcntl(): Bad file descriptor
+ 
+(mkdir -p /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/arm64)
+(printf "\e[0;3%im==> \e[1;39m%s…\e[m\n" 3 "Linking tweak Peach (arm64)"); set -o pipefail; (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -fcolor-diagnostics -L/Users/antoine/theos/lib -ggdb -L/Users/antoine/theos/vendor/lib -lobjc -framework Foundation -framework CoreFoundation              -F/Users/antoine/theos/vendor/lib -framework CydiaSubstrate -dynamiclib -install_name "/Library/MobileSubstrate/DynamicLibraries/Peach.dylib"  -isysroot "/Users/antoine/theos/sdks/iPhoneOS13.5.sdk" -target arm64-apple-ios11.2  -multiply_defined suppress -stdlib=libc++ -lc++  -arch arm64  -O0 -o "/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/arm64/Peach.dylib" /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/arm64/Tweak.x.5ef8d1fc.o)
+(printf "\e[0;3%im==> \e[1;39m%s…\e[m\n" 4 "Generating debug symbols for Peach"); set -o pipefail; (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil "/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/arm64/Peach.dylib")
+ 
+fcntl(): Bad file descriptor
+ 
+(mkdir -p /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/arm64e)
+(printf "\e[0;3%im==> \e[1;39m%s…\e[m\n" 3 "Linking tweak Peach (arm64e)"); set -o pipefail; (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -fcolor-diagnostics -L/Users/antoine/theos/lib -ggdb -L/Users/antoine/theos/vendor/lib -lobjc -framework Foundation -framework CoreFoundation              -F/Users/antoine/theos/vendor/lib -framework CydiaSubstrate -dynamiclib -install_name "/Library/MobileSubstrate/DynamicLibraries/Peach.dylib"  -isysroot "/Users/antoine/theos/sdks/iPhoneOS13.5.sdk" -target arm64e-apple-ios11.2  -multiply_defined suppress -stdlib=libc++ -lc++  -arch arm64e  -O0 -o "/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/arm64e/Peach.dylib" /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/arm64e/Tweak.x.20dc6bfc.o)
+(printf "\e[0;3%im==> \e[1;39m%s…\e[m\n" 4 "Generating debug symbols for Peach"); set -o pipefail; (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil "/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/arm64e/Peach.dylib")
+ 
+fcntl(): Bad file descriptor
+ 
+(printf "\e[0;3%im==> \e[1;39m%s…\e[m\n" 4 "Merging tweak Peach"); set -o pipefail; (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo -arch arm64 /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/arm64/Peach.dylib -arch arm64e /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/arm64e/Peach.dylib -create -output "/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/Peach.dylib.47ba6b93.unsigned")
+ 
+fcntl(): Bad file descriptor
+ 
+(printf "\e[0;3%im==> \e[1;39m%s…\e[m\n" 4 "Signing Peach"); set -o pipefail; (CODESIGN_ALLOCATE=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/codesign_allocate  ldid -S "/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/Peach.dylib.47ba6b93.unsigned" && mv "/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/Peach.dylib.47ba6b93.unsigned" "/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/Peach.dylib")
+ 
+rm /Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach/.theos/obj/debug/Peach.dylib.47ba6b93.unsigned
+ 
+fcntl(): Bad file descriptor
+ 
+:
+ 
+fcntl(): Bad file descriptor
+ 
+:
+ 
+make: Leaving directory '/Users/antoine/OneDrive/Documents/Programmation/RedenticDev/Tweaks/Peach'
+ 

@@ -1,0 +1,12 @@
+Package: com.redenticdev.peach
+Name: Peach
+Version: 1.1.0
+Architecture: iphoneos-arm
+Description: Hacky utilities for Fruitz app
+Icon: https://redentic.dev/depictions/com.redenticdev.peach/icon.png
+Depiction: https://redentic.dev/depictions/?p=com.redenticdev.peach
+SileoDepiction: https://redentic.dev/depictions/com.redenticdev.peach/sileo.json
+Maintainer: RedenticDev <redenticdev@gmail.com>
+Author: RedenticDev <redenticdev@gmail.com>
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000)
