@@ -55,7 +55,7 @@
 
     if (orig) {
         UILongPressGestureRecognizer *revealTap = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(peach_unblurImage:)];
-        revealTap.minimumPressDuration = .5;
+        revealTap.minimumPressDuration = .25;
         [self addGestureRecognizer:revealTap];
 
         UITapGestureRecognizer *detailTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(peach_openImageInDetails:)];
@@ -68,15 +68,28 @@
 
 %new
 -(void)peach_unblurImage:(UILongPressGestureRecognizer *)gesture {
-    if (self.revealed) return;
-    if (gesture.state == UIGestureRecognizerStateBegan) [self peach_vibrateWithType:1];
-    if (gesture.state == UIGestureRecognizerStateEnded) {
+    if (self.revealed || !self.image) return;
+    if (gesture.state == UIGestureRecognizerStateBegan) {
+        [self peach_vibrateWithType:1];
+        UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithFrame:self.bounds];
+        [self addSubview:spinner];
         // Get URL
         NSURL *profileURL = ((RCTImageSource *)((RCTImageView *)self.superview).imageSources[0]).request.URL;
-        // Replace image
-        self.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:profileURL]];
-        // Vibrate stronger
-        [self peach_vibrateWithType:2];
+        [spinner startAnimating];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            UIImage *deblurredProfilePicture = [UIImage imageWithData:[NSData dataWithContentsOfURL:profileURL]];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                // Replace image
+                [spinner stopAnimating];
+                [spinner removeFromSuperview];
+                [UIView transitionWithView:self duration:.3 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+                    self.image = deblurredProfilePicture;
+                } completion:^(BOOL finished) {
+                    // Vibrate stronger
+                    if (finished) [self peach_vibrateWithType:2];
+                }];
+            });
+        });
         self.revealed = YES;
     }
 }
