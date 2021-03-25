@@ -164,7 +164,7 @@
                     NSLog(@"[Peach] Instagram found: %@", supposedInstagram);
                     // Editing text
                     NSMutableAttributedString *newBio = [textView.attributedText mutableCopy];
-                    [newBio addAttribute:NSLinkAttributeName value:[NSURL URLWithString:[@"https://instagr.am/" stringByAppendingString:[supposedInstagram stringByReplacingOccurrencesOfString:@"@" withString:@""]]] range:[textView.text rangeOfString:supposedInstagram]];
+                    [newBio addAttribute:NSLinkAttributeName value:[NSURL URLWithString:[@"https://instagram.com/" stringByAppendingString:[supposedInstagram stringByReplacingOccurrencesOfString:@"@" withString:@""]]] range:[textView.text rangeOfString:supposedInstagram]];
                     textView.attributedText = newBio;
                 } else {
                     NSLog(@"[Peach] No instagram found.");
