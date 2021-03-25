@@ -1,6 +1,6 @@
 Package: com.redenticdev.peach
 Name: Peach
-Version: 1.2.1
+Version: 1.2.2
 Architecture: iphoneos-arm
 Description: Hacky utilities for Fruitz app
 Icon: https://redentic.dev/depictions/com.redenticdev.peach/icon.png

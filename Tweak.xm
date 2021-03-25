@@ -136,24 +136,26 @@
                 [self removeFromSuperview];
                 // Finding instagram
                 __block NSString *supposedInstagram;
-                NSString *text = [[[[[[textStorage.string
+                NSString *text = [[[[[[[[textStorage.string
                     stringByReplacingOccurrencesOfString:@":" withString:@" "]
                     stringByReplacingOccurrencesOfString:@"\n" withString:@" "]
                     stringByReplacingOccurrencesOfString:@"📸" withString:@"📸 "]
                     stringByReplacingOccurrencesOfString:@"," withString:@""]
                     stringByReplacingOccurrencesOfString:@"?" withString:@""]
-                    stringByReplacingOccurrencesOfString:@"!" withString:@""];
+                    stringByReplacingOccurrencesOfString:@"!" withString:@""]
+                    stringByReplacingOccurrencesOfString:@"(" withString:@""]
+                    stringByReplacingOccurrencesOfString:@")" withString:@""];
                 NSMutableArray<NSString *> *words = [[text componentsSeparatedByString:@" "] mutableCopy];
                 [words removeObject:@""];
                 [words enumerateObjectsUsingBlock:^(NSString *string, NSUInteger index, BOOL *stop) {
                     if ([string hasPrefix:@"@"]) {
                         NSLog(@"[Peach] Method: \"@\" detected");
-                        supposedInstagram = [[string lowercaseString] stringByReplacingOccurrencesOfString:@"@" withString:@""];
+                        supposedInstagram = [string lowercaseString];
                         *stop = YES;
                     } else if ([[string lowercaseString] containsString:@"insta"] || [[string lowercaseString] isEqualToString:@"📸"] || [[string lowercaseString] isEqualToString:@"ig"]) {
                         NSLog(@"[Peach] Method: \"insta\", \"IG\" or \"📸\"");
                         if (index + 1 < [words count]) {
-                            supposedInstagram = [[words objectAtIndex:index + 1] stringByReplacingOccurrencesOfString:@"@" withString:@""];
+                            supposedInstagram = [words objectAtIndex:index + 1];
                             *stop = YES;
                         }
                     }
@@ -162,7 +164,7 @@
                     NSLog(@"[Peach] Instagram found: %@", supposedInstagram);
                     // Editing text
                     NSMutableAttributedString *newBio = [textView.attributedText mutableCopy];
-                    [newBio addAttribute:NSLinkAttributeName value:[NSURL URLWithString:[@"https://instagram.com/" stringByAppendingString:supposedInstagram]] range:[textView.text rangeOfString:supposedInstagram]];
+                    [newBio addAttribute:NSLinkAttributeName value:[NSURL URLWithString:[@"https://instagr.am/" stringByAppendingString:[supposedInstagram stringByReplacingOccurrencesOfString:@"@" withString:@""]]] range:[textView.text rangeOfString:supposedInstagram]];
                     textView.attributedText = newBio;
                 } else {
                     NSLog(@"[Peach] No instagram found.");
