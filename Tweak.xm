@@ -1,8 +1,14 @@
 #import <AudioToolbox/AudioServices.h>
 #import "PCHImageViewController.h"
 
+#pragma mark - Interfaces
+@interface FFFastImageSource : NSObject
+@property (nonatomic, strong, readwrite) NSURL *url;
+@end
+
 @interface FFFastImageView : UIImageView
 -(id)_viewControllerForAncestor;
+@property (nonatomic, strong, readwrite) FFFastImageSource *source;
 @end
 
 @interface RCTUIImageViewAnimated : UIImageView
@@ -22,52 +28,70 @@
 @interface RCTTextView : UIView
 @end
 
-// Images in profiles
+@interface BVLinearGradient : UIView
+@end
+
+@interface UIImageAsset (Peach)
+@property (nonatomic, copy) NSString *assetName;
+@end
+
+#pragma mark - Hooks
+// Images in profiles / profile pictures
 %hook FFFastImageView
 
--(id)initWithFrame:(CGRect)arg1 {
-    id orig = %orig;
-
-    if (orig) {
+- (instancetype)initWithFrame:(CGRect)arg1 {
+    if ((self = %orig)) {
         UILongPressGestureRecognizer *detailTap = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(peach_openImageInDetails:)];
         detailTap.minimumPressDuration = .2;
         [self addGestureRecognizer:detailTap];
 
         self.userInteractionEnabled = YES;
     }
-    return orig;
+    return self;
+}
+
+// Peach in logo: I had to use layoutSubviews cause frame is nil in usual methods for a reason
+- (void)layoutSubviews {
+    %orig;
+    if ([self.source.url.lastPathComponent isEqualToString:@"fruitz_nav.png"] && self.subviews.count == 0) {
+        UIImageView *hookedPeach = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width - 32, self.frame.size.height - 32, 32, 32)];
+        hookedPeach.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"peach_shadow" ofType:@"png" inDirectory:@"assets/app/assets/artworks/"]];
+        [self addSubview:hookedPeach];
+        NSLog(@"[Peach] Pimped logo");
+    }
 }
 
 %new
--(void)peach_openImageInDetails:(UILongPressGestureRecognizer *)gesture {
-    [self._viewControllerForAncestor presentViewController:[[UINavigationController alloc] initWithRootViewController:[[PCHImageViewController alloc] initWithImage:self.image]] animated:YES completion:nil];
+- (void)peach_openImageInDetails:(UILongPressGestureRecognizer *)gesture {
+    if (![self.source.url.scheme isEqualToString:@"file"]) {
+        [self._viewControllerForAncestor presentViewController:[[UINavigationController alloc] initWithRootViewController:[[PCHImageViewController alloc] initWithImage:self.image]] animated:YES completion:nil];
+    }
 }
 
 %end
 
-// Matches that can be revealed by paying
+// Matches that can be revealed by paying in the reveal page
 %hook RCTUIImageViewAnimated
 
 %property (nonatomic, assign) BOOL revealed;
 
--(id)initWithFrame:(CGRect)arg1 {
-    id orig = %orig;
-
-    if (orig) {
+- (instancetype)initWithFrame:(CGRect)arg1 {
+    if ((self = %orig)) {
         UILongPressGestureRecognizer *revealTap = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(peach_unblurImage:)];
         revealTap.minimumPressDuration = .25;
         [self addGestureRecognizer:revealTap];
 
-        UITapGestureRecognizer *detailTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(peach_openImageInDetails:)];
+        UITapGestureRecognizer *detailTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(peach_openRevealedImageInDetails:)];
         [self addGestureRecognizer:detailTap];
 
         self.userInteractionEnabled = YES;
+        self.revealed = NO;
     }
-    return orig;
+    return self;
 }
 
 %new
--(void)peach_unblurImage:(UILongPressGestureRecognizer *)gesture {
+- (void)peach_unblurImage:(UILongPressGestureRecognizer *)gesture {
     if (self.revealed || !self.image) return;
     if (gesture.state == UIGestureRecognizerStateBegan) {
         [self peach_vibrateWithType:1];
@@ -95,13 +119,13 @@
 }
 
 %new
--(void)peach_openImageInDetails:(UITapGestureRecognizer *)gesture {
+- (void)peach_openRevealedImageInDetails:(UITapGestureRecognizer *)gesture {
     if (!self.revealed) return;
     if (gesture.state == UIGestureRecognizerStateEnded) [self._viewControllerForAncestor presentViewController:[[UINavigationController alloc] initWithRootViewController:[[PCHImageViewController alloc] initWithImage:self.image]] animated:YES completion:nil];
 }
 
 %new
--(void)peach_vibrateWithType:(int)type {
+- (void)peach_vibrateWithType:(int)type {
     if ([[[UIDevice currentDevice] valueForKey:@"_feedbackSupportLevel"] integerValue] > 1) {
         if (type == 1) {
             [[[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleMedium] impactOccurred];
@@ -109,7 +133,11 @@
             [[[UINotificationFeedbackGenerator alloc] init] notificationOccurred:UINotificationFeedbackTypeSuccess];
         }
     } else {
-        AudioServicesPlaySystemSound(1519);
+        if (type == 1) {
+            AudioServicesPlaySystemSound(1519);
+        } else if (type == 2) {
+            AudioServicesPlaySystemSound(1520);
+        }
     }
 }
 
@@ -118,14 +146,14 @@
 // Parse Instagram accounts
 %hook RCTTextView
 
--(void)setTextStorage:(NSTextStorage *)textStorage contentFrame:(CGRect)contentFrame descendantViews:(NSArray<UIView *> *)descendantViews {
+- (void)setTextStorage:(NSTextStorage *)textStorage contentFrame:(CGRect)contentFrame descendantViews:(NSArray<UIView *> *)descendantViews {
     %orig;
     // searching for bio
     dispatch_async(dispatch_get_main_queue(), ^{
         for (UIView *sub in self.superview.superview.subviews) {
             if ([sub isKindOfClass:[%c(RCTTextView) class]] && [MSHookIvar<NSTextStorage *>((RCTTextView *)sub, "_textStorage").string isEqualToString:@"Bio"]) {
                 NSLog(@"[Peach] Bio found (%p)", self);
-                // Swapping shitty RCTTexView to UITextView
+                // Swapping shitty RCTTextView to UITextView
                 UITextView *textView = [[UITextView alloc] initWithFrame:self.frame textContainer:MSHookIvar<NSTextStorage *>(self, "_textStorage").layoutManagers.firstObject.textContainers.firstObject];
                 textView.editable = NO;
                 textView.selectable = YES;
@@ -170,6 +198,44 @@
                     NSLog(@"[Peach] No instagram found.");
                 }
                 break;
+            }
+        }
+    });
+}
+
+%end
+
+// Removing "Reveal" button
+%hook BVLinearGradient
+
+- (void)didMoveToSuperview { // FIXME: causes lag + EXEC_BAD_ACCESS crash sometimes
+    %orig;
+    // RCTView = 30 589 315 48 -> button to remove
+    //   BVLinearGradient = 0 0 315 48 -> white bg
+    //   RCTView = 267 4 40 40 -> image area
+    //     RCTImageView = 0 0 40 40 -> imageview
+    //       RCTUIImageViewAnimated = 0 0 40 40 -> image (assets/app/assets/artworks/premium/heart.png)
+    //   RCTView = 24 0 267 48 -> text area
+    // ----- RCTTextView = 100.5 10.5 66 27 -> text
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if ([self.superview isKindOfClass:%c(RCTView)] && self.superview.subviews.count == 3) {
+            for (UIView *first in self.superview.subviews) {
+                if (first.subviews.count > 0 && first.subviews[0].subviews.count > 0
+                    && [first.subviews[0].subviews[0] isKindOfClass:%c(RCTUIImageViewAnimated)]
+                    && [((RCTUIImageViewAnimated *)first.subviews[0].subviews[0]).image.imageAsset.assetName isEqualToString:@"assets/app/assets/artworks/premium/heart.png"]) {
+                        // Good start
+                        for (UIView *sec in self.superview.subviews) {
+                            if (sec.subviews.count > 0 && [sec.subviews[0] isKindOfClass:%c(RCTTextView)]) {
+                                // Almost 100% sure it's good
+                                NSLog(@"[Peach] Removing button %p after detecting %p", self.superview.superview, self);
+                                [UIView transitionWithView:self.superview.superview duration:.3 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+                                    [self.superview removeFromSuperview];
+                                } completion:nil];
+                                break;
+                            }
+                        }
+                    break;
+                }
             }
         }
     });

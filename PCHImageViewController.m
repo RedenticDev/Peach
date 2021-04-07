@@ -80,7 +80,13 @@
 
 - (void)zoomToInitialScale:(UIGestureRecognizer *)sender {
 	if (self.scrollView.zoomScale == self.scrollView.minimumZoomScale) {
-		[self.scrollView setZoomScale:2.0 animated:YES];
+		CGPoint center = [self.imageView convertPoint:[sender locationInView:sender.view] fromView:self.scrollView];
+		CGRect zoomRect;
+		zoomRect.size.height = self.imageView.frame.size.height / 2.0;
+		zoomRect.size.width = self.imageView.frame.size.width / 2.0;
+		zoomRect.origin.x = center.x - (zoomRect.size.width / 2.0);
+		zoomRect.origin.y = center.y - (zoomRect.size.height / 2.0);
+		[self.scrollView zoomToRect:zoomRect animated:YES];
 	} else {
 		[self.scrollView setZoomScale:self.scrollView.minimumZoomScale animated:YES];
 	}
