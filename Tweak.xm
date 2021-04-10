@@ -1,7 +1,8 @@
-#import <AudioToolbox/AudioServices.h>
 #import "PCHImageViewController.h"
+#import "PCHHapticManager.h"
 
 #pragma mark - Interfaces
+// FF
 @interface FFFastImageSource : NSObject
 @property (nonatomic, strong, readwrite) NSURL *url;
 @end
@@ -11,13 +12,16 @@
 @property (nonatomic, strong, readwrite) FFFastImageSource *source;
 @end
 
+// RCT
+@interface RCTView : UIView
+@end
+
 @interface RCTUIImageViewAnimated : UIImageView
 @property (nonatomic, assign) BOOL revealed;
 -(id)_viewControllerForAncestor;
--(void)peach_vibrateWithType:(int)type;
 @end
 
-@interface RCTImageView : UIView
+@interface RCTImageView : RCTView
 @property (nonatomic, copy, readwrite) NSArray *imageSources;
 @end
 
@@ -28,7 +32,7 @@
 @interface RCTTextView : UIView
 @end
 
-@interface BVLinearGradient : UIView
+@interface BVLinearGradient : RCTView
 @end
 
 @interface UIImageAsset (Peach)
@@ -36,6 +40,27 @@
 @end
 
 #pragma mark - Hooks
+// Haptic - not implemented
+%hook RCTView
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    NSLog(@"[Peach] Testing eligibility for view %p", self);
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        if (self.subviews.count == 1 && self.subviews[0].subviews.count == 1
+            && [self.subviews[0].subviews[0] isKindOfClass:%c(FFFastImageView)]) {
+            NSLog(@"[Peach] View eligible for haptics (%p)", self);
+            FFFastImageView *button = (FFFastImageView *)self.subviews[0].subviews[0];
+            if ([button.source.url.lastPathComponent containsString:@"swipe_pass"]) {
+                [PCHHapticManager triggerHapticForIntensity:1];
+            } else if ([button.source.url.lastPathComponent containsString:@"swipe_like"]) {
+                [PCHHapticManager triggerHapticForIntensity:2];
+            }
+        }
+    });
+}
+
+%end
+
 // Images in profiles / profile pictures
 %hook FFFastImageView
 
@@ -63,7 +88,7 @@
 
 %new
 - (void)peach_openImageInDetails:(UILongPressGestureRecognizer *)gesture {
-    if (![self.source.url.scheme isEqualToString:@"file"]) {
+    if (self.image && ![self.source.url.scheme isEqualToString:@"file"]) {
         [self._viewControllerForAncestor presentViewController:[[UINavigationController alloc] initWithRootViewController:[[PCHImageViewController alloc] initWithImage:self.image]] animated:YES completion:nil];
     }
 }
@@ -94,7 +119,7 @@
 - (void)peach_unblurImage:(UILongPressGestureRecognizer *)gesture {
     if (self.revealed || !self.image) return;
     if (gesture.state == UIGestureRecognizerStateBegan) {
-        [self peach_vibrateWithType:1];
+        [PCHHapticManager triggerHapticForIntensity:1];
         UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithFrame:self.bounds];
         [self addSubview:spinner];
         // Get URL
@@ -110,7 +135,7 @@
                     self.image = deblurredProfilePicture;
                 } completion:^(BOOL finished) {
                     // Vibrate stronger
-                    if (finished) [self peach_vibrateWithType:2];
+                    if (finished) [PCHHapticManager triggerHapticForIntensity:3];
                 }];
             });
         });
@@ -120,25 +145,8 @@
 
 %new
 - (void)peach_openRevealedImageInDetails:(UITapGestureRecognizer *)gesture {
-    if (!self.revealed) return;
+    if (!self.revealed || !self.image) return;
     if (gesture.state == UIGestureRecognizerStateEnded) [self._viewControllerForAncestor presentViewController:[[UINavigationController alloc] initWithRootViewController:[[PCHImageViewController alloc] initWithImage:self.image]] animated:YES completion:nil];
-}
-
-%new
-- (void)peach_vibrateWithType:(int)type {
-    if ([[[UIDevice currentDevice] valueForKey:@"_feedbackSupportLevel"] integerValue] > 1) {
-        if (type == 1) {
-            [[[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleMedium] impactOccurred];
-        } else if (type == 2) {
-            [[[UINotificationFeedbackGenerator alloc] init] notificationOccurred:UINotificationFeedbackTypeSuccess];
-        }
-    } else {
-        if (type == 1) {
-            AudioServicesPlaySystemSound(1519);
-        } else if (type == 2) {
-            AudioServicesPlaySystemSound(1520);
-        }
-    }
 }
 
 %end
@@ -205,7 +213,7 @@
 
 %end
 
-// Removing "Reveal" button
+// Removing "Reveal" button - not implemented
 %hook BVLinearGradient
 
 - (void)didMoveToSuperview { // FIXME: causes lag + EXEC_BAD_ACCESS crash sometimes

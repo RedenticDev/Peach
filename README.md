@@ -2,6 +2,10 @@
 Hacky utilities for Fruitz app
 
 ## History
+**v1.2.4**
+- Fixed empty images being able to be opened in detail
+- Rewrote Haptics Manager, adding support for iPhone 6 and lower
+
 **v1.2.3**
 - Disabled long-press gesture for non-profile-picture images
 - Improved double tap to zoom
