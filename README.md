@@ -2,19 +2,19 @@
 Hacky utilities for Fruitz app
 
 ## History
-**v1.3.1** - 0//2021
+<!-- **v1.3.1** - 0//2021
 - Added spinner for images loading
-- Added auto-unblur support for little images on Basket page
+- Added auto-unblur support for little images on Basket page -->
 
-**v1.3.0** - 0//2021
+**v1.3.0** - 05/09/2021
 - Added Dark Mode support
 - Prevented words like "instant" to be triggers for Instagram detection
 
-**v1.2.4** 04/10/2021
+**v1.2.4** - 04/10/2021
 - Fixed empty images being able to be opened in detail
 - Rewrote Haptics Manager, adding support for iPhone 6 and lower
 
-**v1.2.3** 04/07/2021
+**v1.2.3** - 04/07/2021
 - Disabled long-press gesture for non-profile-picture images
 - Improved double tap to zoom
 - Added view in title indicating that Peach is loaded
