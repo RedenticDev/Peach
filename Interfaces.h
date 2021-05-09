@@ -37,6 +37,9 @@
 -(NSURLRequest *)request;
 @end
 
+@interface RCTUITextView : UITextView
+@end
+
 @interface RCTTextView : UIView
 @end
 

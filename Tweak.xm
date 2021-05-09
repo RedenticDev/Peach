@@ -1,6 +1,7 @@
 #import "Interfaces.h"
 
 #pragma mark - Hooks
+
 // Haptic - not implemented
 /* %hook RCTView
 
@@ -142,8 +143,10 @@
 - (void)setTextStorage:(NSTextStorage *)textStorage contentFrame:(CGRect)contentFrame descendantViews:(NSArray<UIView *> *)descendantViews {
     // dark mode
     NSMutableDictionary *attributes = [[textStorage attributesAtIndex:0 effectiveRange:nil] mutableCopy];
-    [attributes setObject:[UIColor systemTextColorIfEligible:attributes[NSForegroundColorAttributeName]] forKey:NSForegroundColorAttributeName];
-    [textStorage setAttributes:attributes range:NSMakeRange(0, textStorage.length)];
+    if (attributes[NSForegroundColorAttributeName]) {
+        [attributes setObject:[UIColor systemTextColorIfEligible:attributes[NSForegroundColorAttributeName]] forKey:NSForegroundColorAttributeName];
+        [textStorage setAttributes:attributes range:NSMakeRange(0, textStorage.length)];
+    }
 
     %orig(textStorage, contentFrame, descendantViews);
 
@@ -291,6 +294,35 @@
 
 - (UIColor *)backgroundColor {
     return [UIColor systemBackgroundColorIfEligible:%orig];
+}
+
+%end
+
+%hook RCTUITextView
+
+- (void)textDidChange {
+    %orig;
+    if (@available(iOS 13.0, *)) {
+        self.textColor = [UIColor labelColor];
+    }
+}
+
+- (NSDictionary *)defaultTextAttributes {
+    if (@available(iOS 13.0, *)) {
+        NSMutableDictionary *attributes = [%orig mutableCopy];
+        if (attributes[NSForegroundColorAttributeName]) {
+            [attributes setObject:[UIColor systemTextColorIfEligible:attributes[NSForegroundColorAttributeName]] forKey:NSForegroundColorAttributeName];
+            return attributes;
+        }
+    }
+    return %orig;
+}
+
+- (UIColor *)textColor {
+    if (@available(iOS 13.0, *)) {
+        return [UIColor labelColor];
+    }
+    return %orig;
 }
 
 %end
