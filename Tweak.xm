@@ -1,47 +1,8 @@
-#import "PCHImageViewController.h"
-#import "PCHHapticManager.h"
-
-#pragma mark - Interfaces
-// FF
-@interface FFFastImageSource : NSObject
-@property (nonatomic, strong, readwrite) NSURL *url;
-@end
-
-@interface FFFastImageView : UIImageView
--(id)_viewControllerForAncestor;
-@property (nonatomic, strong, readwrite) FFFastImageSource *source;
-@end
-
-// RCT
-@interface RCTView : UIView
-@end
-
-@interface RCTUIImageViewAnimated : UIImageView
-@property (nonatomic, assign) BOOL revealed;
--(id)_viewControllerForAncestor;
-@end
-
-@interface RCTImageView : RCTView
-@property (nonatomic, copy, readwrite) NSArray *imageSources;
-@end
-
-@interface RCTImageSource : NSObject
--(NSURLRequest *)request;
-@end
-
-@interface RCTTextView : UIView
-@end
-
-@interface BVLinearGradient : RCTView
-@end
-
-@interface UIImageAsset (Peach)
-@property (nonatomic, copy) NSString *assetName;
-@end
+#import "Interfaces.h"
 
 #pragma mark - Hooks
 // Haptic - not implemented
-%hook RCTView
+/* %hook RCTView
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     NSLog(@"[Peach] Testing eligibility for view %p", self);
@@ -59,10 +20,12 @@
     });
 }
 
-%end
+%end */
 
 // Images in profiles / profile pictures
 %hook FFFastImageView
+
+// %property (nonatomic, strong) UIActivityIndicatorView *loadingSpinner;
 
 - (instancetype)initWithFrame:(CGRect)arg1 {
     if ((self = %orig)) {
@@ -85,6 +48,28 @@
         NSLog(@"[Peach] Pimped logo");
     }
 }
+
+/*- (void)setHasCompleted:(BOOL)completed {
+    NSLog(@"[Peach] (%p) self.hasCompleted: %d, completed: %d -> interesting? %d", self, self.hasCompleted, completed, (!completed && self.hasCompleted) || (completed && !self.hasCompleted && self.loadingSpinner));
+    if (!completed && self.hasCompleted) {
+        NSLog(@"[Peach] Spinny needed (%p)", self);
+        // Start spinny
+        if (!self.loadingSpinner) {
+            NSLog(@"[Peach] Spinny created");
+            self.loadingSpinner = [[UIActivityIndicatorView alloc] initWithFrame:self.bounds];
+            self.loadingSpinner.color = [UIColor blackColor];
+            [self addSubview:self.loadingSpinner];
+        }
+        [self.loadingSpinner startAnimating];
+        NSLog(@"[Peach] Spinny started");
+    } else if (completed && !self.hasCompleted && self.loadingSpinner) {
+        // Stop spinny
+        [self.loadingSpinner stopAnimating];
+        [self.loadingSpinner removeFromSuperview];
+        NSLog(@"[Peach] Spinny stopped (%p)", self);
+    }
+    %orig;
+}*/
 
 %new
 - (void)peach_openImageInDetails:(UILongPressGestureRecognizer *)gesture {
@@ -155,7 +140,13 @@
 %hook RCTTextView
 
 - (void)setTextStorage:(NSTextStorage *)textStorage contentFrame:(CGRect)contentFrame descendantViews:(NSArray<UIView *> *)descendantViews {
-    %orig;
+    // dark mode
+    NSMutableDictionary *attributes = [[textStorage attributesAtIndex:0 effectiveRange:nil] mutableCopy];
+    [attributes setObject:[UIColor systemTextColorIfEligible:attributes[NSForegroundColorAttributeName]] forKey:NSForegroundColorAttributeName];
+    [textStorage setAttributes:attributes range:NSMakeRange(0, textStorage.length)];
+
+    %orig(textStorage, contentFrame, descendantViews);
+
     // searching for bio
     dispatch_async(dispatch_get_main_queue(), ^{
         for (UIView *sub in self.superview.superview.subviews) {
@@ -188,7 +179,10 @@
                         NSLog(@"[Peach] Method: \"@\" detected");
                         supposedInstagram = [string lowercaseString];
                         *stop = YES;
-                    } else if ([[string lowercaseString] containsString:@"insta"] || [[string lowercaseString] isEqualToString:@"📸"] || [[string lowercaseString] isEqualToString:@"ig"]) {
+                    } else if ([[string lowercaseString] isEqualToString:@"instagram"] || 
+                                [[string lowercaseString] isEqualToString:@"insta"] || 
+                                [[string lowercaseString] isEqualToString:@"📸"] || 
+                                [[string lowercaseString] isEqualToString:@"ig"]) {
                         NSLog(@"[Peach] Method: \"insta\", \"IG\" or \"📸\"");
                         if (index + 1 < [words count]) {
                             supposedInstagram = [words objectAtIndex:index + 1];
@@ -214,7 +208,7 @@
 %end
 
 // Removing "Reveal" button - not implemented
-%hook BVLinearGradient
+/* %hook BVLinearGradient
 
 - (void)didMoveToSuperview { // FIXME: causes lag + EXEC_BAD_ACCESS crash sometimes
     %orig;
@@ -247,6 +241,67 @@
             }
         }
     });
+}
+
+%end
+
+// Premiums - not working
+%hook RNGestureHandlerButton
+
+- (BOOL)hidden {
+    UIView *supposedImage = self.subviews[0].subviews[0].subviews[0];
+    if ([supposedImage isKindOfClass:%c(FFFastImageView)] && [((FFFastImageView *)supposedImage).source.url.lastPathComponent isEqualToString:@"mixer.png"]) {
+        return YES;
+    }
+    return %orig;
+}
+
+%end*/
+
+// Dark mode
+%hook RCTView
+
+- (void)didMoveToWindow {
+    %orig;
+    self.backgroundColor = [UIColor systemBackgroundColorIfEligible:self.backgroundColor];
+}
+
+- (void)didMoveToSuperview {
+    %orig;
+    self.backgroundColor = [UIColor systemBackgroundColorIfEligible:self.backgroundColor];
+}
+
+- (UIColor *)backgroundColor {
+    return [UIColor systemBackgroundColorIfEligible:%orig];
+}
+
+%end
+
+%hook RNCSafeAreaView
+
+- (void)didMoveToWindow {
+    %orig;
+    self.backgroundColor = [UIColor systemBackgroundColorIfEligible:self.backgroundColor];
+}
+
+- (void)didMoveToSuperview {
+    %orig;
+    self.backgroundColor = [UIColor systemBackgroundColorIfEligible:self.backgroundColor];
+}
+
+- (UIColor *)backgroundColor {
+    return [UIColor systemBackgroundColorIfEligible:%orig];
+}
+
+%end
+
+%hook UIApplication
+
+- (NSInteger)statusBarStyle {
+    if (@available(iOS 13.0, *)) {
+        return UIStatusBarStyleDefault;
+    }
+    return %orig;
 }
 
 %end
