@@ -45,8 +45,10 @@
     if ([self.source.url.lastPathComponent isEqualToString:@"fruitz_nav.png"] && self.subviews.count == 0) {
         UIImageView *hookedPeach = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width - 32, self.frame.size.height - 32, 32, 32)];
         hookedPeach.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"peach_shadow" ofType:@"png" inDirectory:@"assets/app/assets/artworks/"]];
+        hookedPeach.userInteractionEnabled = YES;
         [self addSubview:hookedPeach];
         NSLog(@"[Peach] Pimped logo");
+        [hookedPeach addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(peach_showCredits:)]];
     }
 }
 
@@ -79,6 +81,19 @@
     }
 }
 
+%new
+- (void)peach_showCredits:(UITapGestureRecognizer *)gesture {
+    /*char ver[32];
+    FILE *fp = popen("/usr/bin/dpkg -s com.redenticdev.peach | grep Version | cut -d' ' -f2- | xargs", "r");
+    fgets(ver, 32, fp);
+    pclose(fp);
+    NSString *version = [NSString stringWithCString:ver encoding:NSUTF8StringEncoding];*/
+
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"🍑 Peach" message:/*[NSString stringWithFormat:@"\nVersion %@\n*/@"\nMade with ❤️ by RedenticDev"/*, version]*/ preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+    [self._viewControllerForAncestor presentViewController:alert animated:YES completion:nil];
+}
+
 %end
 
 // Matches that can be revealed by paying in the reveal page
@@ -101,6 +116,12 @@
     return self;
 }
 
+/*- (void)setHasCompleted:(BOOL)arg1 {
+    %orig;
+    if (self.frame.size.width > 40 && self.frame.size.height > 40) return;
+    NSLog(@"willWindow candidate %@", self);
+}*/
+
 %new
 - (void)peach_unblurImage:(UILongPressGestureRecognizer *)gesture {
     if (self.revealed || !self.image) return;
@@ -118,7 +139,7 @@
                 [spinner stopAnimating];
                 [spinner removeFromSuperview];
                 [UIView transitionWithView:self duration:.3 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
-                    self.image = deblurredProfilePicture;
+                    if (self.image) self.image = deblurredProfilePicture;
                 } completion:^(BOOL finished) {
                     // Vibrate stronger
                     if (finished) [PCHHapticManager triggerHapticForIntensity:3];
@@ -198,7 +219,7 @@
                     // Editing text
                     NSMutableAttributedString *newBio = [textView.attributedText mutableCopy];
                     [newBio addAttribute:NSLinkAttributeName value:[NSURL URLWithString:[@"https://instagram.com/" stringByAppendingString:[supposedInstagram stringByReplacingOccurrencesOfString:@"@" withString:@""]]] range:[textView.text rangeOfString:supposedInstagram]];
-                    textView.attributedText = newBio;
+                    if (textView) textView.attributedText = newBio;
                 } else {
                     NSLog(@"[Peach] No instagram found.");
                 }

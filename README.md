@@ -1,10 +1,23 @@
 # Peach
 Hacky utilities for Fruitz app
 
+## Planned features
+- Remove all buttons of paid options (began)
+- Haptics on like/dislike buttons (began)
+- Spinner on loading images (began)
+- Auto-reveal for little pictures on big button above matches
+- Show number of matches somewhere
+- Comprehensive in-app tweak settings panel
+
 ## History
-<!-- **v1.3.1** - 0//2021
+<!-- **v1.3.2** - 0//2021
 - Added spinner for images loading
 - Added auto-unblur support for little images on Basket page -->
+
+**v1.3.1** - 05/11/2021
+- Made Dark Mode truly dark
+- Added credits by tapping on the peach of the logo
+- Fixed rare crashes
 
 **v1.3.0** - 05/09/2021
 - Added Dark Mode support
