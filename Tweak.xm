@@ -165,7 +165,7 @@
     // dark mode
     NSMutableDictionary *attributes = [[textStorage attributesAtIndex:0 effectiveRange:nil] mutableCopy];
     if (attributes[NSForegroundColorAttributeName]) {
-        [attributes setObject:[UIColor systemTextColorIfEligible:attributes[NSForegroundColorAttributeName]] forKey:NSForegroundColorAttributeName];
+        attributes[NSForegroundColorAttributeName] = [UIColor peach_systemTextColorIfEligible:attributes[NSForegroundColorAttributeName]];
         [textStorage setAttributes:attributes range:NSMakeRange(0, textStorage.length)];
     }
 
@@ -186,7 +186,7 @@
                 [self.superview addSubview:textView];
                 [self removeFromSuperview];
                 // Finding instagram
-                __block NSString *supposedInstagram;
+                NSString __block *supposedInstagram;
                 NSString *text = [[[[[[[[textStorage.string
                     stringByReplacingOccurrencesOfString:@":" withString:@" "]
                     stringByReplacingOccurrencesOfString:@"\n" withString:@" "]
@@ -287,16 +287,16 @@
 
 - (void)didMoveToWindow {
     %orig;
-    self.backgroundColor = [UIColor systemBackgroundColorIfEligible:self.backgroundColor];
+    self.backgroundColor = [UIColor peach_systemBackgroundColorIfEligible:self.backgroundColor];
 }
 
 - (void)didMoveToSuperview {
     %orig;
-    self.backgroundColor = [UIColor systemBackgroundColorIfEligible:self.backgroundColor];
+    self.backgroundColor = [UIColor peach_systemBackgroundColorIfEligible:self.backgroundColor];
 }
 
 - (UIColor *)backgroundColor {
-    return [UIColor systemBackgroundColorIfEligible:%orig];
+    return [UIColor peach_systemBackgroundColorIfEligible:%orig];
 }
 
 %end
@@ -305,16 +305,16 @@
 
 - (void)didMoveToWindow {
     %orig;
-    self.backgroundColor = [UIColor systemBackgroundColorIfEligible:self.backgroundColor];
+    self.backgroundColor = [UIColor peach_systemBackgroundColorIfEligible:self.backgroundColor];
 }
 
 - (void)didMoveToSuperview {
     %orig;
-    self.backgroundColor = [UIColor systemBackgroundColorIfEligible:self.backgroundColor];
+    self.backgroundColor = [UIColor peach_systemBackgroundColorIfEligible:self.backgroundColor];
 }
 
 - (UIColor *)backgroundColor {
-    return [UIColor systemBackgroundColorIfEligible:%orig];
+    return [UIColor peach_systemBackgroundColorIfEligible:%orig];
 }
 
 %end
@@ -324,7 +324,7 @@
 - (void)textDidChange {
     %orig;
     if (@available(iOS 13.0, *)) {
-        self.textColor = [UIColor labelColor];
+        self.textColor = [UIColor peach_OLEDTextColor];
     }
 }
 
@@ -332,7 +332,7 @@
     if (@available(iOS 13.0, *)) {
         NSMutableDictionary *attributes = [%orig mutableCopy];
         if (attributes[NSForegroundColorAttributeName]) {
-            [attributes setObject:[UIColor systemTextColorIfEligible:attributes[NSForegroundColorAttributeName]] forKey:NSForegroundColorAttributeName];
+            attributes[NSForegroundColorAttributeName] = [UIColor peach_systemTextColorIfEligible:attributes[NSForegroundColorAttributeName]];
             return attributes;
         }
     }
@@ -341,7 +341,7 @@
 
 - (UIColor *)textColor {
     if (@available(iOS 13.0, *)) {
-        return [UIColor labelColor];
+        return [UIColor peach_OLEDTextColor];
     }
     return %orig;
 }

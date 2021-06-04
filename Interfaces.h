@@ -1,6 +1,6 @@
-#import "PCHImageViewController.h"
-#import "PCHHapticManager.h"
-#import "UIColor+Peach.h"
+#import "Classes/PCHImageViewController.h"
+#import "Classes/PCHHapticManager.h"
+#import "Classes/UIColor+Peach.h"
 
 #pragma mark - Categories
 @interface UIImageAsset (Peach)
