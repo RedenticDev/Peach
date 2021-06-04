@@ -3,21 +3,24 @@
 #import "Classes/UIColor+Peach.h"
 
 #pragma mark - Categories
+@interface UIView (Peach)
+- (UIViewController *)_viewControllerForAncestor;
+@end
+
 @interface UIImageAsset (Peach)
-@property (nonatomic, copy) NSString *assetName;
+@property(nonatomic, copy) NSString *assetName;
 @end
 
 #pragma mark - Interfaces
 // FF
 @interface FFFastImageSource : NSObject
-@property (nonatomic, strong, readwrite) NSURL *url;
+@property(nonatomic, strong, readwrite) NSURL *url;
 @end
 
 @interface FFFastImageView : UIImageView
--(UIViewController *)_viewControllerForAncestor;
-@property (nonatomic, strong, readwrite) FFFastImageSource *source;
-// @property (nonatomic, strong) UIActivityIndicatorView *loadingSpinner;
-@property (nonatomic, assign, readwrite) BOOL hasCompleted;
+@property(nonatomic, strong, readwrite) FFFastImageSource *source;
+// @property(nonatomic, strong) UIActivityIndicatorView *loadingSpinner;
+// @property(nonatomic, assign, readwrite) BOOL hasCompleted;
 @end
 
 // RCT
@@ -25,16 +28,15 @@
 @end
 
 @interface RCTUIImageViewAnimated : UIImageView
-@property (nonatomic, assign) BOOL revealed;
--(UIViewController *)_viewControllerForAncestor;
+@property(nonatomic, assign) BOOL revealed;
 @end
 
 @interface RCTImageView : RCTView
-@property (nonatomic, copy, readwrite) NSArray *imageSources;
+@property(nonatomic, copy, readwrite) NSArray *imageSources;
 @end
 
 @interface RCTImageSource : NSObject
--(NSURLRequest *)request;
+- (NSURLRequest *)request;
 @end
 
 @interface RCTUITextView : UITextView
