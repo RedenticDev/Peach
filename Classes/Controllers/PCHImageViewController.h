@@ -1,4 +1,6 @@
 #import <UIKit/UIKit.h>
+#import <Cephei/HBPreferences.h>
+#import <LinkPresentation/LPLinkMetadata.h>
 #import <Photos/Photos.h>
 
 @interface PCHImageViewController : UIViewController <UIScrollViewDelegate>
@@ -7,8 +9,4 @@
 @property (nonatomic, strong) UIImage *image;
 
 - (instancetype)initWithImage:(UIImage *)image;
-- (void)saveImage:(id)sender;
-- (void)shareImage:(id)sender;
-- (void)closeDetails:(id)sender;
-- (void)zoomToInitialScale:(UIGestureRecognizer *)sender;
 @end

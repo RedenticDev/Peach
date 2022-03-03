@@ -1,6 +1,22 @@
-#import "Classes/PCHHapticManager.h"
-#import "Classes/PCHImageViewController.h"
-#import "Classes/UIColor+Peach.h"
+#import <Cephei/HBPreferences.h>
+#import "Classes/Models/PCHHapticManager.h"
+#import "Classes/Controllers/PCHImageViewController.h"
+#import "Classes/Controllers/PCHSettingsViewController.h"
+#import "Classes/Categories/UIColor+Peach.h"
+
+#pragma mark - Preferences
+BOOL enabled;
+
+BOOL enableDarkMode;
+
+BOOL enableLongPressOpen;
+BOOL longPressHaptics;
+
+BOOL unblurImages;
+BOOL unblurHaptics;
+BOOL likePassHaptics;
+BOOL instaParser;
+BOOL enableSpinners;
 
 #pragma mark - Categories
 @interface UIView (Peach)

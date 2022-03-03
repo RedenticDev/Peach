@@ -4,28 +4,24 @@ Hacky utilities for Fruitz app
 
 ## Planned features
 
-- Remove all buttons of paid options (began)
-- Haptics on like/dislike buttons (began)
-- Spinner on loading images (began)
-- Auto-reveal for little pictures on big button above matches
-- Show number of matches somewhere
 - Show amount of remaining likes somewhere
-- Comprehensive in-app tweak settings pane
+- Auto-reveal little pictures on big button above matches
+- Remove all buttons of paid options (began)
+- Show number of matches somewhere
+- Handle profile' gifs in image opener
+<!-- Find a way to show tweak version dynamically + relaunch app instead of close -->
+<!-- Hook launch storyboard, fix FIXMEs -->
 
 ## History
 
-<!-- **** - 0//2022
+**v1.4.0** - 03/03/2022
 
-- Handle gif in ImageVC
-- Find a way to popen
-- Settings
-  - Enable
-  - Dark mode
-  - Enable ImageVC
-  - Enable unblur
-  - Enable haptics
-  - Enable Instagram parser
-- Add auto-unblur support for little images on Basket page (?) -->
+- Add Settings pane with 10 toggles for the tweak (replaces the alert when clicking the peach icon in the app logo)
+- Add haptics when long pressing to open images
+- Improve haptics for button, now working much more reliably
+- Improve share sheet and save button in image opener
+- Filter some other characters to improve Instagram parser
+- Code improvements
 
 **v1.3.2** - 02/27/2022
 
