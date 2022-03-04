@@ -177,7 +177,7 @@ static NSString *VERSION = @"1.4.0";
         if ([sub isKindOfClass:%c(RCTTextView)]) {
             NSTextStorage *bioLabel = MSHookIvar<NSTextStorage *>((RCTTextView *)sub, "_textStorage");
             if ([bioLabel.string isEqualToString:@"Bio"] ||
-                (!bioLabel.string && sub.frame.origin.x == 0 && sub.frame.origin.y == 17)) { // I know, don't judge me
+                (!bioLabel.string && sub.frame.origin.x == 0)) { // I know, don't judge me
                 NSLog(@"Bio found (%p)", self);
                 bioFound = YES;
                 break;
@@ -189,19 +189,20 @@ static NSString *VERSION = @"1.4.0";
 
         // Swapping shitty RCTTextView to UITextView
         NSLog(@"Fixing text view");
+        BOOL isBoldEnabled = [[[UIFont systemFontOfSize:14].fontName lowercaseString] containsString:@"semibold"];
         [textStorage setAttributes:@{
-            NSFontAttributeName : [UIFont systemFontOfSize:[UIFont systemFontSize] + 2.], // fix font
-            NSForegroundColorAttributeName : [UIColor peach_systemTextColorIfEligible:[textStorage attributesAtIndex:0 effectiveRange:nil][NSForegroundColorAttributeName]]
+            NSFontAttributeName : [UIFont systemFontOfSize:((UIFont *)[textStorage attribute:NSFontAttributeName atIndex:0 effectiveRange:nil]).pointSize - (isBoldEnabled ? 1. : 0) weight:UIFontWeightRegular], // fix font (fighting with system)
+            NSForegroundColorAttributeName : [UIColor peach_systemTextColorIfEligible:[textStorage attribute:NSForegroundColorAttributeName atIndex:0 effectiveRange:nil]]
         } range:NSMakeRange(0, textStorage.length)];
-        CGRect originalFrame = self.frame;
-        originalFrame.size.height = ceil(originalFrame.size.height); // other fix for out of view
-        UITextView *textView = [[UITextView alloc] initWithFrame:originalFrame textContainer:textStorage.layoutManagers.firstObject.textContainers.firstObject];
+        UITextView *textView = [[UITextView alloc] initWithFrame:self.frame textContainer:textStorage.layoutManagers.firstObject.textContainers.firstObject];
         textView.editable = NO;
         textView.selectable = YES;
         CGFloat leftRightInset = textView.textContainer.lineFragmentPadding;
         textView.textContainerInset = UIEdgeInsetsMake(0, -leftRightInset, 0, -leftRightInset);
         textView.backgroundColor = [UIColor clearColor];
-        textView.scrollEnabled = NO; // prevent text from getting out of view
+        textView.scrollEnabled = NO;
+        textView.scrollEnabled = YES; // fix buggy UITextView cut text (yes, these 2 are both required)
+        textView.frame = CGRectMake(0, 0, textView.contentSize.width, textView.contentSize.height);
         [self.superview addSubview:textView];
         [self removeFromSuperview];
         NSLog(@"UITextView applied.");
@@ -302,17 +303,17 @@ static NSString *VERSION = @"1.4.0";
                 NSLog(@"No instagram found.");
             }
         }
-    } else if (enableDarkMode) {
-        // Dark mode
-        NSMutableDictionary *attributes = [[textStorage attributesAtIndex:0 effectiveRange:nil] mutableCopy];
-        if (attributes[NSForegroundColorAttributeName]) {
-            attributes[NSForegroundColorAttributeName] = [UIColor peach_systemTextColorIfEligible:attributes[NSForegroundColorAttributeName]];
-            [textStorage setAttributes:attributes range:NSMakeRange(0, textStorage.length)];
+    } else {
+        if (enableDarkMode) {
+            // Dark mode
+            NSMutableDictionary *attributes = [[textStorage attributesAtIndex:0 effectiveRange:nil] mutableCopy];
+            if (attributes[NSForegroundColorAttributeName]) {
+                attributes[NSForegroundColorAttributeName] = [UIColor peach_systemTextColorIfEligible:attributes[NSForegroundColorAttributeName]];
+                [textStorage setAttributes:attributes range:NSMakeRange(0, textStorage.length)];
+            }
         }
 
         %orig(textStorage, contentFrame, descendantViews);
-    } else {
-        %orig;
     }
 }
 

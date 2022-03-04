@@ -10,9 +10,20 @@ Hacky utilities for Fruitz app
 - Show number of matches somewhere
 - Handle profile' gifs in image opener
 <!-- Find a way to show tweak version dynamically + relaunch app instead of close -->
+<!-- Enable RCTDevSettings (vc.viewIfLoaded.bridge.dev{Settings,Menu} = [ new]) -->
+<!-- [[RCTBridge currentBridge] reloadWithReason:nil] -->
 <!-- Hook launch storyboard, fix FIXMEs -->
 
 ## History
+
+**v1.4.1** • Peach's 1st birthday 🎉 - 03/04/2022
+
+- New bundle id now replaces the old one in package managers
+- Rework and fix logic for "Close app" button in settings
+- Adapt font size of cells in settings
+- Fix bio not always being detected under certain conditions
+- Fix (again) end of bio getting out of its view
+- Fix wrong font being applied to bio with devices using bold font
 
 **v1.4.0** - 03/03/2022
 

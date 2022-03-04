@@ -8,7 +8,7 @@
         case 0: { // 6 and older
             NSMutableDictionary *dict = [NSMutableDictionary dictionary];
             NSMutableArray *arr = [NSMutableArray array];
-            [arr addObject:[NSNumber numberWithBool:YES]];
+            [arr addObject:@YES];
             [arr addObject:[NSNumber numberWithInt:250]];
             [dict setObject:arr forKey:@"VibePattern"];
             [dict setObject:[NSNumber numberWithFloat:strength] forKey:@"Intensity"];

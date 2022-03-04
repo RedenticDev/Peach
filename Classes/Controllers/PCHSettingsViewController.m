@@ -1,6 +1,6 @@
 #import "PCHSettingsViewController.h"
 
-static NSString *VERSION = @"1.4.0";
+static NSString *VERSION = @"1.4.1";
 
 @implementation PCHSettingsViewController
 
@@ -56,24 +56,34 @@ static NSString *VERSION = @"1.4.0";
 
 #pragma mark - Switch delegate
 - (void)key:(NSString *)key didChangeTo:(BOOL)value needingRestart:(BOOL)restart {
-    // Save in temporary dictionary
-    self.pendingPrefs[key] = [NSNumber numberWithBool:value]; 
+    static NSMutableSet<NSString *> *restartKeys;
+    
+    if (!restartKeys)
+        restartKeys = [[NSMutableSet alloc] init];
+    // Save keys to save
+    HBPreferences *prefs = [HBPreferences preferencesForIdentifier:@"dev.redentic.peach"];
+    if ([prefs boolForKey:key] != value) {
+       self.pendingPrefs[key] = @(value);
+       if (restart)
+           [restartKeys addObject:key];
+    } else if ([self.pendingPrefs objectForKey:key]) {
+        [self.pendingPrefs removeObjectForKey:key];
+        if (restart)
+            [restartKeys removeObject:key];
+    }
     // UIBarButtonItem
-    if (restart) {
-        HBPreferences *prefs = [HBPreferences preferencesForIdentifier:@"dev.redentic.peach"];
-        if ([prefs objectForKey:key]) {
-            BOOL needsToClose = [prefs boolForKey:key] != value;
-            UIBarButtonItem *item;
-            if (needsToClose) {
-                item = [[UIBarButtonItem alloc] initWithTitle:@"Close app" style:UIBarButtonItemStyleDone target:self action:@selector(closeSettings:)];
-                item.tintColor = [UIColor systemRedColor];
-            } else {
-	            item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(closeSettings:)];
-            }
-            [self.navigationItem setRightBarButtonItem:item animated:YES];
-            if (@available(iOS 13.0, *)) {
-                self.modalInPresentation = needsToClose;
-            }
+    UIBarButtonItem *item;
+    BOOL isCurrentItemRed = self.navigationItem.rightBarButtonItem.tintColor == [UIColor systemRedColor];
+    if ([restartKeys count] && !isCurrentItemRed) {
+        item = [[UIBarButtonItem alloc] initWithTitle:@"Close app" style:UIBarButtonItemStyleDone target:self action:@selector(closeSettings:)];
+        item.tintColor = [UIColor systemRedColor];
+    } else if (![restartKeys count] && isCurrentItemRed) {
+        item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(closeSettings:)];
+    }
+    if (item) {
+        [self.navigationItem setRightBarButtonItem:item animated:YES];
+        if (@available(iOS 13.0, *)) {
+            self.modalInPresentation = [restartKeys count];
         }
     }
 }

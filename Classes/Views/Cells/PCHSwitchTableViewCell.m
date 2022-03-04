@@ -13,6 +13,7 @@
 
 - (void)configureCellWithLabel:(NSString *)label defaultValue:(BOOL)value key:(NSString *)key majorSetting:(BOOL)major {
 	self.textLabel.text = label;
+	self.textLabel.adjustsFontSizeToFitWidth = YES;
 	self.major = major;
 	HBPreferences *preferences = [HBPreferences preferencesForIdentifier:@"dev.redentic.peach"];
 	if ([preferences objectForKey:key]) {

@@ -1,6 +1,6 @@
 Package: dev.redentic.peach
 Name: Peach
-Version: 1.4.0
+Version: 1.4.1
 Architecture: iphoneos-arm
 Description: Hacky utilities for Fruitz app
 Icon: https://redentic.dev/depictions/dev.redentic.peach/icon.png
@@ -10,3 +10,4 @@ Maintainer: RedenticDev <hello@redentic.dev>
 Author: RedenticDev <hello@redentic.dev>
 Section: Tweaks
 Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 12), ws.hbang.common (>= 1.17)
+Replaces: com.redenticdev.peach
